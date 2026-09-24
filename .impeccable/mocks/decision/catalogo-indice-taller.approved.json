@@ -1,0 +1,16 @@
+{
+  "status": "approved",
+  "approvedAt": "2026-09-24",
+  "approvedBy": "user",
+  "approvalQuote": "la opcion 1 me parece perfecta",
+  "name": "Índice de taller",
+  "mode": "operate",
+  "buildPath": "comp",
+  "seedKey": "b262484f",
+  "selectionKind": "assigned",
+  "desktopComp": ".impeccable/mocks/decision/catalogo-indice-taller.png",
+  "mobileComp": ".impeccable/mocks/decision/catalogo-indice-taller-mobile.png",
+  "mobileFilterComp": ".impeccable/mocks/decision/catalogo-indice-taller-mobile-filtros.png",
+  "surfaceBrief": ".impeccable/surfaces/catalogo.md",
+  "handoff": "CATALOG_HANDOFF.md"
+}

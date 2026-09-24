@@ -1,0 +1,7 @@
+Use case: ui-mockup
+Asset type: full-fidelity mobile web companion for the desktop concept “Salón curado” on Lirios /catalogo.
+Input images: Image 1 is the exact desktop concept to adapt; Image 2 is the existing Lirios mobile homepage and binds the brand and mobile header.
+Primary request: Create a polished portrait mobile catalog at 390px proportions. Preserve the editorial salon rhythm instead of collapsing into uniform ecommerce cards.
+Structure: compact Lirios header with “Menú” and bag count. Title “La colección”, short copy and discreet “Precios provisionales”. Horizontal category tabs “Todos / Arreglos / Flores”. One compact toolbar “Filtros (2)” and “Precio”. Below, a deliberately staggered gallery: first a wide close-up photograph with its caption “Girasol de otoño — Flor individual — Q 42”; next a tall portrait image offset inward with its caption; a third image peeks from the lower fold. Alternate full-bleed and inset widths to create rhythm. No card containers and no repeated action buttons; tapping the image opens the modal.
+Style: refined florist lookbook, matte blush cream, deep wine, Bodoni-like names, calm sans controls, square photo edges, hairline rules, real luminous chenille texture, generous but useful mobile spacing.
+Constraints: retain clear tap affordance through underlined product titles and tiny “Ver de cerca”; readable Spanish; show prices, never availability; no search; no boxed cards; no rounded pills; no gradients; no ratings; no badges; no device frame; no watermark.

@@ -1,0 +1,47 @@
+{
+  "title": "Catálogo — una versión más tradicional",
+  "question": "Las tres propuestas parten de Capítulos de color y hacen más explícitas las tres rutas: arreglos, flores individuales y personalizados.",
+  "options": [
+    {
+      "id": "three-windows",
+      "label": "Tres escaparates",
+      "kicker": "EVOLUCIÓN DIRECTA",
+      "lineage": "categorías de floristería seguidas por una colección editorial",
+      "thesis": "Tres fotografías grandes presentan las categorías antes de entrar al catálogo filtrable.",
+      "palette": ["#faf2eb", "#741429", "#e8d1cc", "#2d2427"],
+      "materials": ["tríptico fotográfico", "reglas finas", "capítulos de color"],
+      "viewport": "Tras el título aparece un tríptico de Arreglos, Flores individuales y Personalizados; debajo comienza la colección con filtros y piezas a gran escala.",
+      "risk": "La entrada es muy clara, aunque desplaza algunos productos un poco más abajo.",
+      "comp": ".impeccable/mocks/decision/catalog-three-windows.png"
+    },
+    {
+      "id": "sectioned-collection",
+      "label": "Colección por secciones",
+      "lineage": "catálogo clásico de floristería con capítulos explícitos",
+      "thesis": "Cada categoría ocupa una sección reconocible con su propio ritmo y enlace de continuidad.",
+      "palette": ["#faf2eb", "#6c1326", "#f4e7dd", "#513f42"],
+      "materials": ["encabezados de sección", "fotografía generosa", "separadores tipográficos"],
+      "viewport": "Título, filtros y un primer bloque Arreglos listos con una pieza protagonista; una franja inferior anticipa Flores individuales y Personalizados.",
+      "risk": "Es la estructura más familiar, pero necesita un buen ritmo para no sentirse demasiado convencional.",
+      "comp": ".impeccable/mocks/decision/catalog-sectioned-collection.png"
+    },
+    {
+      "id": "catalog-plus-commission",
+      "label": "Catálogo y encargo",
+      "lineage": "colección comercial contenida con un pasaje dedicado al trabajo personalizado",
+      "thesis": "Arreglos y flores comparten el catálogo; los personalizados tienen una invitación protagonista aparte.",
+      "palette": ["#faf2eb", "#741429", "#d6bea9", "#261c1f"],
+      "materials": ["retícula editorial", "banda vino", "fotografía de proceso"],
+      "viewport": "Una retícula relajada muestra arreglos y flores con filtros; una banda vino de ancho completo abre la futura ruta de personalizados sin mezclarla con productos listos.",
+      "risk": "Aclara muy bien la diferencia entre comprar y encargar, pero personalizados recibe menos presencia inicial.",
+      "comp": ".impeccable/mocks/decision/catalog-plus-commission.png"
+    }
+  ],
+  "reroll": true,
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true,
+  "followup": true
+}

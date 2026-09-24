@@ -1,0 +1,41 @@
+@import '@fontsource/bodoni-moda/latin-400.css';
+@import '@fontsource/bodoni-moda/latin-500.css';
+@import '@fontsource-variable/manrope/wght.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #faf2eb;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  margin: 0;
+  background: #faf2eb;
+  color: #2d2427;
+  font-family: 'Manrope Variable', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #6c1326;
+  color: #fff8f3;
+}
+
+:focus-visible {
+  outline: 0.1875rem solid #6c1326;
+  outline-offset: 0.25rem;
+}
+
+html {
+  scrollbar-color: #6c1326 #faf2eb;
+}

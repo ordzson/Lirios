@@ -1,0 +1,699 @@
+$wine: #6c1326;
+$wine-deep: #641326;
+$wine-action: #741429;
+$wine-pressed: #5f0e21;
+$cream: #faf2eb;
+$blush: #e8d1cc;
+$parchment: #f4e7dd;
+$charcoal: #2d2427;
+$mauve: #5d4b4f;
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+:host {
+  display: block;
+}
+
+.custom-page {
+  min-height: 100vh;
+  overflow: clip;
+  background: $cream;
+  color: $charcoal;
+}
+
+.custom-header {
+  height: clamp(5rem, 8vw, 7rem);
+  border-bottom: 1px solid rgb(108 19 38 / 16%);
+}
+
+.custom-header app-site-header {
+  display: block;
+  height: 100%;
+}
+
+.custom-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(28rem, 1.08fr);
+  min-height: calc(100svh - clamp(5rem, 8vw, 7rem));
+}
+
+.custom-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 7.5vw, 7.5rem);
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.custom-hero h1 {
+  max-width: 8ch;
+  margin-bottom: 2rem;
+  color: $wine;
+  font-size: clamp(3.75rem, 6.3vw, 6rem);
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.custom-hero__copy > p:not(.custom-hero__reassurance) {
+  max-width: 34ch;
+  margin-bottom: 2.25rem;
+  color: $mauve;
+  font-size: clamp(1.08rem, 1.35vw, 1.24rem);
+  line-height: 1.7;
+}
+
+.whatsapp-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  min-height: 4rem;
+  padding: 1rem 1.4rem;
+  background: $wine-action;
+  color: #fff8f3;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 0.7rem 1.5rem rgb(77 13 31 / 12%);
+  transition:
+    background-color 180ms ease-out,
+    box-shadow 180ms ease-out,
+    transform 180ms ease-out;
+}
+
+.whatsapp-action:hover {
+  background: $wine-pressed;
+  box-shadow: 0 0.85rem 1.8rem rgb(77 13 31 / 18%);
+  transform: translateY(-0.125rem);
+}
+
+.whatsapp-action svg,
+.mobile-whatsapp svg {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.45;
+}
+
+.whatsapp-action .whatsapp-action__arrow {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-left: auto;
+}
+
+.whatsapp-action--primary {
+  min-width: min(100%, 20rem);
+  min-height: 4.5rem;
+  font-size: 1.08rem;
+}
+
+.custom-hero__reassurance {
+  max-width: 27rem;
+  margin: 1rem 0 0;
+  color: #66595a;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.custom-hero__visual {
+  position: relative;
+  min-height: 42rem;
+  margin: 0;
+  overflow: hidden;
+  background: $parchment;
+}
+
+.custom-hero__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 43%;
+  animation: hero-focus 1400ms $ease both;
+}
+
+.custom-hero__visual figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 22rem;
+  padding: 1rem 1.4rem;
+  background: $cream;
+  color: $mauve;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.choice-guide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.6fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  padding: clamp(7rem, 11vw, 11rem) clamp(2rem, 8vw, 8rem);
+  background: $cream;
+}
+
+.choice-guide h2 {
+  max-width: 10ch;
+  margin-bottom: 0;
+  color: $wine;
+  font-size: clamp(3.5rem, 6.8vw, 6rem);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.choice-guide p {
+  max-width: 35ch;
+  margin-bottom: 0.5rem;
+  color: $mauve;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.choice {
+  padding: clamp(6rem, 10vw, 10rem) clamp(2rem, 8vw, 8rem);
+  scroll-margin-top: 2rem;
+  background: $parchment;
+}
+
+.choice--occasion {
+  background: $blush;
+}
+
+.choice--story {
+  background: $wine-deep;
+  color: #fff5eb;
+}
+
+.choice__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.65fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  max-width: 96rem;
+  margin: 0 auto clamp(3.5rem, 6vw, 6rem);
+}
+
+.choice h2 {
+  margin-bottom: 0.65rem;
+  color: $wine;
+  font-size: clamp(3.8rem, 7.2vw, 6rem);
+  line-height: 0.9;
+}
+
+.choice--story h2 {
+  color: #fff5eb;
+}
+
+.choice__promise {
+  margin-bottom: 0;
+  color: $mauve;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.choice--story .choice__promise {
+  color: #efd8d0;
+}
+
+.choice__details > p {
+  max-width: 38ch;
+  color: $mauve;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.choice--story .choice__details > p {
+  color: #f2ddd6;
+}
+
+.choice__fit {
+  padding-top: 1rem;
+  border-top: 1px solid rgb(108 19 38 / 28%);
+  font-size: 0.9rem !important;
+}
+
+.choice--story .choice__fit {
+  border-top-color: rgb(255 245 235 / 30%);
+}
+
+.choice__details .whatsapp-action {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.choice--story .choice__details .whatsapp-action {
+  background: #fff5eb;
+  color: $wine;
+  box-shadow: 0 0.7rem 1.5rem rgb(38 28 31 / 22%);
+}
+
+.choice--story .choice__details .whatsapp-action:hover {
+  background: #f1ddd5;
+}
+
+.samples {
+  display: grid;
+  grid-template-columns: 1.16fr 0.92fr 0.92fr;
+  gap: clamp(1rem, 1.7vw, 1.75rem);
+  align-items: start;
+  max-width: 96rem;
+  margin-inline: auto;
+}
+
+.samples--two {
+  grid-template-columns: 1.16fr 0.84fr;
+}
+
+.sample {
+  min-width: 0;
+}
+
+.sample img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.84 / 1;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.sample--lead img {
+  aspect-ratio: 0.92 / 1;
+}
+
+.choice--story .sample:nth-child(2) img,
+.choice--story .sample:nth-child(3) img {
+  object-position: 50% 30%;
+}
+
+.sample__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.sample h3 {
+  margin-bottom: 0;
+  color: $charcoal;
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  line-height: 1.1;
+}
+
+.choice--story .sample h3 {
+  color: #fff5eb;
+}
+
+.sample a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid currentColor;
+  color: $wine;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.sample a svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: 0.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+  vertical-align: -0.18rem;
+}
+
+.choice--story .sample a {
+  color: #fff5eb;
+}
+
+.simple-process {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(30rem, 1.2fr);
+  gap: clamp(4rem, 9vw, 10rem);
+  padding: clamp(7rem, 11vw, 11rem) clamp(2rem, 8vw, 8rem);
+  background: $cream;
+}
+
+.simple-process > div > p {
+  max-width: 32ch;
+  color: $mauve;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.simple-process h2 {
+  max-width: 7ch;
+  margin-bottom: 2rem;
+  color: $wine;
+  font-size: clamp(3.75rem, 6vw, 5.5rem);
+  line-height: 0.92;
+}
+
+.simple-process ol {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #cdbeb4;
+  list-style: none;
+}
+
+.simple-process li {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.65fr) minmax(0, 1.35fr);
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid #cdbeb4;
+}
+
+.simple-process li span {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.65rem;
+}
+
+.simple-process li p {
+  max-width: 38ch;
+  margin-bottom: 0;
+  color: $mauve;
+  line-height: 1.65;
+}
+
+.closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(7rem, 11vw, 11rem) 1.25rem;
+  background: $wine-deep;
+  color: #fff5eb;
+  text-align: center;
+}
+
+.closing h2 {
+  max-width: 11ch;
+  margin-bottom: 2.5rem;
+  font-size: clamp(3.65rem, 6.5vw, 6rem);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.whatsapp-action--light {
+  min-width: min(100%, 20rem);
+  background: #fff5eb;
+  color: $wine;
+}
+
+.whatsapp-action--light:hover {
+  background: #f1ddd5;
+}
+
+.closing__back {
+  margin-top: 1.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgb(255 245 235 / 58%);
+  color: #fff5eb;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.custom-footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: baseline;
+  padding: 3.5rem clamp(2rem, 8vw, 8rem);
+  background: #261c1f;
+  color: #f4e7dd;
+}
+
+.custom-footer a {
+  color: inherit;
+}
+
+.custom-footer__brand {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2.3rem;
+  text-decoration: none;
+}
+
+.custom-footer p,
+.custom-footer > a:last-child {
+  margin-bottom: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.mobile-whatsapp {
+  display: none;
+}
+
+@keyframes hero-focus {
+  from {
+    filter: blur(0.8rem);
+    transform: scale(1.04);
+  }
+
+  to {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 68.74rem) {
+  .custom-hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(25rem, 1.05fr);
+  }
+
+  .sample__meta {
+    display: block;
+  }
+
+  .sample h3 {
+    margin-bottom: 0.65rem;
+  }
+
+  .custom-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .custom-footer > a:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 56.24rem) {
+  .custom-page {
+    padding-bottom: 4.75rem;
+  }
+
+  .custom-header {
+    height: 4.75rem;
+  }
+
+  .custom-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .custom-hero__copy {
+    padding: 4.5rem 1.25rem 3rem;
+  }
+
+  .custom-hero h1 {
+    max-width: 9ch;
+    margin-bottom: 1.5rem;
+    font-size: clamp(3.25rem, 15.5vw, 5rem);
+  }
+
+  .custom-hero__copy > p:not(.custom-hero__reassurance) {
+    max-width: 35ch;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+  }
+
+  .whatsapp-action--primary {
+    width: 100%;
+  }
+
+  .custom-hero__visual {
+    min-height: 70svh;
+  }
+
+  .custom-hero__visual figcaption {
+    right: auto;
+    left: 0;
+    max-width: 18rem;
+  }
+
+  .choice-guide,
+  .choice__intro,
+  .simple-process {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-guide {
+    gap: 2rem;
+    padding: 6rem 1.25rem;
+  }
+
+  .choice-guide h2 {
+    font-size: clamp(3.2rem, 14vw, 4.5rem);
+  }
+
+  .choice {
+    padding: 5.5rem 1.25rem;
+  }
+
+  .choice__intro {
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .choice h2 {
+    font-size: clamp(3.5rem, 15vw, 4.7rem);
+  }
+
+  .choice__details .whatsapp-action {
+    min-height: 4.25rem;
+  }
+
+  .samples,
+  .samples--two {
+    display: flex;
+    width: calc(100% + 1.25rem);
+    margin-right: -1.25rem;
+    overflow-x: auto;
+    scroll-padding-inline: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: $wine transparent;
+  }
+
+  .choice--story .samples {
+    scrollbar-color: #fff5eb transparent;
+  }
+
+  .sample {
+    flex: 0 0 82vw;
+    scroll-snap-align: start;
+  }
+
+  .sample:last-child {
+    padding-right: 1.25rem;
+  }
+
+  .sample img,
+  .sample--lead img {
+    aspect-ratio: 0.85 / 1;
+  }
+
+  .sample__meta {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .sample h3 {
+    margin-bottom: 0;
+  }
+
+  .sample a {
+    min-height: 2.75rem;
+  }
+
+  .simple-process {
+    gap: 3.5rem;
+    padding: 6rem 1.25rem;
+  }
+
+  .simple-process li {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .closing {
+    padding-block: 6.5rem;
+  }
+
+  .closing h2 {
+    font-size: clamp(3.4rem, 14vw, 4.8rem);
+  }
+
+  .custom-footer {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 3.5rem 1.25rem;
+  }
+
+  .custom-footer > a:last-child {
+    grid-column: auto;
+  }
+
+  .mobile-whatsapp {
+    position: fixed;
+    z-index: 40;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3.75rem;
+    background: $wine-action;
+    color: #fff8f3;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0.9rem 2rem rgb(38 28 31 / 28%);
+    transition:
+      transform 220ms $ease,
+      visibility 220ms;
+  }
+
+  .mobile-whatsapp--hidden {
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(calc(100% + 2rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-hero__visual img {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

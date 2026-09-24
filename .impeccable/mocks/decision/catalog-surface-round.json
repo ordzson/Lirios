@@ -1,0 +1,48 @@
+{
+  "title": "Elige la estructura del catálogo",
+  "question": "Las tres propuestas conservan la identidad de Lirios, los mismos filtros y el modal de compra. Cambia la forma de explorar una colección pequeña.",
+  "options": [
+    {
+      "id": "color-chapters",
+      "label": "Capítulos de color",
+      "kicker": "THE ROLL",
+      "lineage": "catálogo editorial organizado como una secuencia cromática",
+      "thesis": "La colección se recorre por atmósferas de color, con pocas piezas grandes en cada capítulo.",
+      "palette": ["#faf2eb", "#741429", "#e8d1cc", "#2d2427"],
+      "materials": ["fotografía a sangre", "reglas finas", "bloques tonales"],
+      "viewport": "Un encabezado compacto deja paso a una tira de filtros y a un primer capítulo con una pieza protagonista y dos apoyos; el color organiza sin convertirse en un filtro obligatorio.",
+      "risk": "La secuencia es memorable, pero comparar precios entre colores exige algo más de desplazamiento.",
+      "comp": ".impeccable/mocks/decision/catalog-color-chapters.png"
+    },
+    {
+      "id": "curated-salon",
+      "label": "Salón curado",
+      "lineage": "lookbook de floristería con retícula asimétrica",
+      "thesis": "Veinte productos se sienten como una colección escogida, nunca como inventario repetido.",
+      "palette": ["#faf2eb", "#6c1326", "#d6bea9", "#513f42"],
+      "materials": ["retratos verticales", "espacio negativo", "pies editoriales"],
+      "viewport": "Título, filtros lineales y una retícula de ritmos desiguales donde una pieza ancla cada grupo; el precio acompaña al nombre sin botones repetidos.",
+      "risk": "Es la dirección más elegante, aunque el orden visual pesa más que la comparación rápida.",
+      "comp": ".impeccable/mocks/decision/catalog-curated-salon.png"
+    },
+    {
+      "id": "florist-index",
+      "label": "Índice vivo",
+      "lineage": "mesa de selección de una florista",
+      "thesis": "Una lista sobria y una fotografía dominante permiten revisar la colección sin reducirla a tarjetas.",
+      "palette": ["#faf2eb", "#741429", "#f4e7dd", "#261c1f"],
+      "materials": ["lista tipográfica", "imagen de detalle", "subrayados de selección"],
+      "viewport": "La columna izquierda contiene filtros y nombres con precios; la derecha muestra la pieza seleccionada a escala generosa antes de abrir su modal de fotos y cantidad.",
+      "risk": "Es la más eficiente para comparar, pero muestra menos productos simultáneamente.",
+      "comp": ".impeccable/mocks/decision/catalog-florist-index.png"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}

@@ -1,0 +1,6 @@
+{
+  "promptFile": ".impeccable/mocks/composition-b.prompt.txt",
+  "prompt": "Exact generation prompt is embedded in composition-b.png and preserved verbatim in composition-b.prompt.txt.",
+  "image": ".impeccable/mocks/composition-b.png",
+  "approved": false
+}

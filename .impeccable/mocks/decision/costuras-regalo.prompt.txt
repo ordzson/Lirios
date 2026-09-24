@@ -1,0 +1,40 @@
+GENERATION PROMPT
+
+Use case: ui-mockup
+Asset type: single north-star desktop ecommerce homepage UI comp, first viewport only, 16:9 landscape, production-ready high fidelity.
+Primary request: Design a refined Spanish catalog homepage for a provisional handmade pipe-cleaner flower brand in Quetzaltenango, Guatemala. The visual concept is “Costuras de regalo”: the webpage feels like an elegant textile sampler assembled from asymmetrical, uneven washed-linen patches with visibly sewn seams. It must feel editorial, polished, lightly feminine, tactile, and welcoming to anyone.
+Input images: Image 1, Image 2, and Image 3 are product-reference photographs. Recreate their recognizable handmade pipe-cleaner flowers as premium product photography inside the UI: one hero arrangement in a large fabric-block image, one separate close-up macro of a single flower, and one quieter supporting bouquet image. Do not merely place the raw reference photos as screenshots.
+Scene/backdrop: full browserless desktop webpage canvas, no device frame, 16:9. Generous margins. Warm linen base with irregular stitched fabric panels creating the composition.
+Composition/framing: clearly show one full desktop first viewport. Top navigation: wordmark at upper left, four navigation items across/right. Below it, a bold editorial hero grid made of 3–4 unequal textile patches, not a generic card grid. Large hero arrangement occupies the dominant fabric block. Headline is large and elegant in the adjacent block, with one understated primary CTA. A narrow cloth-label treatment indicates customization without adding any extra words. Separate flower macro anchors a smaller block. Hierarchy must make ready-made arrangements visibly primary, then individual flowers, then customization.
+Style/medium: believable high-fidelity web UI mockup with premium editorial art direction; mixed elegant display serif and restrained modern sans; subtle thread, linen weave, raw-but-finished cloth edges and precise stitch lines. Refined florist atmosphere translated to durable handmade flowers. Sophisticated, quiet, curious.
+Lighting/mood: soft window light, delicate shadows, warm, calm, tactile.
+Color palette: warm washed linen, misty blue-grey, deep plum, muted coral, charcoal. Controlled accents; no loud saturation.
+Materials/textures: linen, soft woven cloth, fine embroidery thread, handmade chenille flower texture. Stitches should be deliberate and couture-like, not crafty or homespun.
+Text (verbatim, and absolutely no other readable text anywhere):
+"Lirios"
+"Arreglos"
+"Flores individuales"
+"Personaliza"
+"Seguir pedido"
+"Hechas a mano. Elegidas con intención."
+"Ver arreglos"
+Typography/copy constraints: render every listed phrase exactly once, correctly accented and spelled. Do not invent captions, prices, product names, microcopy, tier names, badges, footer text, cart text, search text, icons with letters, or placeholder text.
+Constraints: shippable UI fidelity; desktop web design rather than a moodboard; primary CTA obvious; legible navigation and headline; product imagery retains the handmade pipe-cleaner character from references. Elegant and slightly feminine without excluding masculine gift buyers. No logo symbol is required beyond the wordmark.
+Avoid: rustic flea-market aesthetic, cottagecore clutter, scrapbook chaos, childish craft-store style, overly pink palette, conventional florist luxury clichés, generic rounded card grid, pill buttons, excessive rounded corners, gradients, glassmorphism, drop-shadow-heavy cards, ecommerce chrome overload, prices, discounts, testimonials, invented claims, phone mockups, browser chrome, watermarks, duplicated or malformed text.
+
+CORRECTION PROMPT
+
+Use case: precise-object-edit
+Asset type: corrected desktop ecommerce homepage UI comp.
+Edit target: the most recent generated “Costuras de regalo” desktop webpage mockup.
+Primary request: Remove only the large unauthorized phrase “Costuras de regalo” and its adjacent stitched heart/flourish from the upper-left header. Replace that cleared area with the exact wordmark “Lirios” in the same elegant deep-plum serif styling and vertically centered header position. Remove the existing smaller “Lirios” nav item so “Lirios” appears exactly once in total. Then distribute the four remaining navigation items neatly across the right side.
+Keep unchanged: the entire textile-patch composition; every photograph; colors; linen texture; stitches; layout proportions; hero headline; button; and all other visible design details.
+Required visible text, each exactly once, with absolutely no other readable text:
+"Lirios"
+"Arreglos"
+"Flores individuales"
+"Personaliza"
+"Seguir pedido"
+"Hechas a mano. Elegidas con intención."
+"Ver arreglos"
+Constraints: preserve 16:9 desktop web UI, high fidelity, exact Spanish spelling and accents. Do not add any new copy, prices, captions, tiers, icons with letters, or watermarks.

@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T04:10:58.715850+00:00",
+  "title": "Design System: Lirios",
+  "extensions": {
+    "colorMeta": {
+      "wine": {
+        "role": "primary",
+        "displayName": "Florist Wine",
+        "canonical": "#6c1326",
+        "oklch": "oklch(35.1% 0.122 14.7)",
+        "tonalRamp": [
+          "#2a0001",
+          "#4f0010",
+          "#72192b",
+          "#933d48",
+          "#b4666d",
+          "#d58e93",
+          "#f6b8bc",
+          "#ffdfe2"
+        ]
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Deep Wine Passage",
+        "canonical": "#641326",
+        "oklch": "oklch(33.6% 0.113 12.7)",
+        "tonalRamp": [
+          "#280002",
+          "#4c0014",
+          "#6f1e2f",
+          "#8f414c",
+          "#b16870",
+          "#d19097",
+          "#f2b9be",
+          "#ffe1e4"
+        ]
+      },
+      "wine-action": {
+        "role": "primary",
+        "displayName": "Action Wine",
+        "canonical": "#741429",
+        "oklch": "oklch(36.9% 0.129 14.7)",
+        "tonalRamp": [
+          "#2b0000",
+          "#50000f",
+          "#741429",
+          "#973a47",
+          "#b8636b",
+          "#d98c92",
+          "#f9b6ba",
+          "#ffdee1"
+        ]
+      },
+      "wine-pressed": {
+        "role": "primary",
+        "displayName": "Pressed Wine",
+        "canonical": "#5f0e21",
+        "oklch": "oklch(32.0% 0.113 13.8)",
+        "tonalRamp": [
+          "#290001",
+          "#4c0013",
+          "#6f1e2d",
+          "#8f424c",
+          "#b06970",
+          "#d09196",
+          "#f1babe",
+          "#ffe1e4"
+        ]
+      },
+      "petal": {
+        "role": "secondary",
+        "displayName": "Petal Pink",
+        "canonical": "#d99ca4",
+        "oklch": "oklch(75.3% 0.074 10.3)",
+        "tonalRamp": [
+          "#180407",
+          "#371a1f",
+          "#593339",
+          "#7d4e55",
+          "#a66e76",
+          "#ce929a",
+          "#f6b7bf",
+          "#ffdce4"
+        ]
+      },
+      "leaf": {
+        "role": "secondary",
+        "displayName": "Leaf Green",
+        "canonical": "#2f513e",
+        "oklch": "oklch(40.3% 0.051 158.5)",
+        "tonalRamp": [
+          "#001104",
+          "#082b1a",
+          "#264835",
+          "#446753",
+          "#668a75",
+          "#8dae9a",
+          "#b6d3c1",
+          "#ddf6e6"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Matte Blush Cream",
+        "canonical": "#faf2eb",
+        "oklch": "oklch(96.5% 0.013 63.9)",
+        "tonalRamp": [
+          "#0f0a06",
+          "#29231e",
+          "#453e39",
+          "#635c56",
+          "#867f79",
+          "#aaa39d",
+          "#d1c9c2",
+          "#f5ede6"
+        ]
+      },
+      "blush": {
+        "role": "neutral",
+        "displayName": "Blush Passage",
+        "canonical": "#e8d1cc",
+        "oklch": "oklch(87.8% 0.027 32.2)",
+        "tonalRamp": [
+          "#120907",
+          "#2d211e",
+          "#4b3b38",
+          "#6c5954",
+          "#907b76",
+          "#b59f9a",
+          "#dbc5c0",
+          "#ffe8e3"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sand Passage",
+        "canonical": "#d6bea9",
+        "oklch": "oklch(81.6% 0.040 63.4)",
+        "tonalRamp": [
+          "#120903",
+          "#2e2116",
+          "#4c3c2e",
+          "#6d5948",
+          "#927c68",
+          "#b7a08b",
+          "#dec6b0",
+          "#ffe9d4"
+        ]
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "canonical": "#2d2427",
+        "oklch": "oklch(27.2% 0.015 356.1)",
+        "tonalRamp": [
+          "#10090b",
+          "#2a2124",
+          "#463d40",
+          "#655a5e",
+          "#887d80",
+          "#ada1a5",
+          "#d3c7cb",
+          "#f7ebef"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#261c1f",
+        "oklch": "oklch(24.0% 0.017 358.6)",
+        "tonalRamp": [
+          "#11080b",
+          "#2b2124",
+          "#483c3f",
+          "#665a5d",
+          "#897c80",
+          "#aea0a4",
+          "#d4c6ca",
+          "#f9eaee"
+        ]
+      },
+      "mauve-ink": {
+        "role": "neutral",
+        "displayName": "Mauve Ink",
+        "canonical": "#513f42",
+        "oklch": "oklch(38.8% 0.025 7.1)",
+        "tonalRamp": [
+          "#140709",
+          "#2f1f22",
+          "#4c3a3d",
+          "#6b585b",
+          "#8f7a7d",
+          "#b49ea2",
+          "#d9c4c8",
+          "#fce9ec"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#75686a",
+        "oklch": "oklch(53.0% 0.017 7.1)",
+        "tonalRamp": [
+          "#11080a",
+          "#2b2123",
+          "#483c3e",
+          "#675a5c",
+          "#8a7c7e",
+          "#afa0a3",
+          "#d5c6c8",
+          "#f9eaec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#cdbeb4",
+        "oklch": "oklch(81.1% 0.022 56.1)",
+        "tonalRamp": [
+          "#110905",
+          "#2c221b",
+          "#493d35",
+          "#685b52",
+          "#8b7d74",
+          "#b0a198",
+          "#d6c7bd",
+          "#fbebe1"
+        ]
+      },
+      "cream-on-wine": {
+        "role": "neutral",
+        "displayName": "Cream on Wine",
+        "canonical": "#fff5eb",
+        "oklch": "oklch(97.5% 0.017 67.6)",
+        "tonalRamp": [
+          "#100a04",
+          "#2a231b",
+          "#463e36",
+          "#645c54",
+          "#877e76",
+          "#aca39a",
+          "#d2c9bf",
+          "#f7ede3"
+        ]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "#f4e7dd",
+        "oklch": "oklch(93.6% 0.020 60.2)",
+        "tonalRamp": [
+          "#110904",
+          "#2b221b",
+          "#483d36",
+          "#665b53",
+          "#897e75",
+          "#aea299",
+          "#d5c8be",
+          "#f9ece2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Provisional name set in type."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headlines, capped at 6rem."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Product and tier names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs and asides."
+      },
+      "nav": {
+        "displayName": "Nav / Control",
+        "purpose": "Navigation, links and buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase meta beside headings and form labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "action-lift",
+        "value": "0 0.7rem 1.5rem rgb(77 13 31 / 12%)",
+        "purpose": "Primary action resting on the hero photograph."
+      },
+      {
+        "name": "action-lift-hover",
+        "value": "0 0.85rem 1.8rem rgb(77 13 31 / 18%)",
+        "purpose": "Primary action hover."
+      },
+      {
+        "name": "menu-drop",
+        "value": "0 1.5rem 2.5rem rgb(45 36 39 / 10%)",
+        "purpose": "Unfolded menu panel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "focus-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Opening choreography, menu, feedback arrivals."
+      },
+      {
+        "name": "focus-pull",
+        "value": "1500ms: blur(1.1rem) saturate(0.82) scale(1.05) → sharp",
+        "purpose": "Hero photograph comes into focus once on load."
+      },
+      {
+        "name": "focus-arrive",
+        "value": "700–820ms: opacity 0, blur(0.45rem), translateY(0.9rem) → rest; staggered 260–900ms",
+        "purpose": "Headline lines, CTA and category shelf."
+      },
+      {
+        "name": "state-feedback",
+        "value": "180ms ease-out",
+        "purpose": "Hover colour, arrow slide, button lift."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "opacity fade 200–360ms",
+        "purpose": "Replaces all spatial entrance motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-fold",
+        "value": "68.74rem"
+      },
+      {
+        "name": "single-column",
+        "value": "56.24rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single wine call to action per viewport, label and arrow grouped.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver arreglos <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" width=\"24\" height=\"24\"><path d=\"M5 12h13M14 7l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:1.2rem;min-width:17.5rem;min-height:4.45rem;padding:0.9rem 2.1rem;background:#741429;color:#fff8f3;font-family:'Manrope Variable',Manrope,sans-serif;font-size:1.35rem;font-weight:560;line-height:1;text-decoration:none;border-radius:0;box-shadow:0 0.7rem 1.5rem rgb(77 13 31 / 12%);transition:background-color 180ms ease-out,box-shadow 180ms ease-out,transform 180ms ease-out}.ds-btn-primary:hover{background:#5f0e21;box-shadow:0 0.85rem 1.8rem rgb(77 13 31 / 18%);transform:translateY(-0.125rem)}.ds-btn-primary:focus-visible{outline:0.1875rem solid #6c1326;outline-offset:0.25rem}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "description": "Secondary route: wine ink with a sliding arrow.",
+      "html": "<a class=\"ds-arrow-link\" href=\"#\">Explorar catálogo <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" width=\"24\" height=\"24\"><path d=\"M5 12h13M14 7l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-arrow-link{display:inline-flex;align-items:center;gap:1.4rem;color:#6c1326;font-family:'Manrope Variable',Manrope,sans-serif;font-weight:650;text-decoration:none}.ds-arrow-link svg{width:1.5rem;height:1.5rem;transition:transform 180ms ease-out}.ds-arrow-link:hover svg{transform:translateX(0.3rem)}.ds-arrow-link:focus-visible{outline:0.1875rem solid #6c1326;outline-offset:0.25rem}"
+    },
+    {
+      "name": "Tracking Field",
+      "kind": "input",
+      "refersTo": "input-underline",
+      "description": "Underline field fused to a deep-wine submit block.",
+      "html": "<form class=\"ds-track\"><label class=\"ds-track__label\" for=\"ds-order\">Número de orden</label><div class=\"ds-track__control\"><input id=\"ds-order\" placeholder=\"LIR-2048\"><button type=\"button\">Consultar <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" width=\"24\" height=\"24\"><path d=\"M5 12h13M14 7l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button></div></form>",
+      "css": ".ds-track{background:#d6bea9;padding:2rem;font-family:'Manrope Variable',Manrope,sans-serif}.ds-track__label{display:block;margin-bottom:0.9rem;color:#513f42;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}.ds-track__control{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid #641326}.ds-track input{min-height:4.8rem;border:0;border-radius:0;background:transparent;color:#2d2427;caret-color:#641326;font:inherit;font-size:2rem;outline:none}.ds-track input::placeholder{color:#5a4547;opacity:1}.ds-track button{display:inline-flex;align-items:center;gap:1rem;min-height:4.8rem;padding:0 1.8rem;border:0;border-radius:0;background:#641326;color:#fff5eb;font:inherit;font-weight:650;cursor:pointer}.ds-track button svg{width:1.5rem;height:1.5rem;transition:transform 180ms ease-out}.ds-track button:hover svg{transform:translateX(0.3rem)}.ds-track button:focus-visible,.ds-track input:focus-visible{outline:0.1875rem solid #6c1326;outline-offset:0.25rem}"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Wordmark left, four charcoal links right; wine underline on hover.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav__brand\" href=\"#\">Lirios</a><nav><a href=\"#\">Arreglos</a><a href=\"#\">Flores individuales</a><a href=\"#\">Personaliza</a><a href=\"#\">Seguir pedido</a></nav></header>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:3rem;padding:1.25rem 2.5rem;background:#faf2eb}.ds-nav__brand{color:#6c1326;font-family:'Bodoni Moda',serif;font-size:2.75rem;font-weight:500;letter-spacing:-0.035em;text-decoration:none}.ds-nav nav{display:flex;gap:3.5rem}.ds-nav nav a{padding-block:0.75rem;color:#2d2427;font-family:'Manrope Variable',Manrope,sans-serif;font-size:1.05rem;font-weight:460;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:0.45rem;transition:color 180ms ease-out,text-decoration-color 180ms ease-out}.ds-nav nav a:hover{color:#6c1326;text-decoration-color:currentColor}.ds-nav a:focus-visible{outline:0.1875rem solid #6c1326;outline-offset:0.25rem}"
+    },
+    {
+      "name": "Tier Columns",
+      "kind": "custom",
+      "description": "Ruled columns on blush; title with its tier meta on one baseline.",
+      "html": "<ol class=\"ds-tiers\"><li><div class=\"ds-tiers__head\"><h3>Un gesto</h3><span>Tier 1</span></div><p>El punto de entrada para una idea contenida.</p></li><li><div class=\"ds-tiers__head\"><h3>Una ocasión</h3><span>Tier 2</span></div><p>Más espacio para combinar color y presencia.</p></li></ol>",
+      "css": ".ds-tiers{display:grid;grid-template-columns:repeat(2,1fr);margin:0;padding:0;list-style:none;background:#e8d1cc;border-block:1px solid rgb(100 19 38 / 35%)}.ds-tiers li{padding:3rem 2rem 3.25rem}.ds-tiers li+li{border-left:1px solid rgb(100 19 38 / 35%)}.ds-tiers__head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1rem}.ds-tiers h3{margin:0;color:#641326;font-family:'Bodoni Moda',serif;font-size:2.6rem;font-weight:400}.ds-tiers span{color:#641326;font-family:'Manrope Variable',Manrope,sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}.ds-tiers p{margin:0;color:#5d4b4f;font-family:'Manrope Variable',Manrope,sans-serif;line-height:1.65}"
+    },
+    {
+      "name": "Product Story Meta",
+      "kind": "card",
+      "description": "Square photo with a serif title and trailing uppercase meta; no container.",
+      "html": "<article class=\"ds-story\"><div class=\"ds-story__img\"></div><div class=\"ds-story__meta\"><h3>Girasoles de otoño</h3><p>Arreglo listo</p></div></article>",
+      "css": ".ds-story{max-width:28rem;background:#faf2eb}.ds-story__img{aspect-ratio:4/3;background:#d6bea9}.ds-story__meta{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;padding-top:1.2rem}.ds-story__meta h3{margin:0;color:#2d2427;font-family:'Bodoni Moda',serif;font-size:2rem;font-weight:400;line-height:1.1}.ds-story__meta p{margin:0;color:#75686a;font-family:'Manrope Variable',Manrope,sans-serif;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El escaparate sereno",
+    "overview": "Lirios reads like the window of a refined florist: calm matte cream, one arrangement lit at decisive scale, and a single wine-colored invitation to step inside. The material carries the persuasion. Editorial photographs of chenille (limpiapipas) flowers show the fibre, the wrap and the ribbon before any copy explains them. The interface stays out of the way, with a precise grid, square corners, hairline rules and generous quiet between passages.\n\nThe page is paced like a studio layout. A photographic opening gives way to an editorial catalogue on cream, then a full-bleed wine passage for single stems, a blush passage for personalised tiers, a quiet cream process list, a sand tracking panel, and a charcoal close. Density rises and falls inside one grammar. A high-contrast Didone speaks for the brand, and a sober grotesque does the operating.\n\nThe warmth is feminine without becoming decorative or childish. Wine, blush and petal pink sit against charcoal ink, the photography stays naturally lit, and nothing is rounded, glossy or illustrated.",
+    "keyCharacteristics": [
+      "Matte blush-cream ground (never yellow cream, never white).",
+      "Photography of the real chenille material as the proof; no illustration, no CSS stand-ins.",
+      "Didone display voice in wine; Manrope for everything operational.",
+      "Square corners everywhere; depth from photography and tonal passages, not cards.",
+      "One orchestrated opening motion (\"coming into focus\"), no scattered reveals."
+    ],
+    "rules": [
+      {
+        "name": "The Blush-Cream Rule",
+        "body": "The field is #faf2eb. A cream that drifts toward yellow (#f8f6e8 was measured and rejected against the comp) breaks the florist's temperature.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Action Rule",
+        "body": "Action Wine fills exactly one control per viewport, the primary call to action. Every other link is wine ink on the ground, with an arrow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Speaks, Sans Operates Rule",
+        "body": "Bodoni Moda never sets a control, a form or a label. Manrope never sets a headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Meta Beside, Never Above Rule",
+        "body": "An uppercase label sits on the heading's baseline as trailing meta (see \"Tier 1\" and \"Arreglo listo\"). It never sits above a heading as an eyebrow.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Card Rule",
+        "body": "Content never sits in raised, rounded containers. Groups are separated by 1px rules or by a change of passage colour.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use #faf2eb as the field and move between full-bleed tonal passages (wine, blush, sand, night) to pace the page.",
+      "Do let real photographs of the chenille material carry the proof, at decisive scale, cropped to square-cornered boxes.",
+      "Do keep Action Wine to the one primary action; every secondary route is an arrow link.",
+      "Do set uppercase meta labels beside their heading, never above it.",
+      "Do tint secondary ink toward its surface's hue, and keep body and placeholder text at or above 4.5:1.",
+      "Do mark every unconfirmed fact as a placeholder in the page's own words (\"provisionales\", \"datos por confirmar\")."
+    ],
+    "donts": [
+      "Don't round corners or put content in raised cards.",
+      "Don't set controls or labels in Bodoni Moda, or headlines in Manrope.",
+      "Don't drift the field toward yellow cream or pure white.",
+      "Don't add scroll reveals section by section; the page has one opening motion.",
+      "Don't invent prices, testimonials, delivery zones or contact data."
+    ]
+  }
+}

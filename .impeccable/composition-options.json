@@ -1,0 +1,42 @@
+{
+  "title": "Elige la composición de la portada",
+  "question": "La identidad ya está decidida. ¿Cuál de estas tres composiciones debe convertirse en la página real? Puedes elegir una o escribir qué combinar o corregir.",
+  "options": [
+    {
+      "id": "composition-a",
+      "label": "A · Escaparate sereno",
+      "kicker": "DIRECCIÓN ELEGIDA",
+      "lineage": "portada editorial de floristería",
+      "thesis": "Texto y arreglo comparten protagonismo en una estructura inmediata y muy reconocible.",
+      "palette": ["#FAF7F2", "#6F3548", "#D8B5B8", "#50624E", "#252321"],
+      "materials": ["fotografía editorial", "papel mate", "retícula limpia"],
+      "viewport": "Mensaje grande a la izquierda, arreglo decisivo a la derecha y tres entradas visuales al catálogo en el borde inferior.",
+      "risk": "Es la composición más fácil de entender y también la menos distintiva de las tres.",
+      "comp": ".impeccable/mocks/composition-a.png"
+    },
+    {
+      "id": "composition-b",
+      "label": "B · Galería dividida",
+      "lineage": "editorial de producto con escaparate lateral",
+      "thesis": "Una fotografía de escala real crea deseo mientras una columna silenciosa conserva claridad comercial.",
+      "palette": ["#FAF7F2", "#6F3548", "#D8B5B8", "#50624E", "#252321"],
+      "materials": ["fotografía a sangre", "papel mate", "cinta natural"],
+      "viewport": "El arreglo llena la mitad izquierda; la derecha reúne mensaje, acción principal y una pequeña secuencia visual de categorías.",
+      "risk": "La gran fotografía exige material propio de calidad constante para que el sitio mantenga el nivel.",
+      "comp": ".impeccable/mocks/composition-b.png"
+    },
+    {
+      "id": "composition-c",
+      "label": "C · Ventana de colección",
+      "lineage": "aparador botánico con recorrido ordenado",
+      "thesis": "Un arreglo monumental convierte la portada en escaparate y las vistas laterales despiertan curiosidad por el catálogo.",
+      "palette": ["#FAF7F2", "#6F3548", "#D8B5B8", "#50624E", "#252321"],
+      "materials": ["fotografía monumental", "reglas editoriales", "papel crema"],
+      "viewport": "Mensaje en la esquina izquierda, arreglo al centro, tres vistas verticales a la derecha y continuidad de catálogo en el borde inferior.",
+      "risk": "Es la más memorable, pero también la que necesita una adaptación móvil más cuidadosamente compuesta.",
+      "comp": ".impeccable/mocks/composition-c.png"
+    }
+  ],
+  "steer": true,
+  "followup": true
+}

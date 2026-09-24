@@ -1,0 +1,413 @@
+<div class="catalog-page">
+  <app-site-header [catalogMode]="true" />
+
+  <main class="catalog-main">
+    <div class="catalog-layout">
+      <aside class="catalog-index" aria-label="Índice del catálogo">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <a routerLink="/">Lirios</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Catálogo</span>
+        </nav>
+
+        <h1>Catálogo</h1>
+
+        <nav class="category-switch" aria-label="Categorías del catálogo">
+          <button
+            type="button"
+            [class.is-active]="category() === 'todos'"
+            [attr.aria-current]="category() === 'todos' ? 'page' : null"
+            (click)="setCategory('todos')"
+          >
+            <span>Todos</span>
+            <span>{{ categoryCounts().todos }}</span>
+          </button>
+          <button
+            type="button"
+            [class.is-active]="category() === 'arreglos'"
+            [attr.aria-current]="category() === 'arreglos' ? 'page' : null"
+            (click)="setCategory('arreglos')"
+          >
+            <span>Arreglos</span>
+            <span>{{ categoryCounts().arreglos }}</span>
+          </button>
+          <button
+            type="button"
+            [class.is-active]="category() === 'flores'"
+            [attr.aria-current]="category() === 'flores' ? 'page' : null"
+            (click)="setCategory('flores')"
+          >
+            <span class="category-switch__desktop-label">Flores individuales</span>
+            <span class="category-switch__mobile-label">Flores</span>
+            <span>{{ categoryCounts().flores }}</span>
+          </button>
+        </nav>
+
+        <div class="desktop-filters">
+          <details>
+            <summary>
+              <span>Color</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </summary>
+            <fieldset>
+              <legend class="visually-hidden">Filtrar por color</legend>
+              @for (option of colorOptions(); track option.value) {
+                <label>
+                  <input
+                    type="checkbox"
+                    [checked]="selectedColors().includes(option.value)"
+                    (change)="toggleColor(option.value)"
+                  />
+                  <span>{{ option.label }}</span>
+                </label>
+              }
+            </fieldset>
+          </details>
+
+          <details>
+            <summary>
+              <span>Tipo de flor</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </summary>
+            <fieldset>
+              <legend class="visually-hidden">Filtrar por tipo de flor</legend>
+              @for (option of flowerOptions(); track option.value) {
+                <label>
+                  <input
+                    type="checkbox"
+                    [checked]="selectedFlowers().includes(option.value)"
+                    (change)="toggleFlower(option.value)"
+                  />
+                  <span>{{ option.label }}</span>
+                </label>
+              }
+            </fieldset>
+          </details>
+
+          <details>
+            <summary>
+              <span>Ordenar</span>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+            </summary>
+            <fieldset>
+              <legend class="visually-hidden">Ordenar productos</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="desktop-sort"
+                  value="recommended"
+                  [checked]="sortMode() === 'recommended'"
+                  (change)="setSort('recommended')"
+                />
+                <span>Recomendados</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="desktop-sort"
+                  value="name"
+                  [checked]="sortMode() === 'name'"
+                  (change)="setSort('name')"
+                />
+                <span>Nombre A–Z</span>
+              </label>
+              @if (hasPrices()) {
+                <label>
+                  <input
+                    type="radio"
+                    name="desktop-sort"
+                    value="price-asc"
+                    [checked]="sortMode() === 'price-asc'"
+                    (change)="setSort('price-asc')"
+                  />
+                  <span>Precio: menor a mayor</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="desktop-sort"
+                    value="price-desc"
+                    [checked]="sortMode() === 'price-desc'"
+                    (change)="setSort('price-desc')"
+                  />
+                  <span>Precio: mayor a menor</span>
+                </label>
+              }
+            </fieldset>
+          </details>
+
+          <a class="custom-route" routerLink="/personalizados">
+            <span>Crear un arreglo personalizado</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+          </a>
+        </div>
+      </aside>
+
+      <section class="catalog-results" aria-labelledby="catalog-results-title">
+        <h2 id="catalog-results-title" class="visually-hidden">Piezas del catálogo</h2>
+
+        <div class="mobile-utility" aria-label="Herramientas del catálogo">
+          <button
+            #filterTrigger
+            type="button"
+            aria-haspopup="dialog"
+            [attr.aria-expanded]="filtersOpen()"
+            (click)="openFilters()"
+          >
+            Filtrar <span>{{ activeFilterCount() }}</span>
+          </button>
+          <span class="mobile-utility__rule" aria-hidden="true"></span>
+          <div class="mobile-sort">
+            <button
+              type="button"
+              aria-haspopup="menu"
+              [attr.aria-expanded]="sortOpen()"
+              (click)="toggleSortMenu()"
+            >
+              Ordenar
+            </button>
+            @if (sortOpen()) {
+              <div class="sort-menu" role="menu">
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  [attr.aria-checked]="sortMode() === 'recommended'"
+                  (click)="setSort('recommended')"
+                >
+                  Recomendados
+                </button>
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  [attr.aria-checked]="sortMode() === 'name'"
+                  (click)="setSort('name')"
+                >
+                  Nombre A–Z
+                </button>
+                @if (hasPrices()) {
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    [attr.aria-checked]="sortMode() === 'price-asc'"
+                    (click)="setSort('price-asc')"
+                  >
+                    Precio: menor a mayor
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    [attr.aria-checked]="sortMode() === 'price-desc'"
+                    (click)="setSort('price-desc')"
+                  >
+                    Precio: mayor a menor
+                  </button>
+                }
+              </div>
+            }
+          </div>
+        </div>
+
+        <p class="results-announcement visually-hidden" aria-live="polite" aria-atomic="true">
+          {{ filteredProducts().length }} piezas
+        </p>
+
+        @switch (loadState()) {
+          @case ('loading') {
+            <div class="catalog-status catalog-status--loading" role="status">
+              <p>Cargando colección…</p>
+              <div class="loading-grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          }
+          @case ('error') {
+            <div class="catalog-status" role="alert">
+              <h3>No pudimos cargar la colección.</h3>
+              <button type="button" (click)="retry()">Intentar de nuevo</button>
+            </div>
+          }
+          @default {
+            @if (!products().length) {
+              <div class="catalog-status">
+                <h3>La colección está en preparación.</h3>
+                <a routerLink="/personalizados">Crear un arreglo personalizado →</a>
+              </div>
+            } @else if (!filteredProducts().length) {
+              <div class="catalog-status">
+                <h3>No encontramos piezas con esa combinación.</h3>
+                <button type="button" (click)="clearFilters()">Limpiar filtros</button>
+              </div>
+            } @else {
+              <div id="catalog-grid" class="product-grid" tabindex="-1">
+                @for (product of filteredProducts(); track product.id; let index = $index) {
+                  <a
+                    class="product-card"
+                    [class.product-card--featured]="
+                      product.featured &&
+                      category() === 'todos' &&
+                      !activeFilterCount() &&
+                      sortMode() === 'recommended'
+                    "
+                    [routerLink]="['/catalogo', product.slug]"
+                    [queryParams]="currentQueryParams()"
+                  >
+                    <span class="product-card__image">
+                      @if (!failedImages().has(product.id)) {
+                        <img
+                          [src]="product.image"
+                          [srcset]="product.imageSrcset"
+                          sizes="(max-width: 899px) calc(50vw - 28px), (max-width: 1199px) 35vw, 24vw"
+                          [alt]="product.imageAlt"
+                          width="1086"
+                          height="1448"
+                          [attr.loading]="index < 3 ? 'eager' : 'lazy'"
+                          decoding="async"
+                          (error)="markImageFailed(product.id)"
+                        />
+                      } @else {
+                        <span
+                          class="image-fallback"
+                          role="img"
+                          [attr.aria-label]="'Imagen no disponible: ' + product.imageAlt"
+                        >
+                          Imagen no disponible
+                        </span>
+                      }
+                    </span>
+                    <span class="product-card__name">{{ product.name }}</span>
+                    <span class="product-card__category">{{
+                      categoryLabel(product.category)
+                    }}</span>
+                    <span class="product-card__price">{{ priceLabel(product) }}</span>
+                  </a>
+                }
+              </div>
+            }
+          }
+        }
+      </section>
+    </div>
+  </main>
+
+  @if (filtersOpen()) {
+    <div class="filter-overlay" (mousedown)="closeFilters(true)">
+      <section
+        #filterSheet
+        class="filter-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="filter-title"
+        tabindex="-1"
+        (mousedown)="$event.stopPropagation()"
+      >
+        <header class="filter-sheet__header">
+          <h2 id="filter-title">Filtrar</h2>
+          <button #filterClose type="button" (click)="closeFilters(true)">Cerrar</button>
+        </header>
+
+        <div class="filter-sheet__body">
+          <fieldset>
+            <legend>Color</legend>
+            @for (option of colorOptions(); track option.value) {
+              <label>
+                <input
+                  type="checkbox"
+                  [checked]="draftColors().includes(option.value)"
+                  (change)="toggleDraftColor(option.value)"
+                />
+                <span>{{ option.label }}</span>
+              </label>
+            }
+          </fieldset>
+
+          <fieldset>
+            <legend>Tipo de flor</legend>
+            @for (option of flowerOptions(); track option.value) {
+              <label>
+                <input
+                  type="checkbox"
+                  [checked]="draftFlowers().includes(option.value)"
+                  (change)="toggleDraftFlower(option.value)"
+                />
+                <span>{{ option.label }}</span>
+              </label>
+            }
+          </fieldset>
+        </div>
+
+        <footer class="filter-sheet__footer">
+          <button type="button" class="filter-clear" (click)="clearDraftFilters()">Limpiar</button>
+          <button type="button" class="filter-apply" (click)="applyDraftFilters()">
+            Ver {{ draftResultCount() }} {{ draftResultCount() === 1 ? 'pieza' : 'piezas' }}
+          </button>
+        </footer>
+      </section>
+    </div>
+  }
+
+  @if (selectedProduct(); as product) {
+    <section
+      #productDialog
+      class="product-dialog"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-labelledby]="'product-title-' + product.id"
+      tabindex="-1"
+    >
+      <header class="product-dialog__header">
+        <a class="product-dialog__brand" routerLink="/">Lirios</a>
+        <button #productClose type="button" (click)="closeProduct()">Cerrar</button>
+      </header>
+
+      <div class="product-dialog__content">
+        <div class="product-dialog__visual">
+          @if (!failedImages().has(product.id)) {
+            <img
+              [src]="product.image"
+              [srcset]="product.imageSrcset"
+              sizes="(max-width: 899px) 100vw, 58vw"
+              [alt]="product.imageAlt"
+              width="1086"
+              height="1448"
+              (error)="markImageFailed(product.id)"
+            />
+          } @else {
+            <div
+              class="image-fallback"
+              role="img"
+              [attr.aria-label]="'Imagen no disponible: ' + product.imageAlt"
+            >
+              Imagen no disponible
+            </div>
+          }
+        </div>
+
+        <div class="product-dialog__details">
+          <div class="product-dialog__title">
+            <h2 [id]="'product-title-' + product.id">{{ product.name }}</h2>
+            <p class="product-dialog__category">{{ categoryLabel(product.category) }}</p>
+          </div>
+          <p class="product-dialog__price">{{ priceLabel(product) }}</p>
+
+          <fieldset class="quantity-control">
+            <legend>Cantidad</legend>
+            <div>
+              <button type="button" aria-label="Disminuir cantidad" (click)="decreaseQuantity()">
+                −
+              </button>
+              <output aria-live="polite">{{ quantity() }}</output>
+              <button type="button" aria-label="Aumentar cantidad" (click)="increaseQuantity()">
+                +
+              </button>
+            </div>
+          </fieldset>
+
+          <button type="button" class="add-to-cart" (click)="addToCart(product)">
+            Agregar al carrito
+          </button>
+          <p class="cart-message" aria-live="polite">{{ cartMessage() }}</p>
+        </div>
+      </div>
+    </section>
+  }
+</div>

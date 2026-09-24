@@ -1,0 +1,883 @@
+$wine: #6c1326;
+$wine-deep: #641326;
+$wine-action: #741429;
+$cream: #faf2eb;
+$charcoal: #2d2427;
+$muted: #66595a;
+$rule: #d3c1b8;
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+:host {
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border-radius: 0;
+}
+
+.catalog-page {
+  min-height: 100vh;
+  background: $cream;
+  color: $charcoal;
+}
+
+app-site-header {
+  display: block;
+  height: 3.75rem;
+}
+
+.catalog-main {
+  padding: 1.5rem clamp(2rem, 7.55vw, 7.25rem) 7rem;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(17.5rem, 22.5%) minmax(0, 1fr);
+  gap: clamp(2.5rem, 3.35vw, 3.25rem);
+  max-width: 86rem;
+  margin-inline: auto;
+}
+
+.catalog-index {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  min-height: calc(100vh - 6.75rem);
+  padding-right: clamp(2rem, 3vw, 2.75rem);
+  border-right: 1px solid $rule;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 1.5rem;
+  color: #75686a;
+  font-size: 0.86rem;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb [aria-current='page'] {
+  color: $wine;
+}
+
+h1 {
+  margin: 0.25rem 0 2rem;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(3.5rem, 4.5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.category-switch {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $rule;
+}
+
+.category-switch button {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 3.6rem;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid $rule;
+  background: transparent;
+  color: $charcoal;
+  cursor: pointer;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.category-switch button:last-child {
+  border-bottom: 0;
+}
+
+.category-switch button > span:last-child {
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.category-switch button.is-active {
+  color: $wine;
+}
+
+.category-switch button.is-active::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: $wine;
+  content: '';
+}
+
+.category-switch button {
+  position: relative;
+}
+
+.category-switch__mobile-label {
+  display: none;
+}
+
+.desktop-filters {
+  margin-top: 1.65rem;
+}
+
+.desktop-filters details {
+  border-bottom: 1px solid $rule;
+}
+
+.desktop-filters summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.desktop-filters summary::-webkit-details-marker {
+  display: none;
+}
+
+.desktop-filters summary svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+  transition: transform 180ms ease-out;
+}
+
+.desktop-filters details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.desktop-filters fieldset,
+.filter-sheet fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 1rem;
+  border: 0;
+}
+
+.desktop-filters label,
+.filter-sheet label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.desktop-filters input,
+.filter-sheet input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  appearance: none;
+  border: 2px solid $wine;
+  border-radius: 0;
+  background: transparent;
+}
+
+.desktop-filters input:checked,
+.filter-sheet input:checked {
+  background: $wine;
+}
+
+.desktop-filters label:has(input:checked)::after,
+.filter-sheet label:has(input:checked)::after {
+  position: absolute;
+  top: 50%;
+  left: 0.41rem;
+  width: 0.35rem;
+  height: 0.65rem;
+  border-right: 2px solid #fff8f3;
+  border-bottom: 2px solid #fff8f3;
+  content: '';
+  pointer-events: none;
+  transform: translateY(-62%) rotate(45deg);
+}
+
+.custom-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 2.25rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgb(108 19 38 / 55%);
+  color: $wine;
+  font-size: 0.85rem;
+  font-weight: 560;
+  text-decoration: none;
+}
+
+.custom-route svg {
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transition: transform 180ms ease-out;
+}
+
+.custom-route:hover svg {
+  transform: translateX(0.25rem);
+}
+
+.catalog-results {
+  min-width: 0;
+  padding-top: 3.55rem;
+}
+
+.mobile-utility {
+  display: none;
+}
+
+.product-grid,
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.1rem 1.9rem;
+}
+
+.product-card {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card__image {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1.08;
+  margin-bottom: 0.55rem;
+  background: #f4e7dd;
+}
+
+.product-card--featured .product-card__image {
+  aspect-ratio: 1 / 1.22;
+}
+
+.product-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 200ms ease-out;
+}
+
+.product-card:first-child img {
+  object-position: 50% 39%;
+}
+
+.product-card:nth-child(2) img {
+  object-position: 50% 35%;
+}
+
+.product-card:nth-child(3) img {
+  object-position: 50% 33%;
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.015);
+}
+
+.product-card__name {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.35rem, 1.7vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.28rem;
+  transition: text-decoration-color 180ms ease-out;
+}
+
+.product-card:hover .product-card__name {
+  text-decoration-color: rgb(108 19 38 / 45%);
+}
+
+.product-card__category,
+.product-card__price {
+  color: $muted;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.product-card__category {
+  margin-top: 0.2rem;
+}
+
+.product-card__price {
+  margin-top: 0.35rem;
+}
+
+.image-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  padding: 1rem;
+  background: #e8d1cc;
+  color: #66595a;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.catalog-status {
+  display: grid;
+  min-height: 28rem;
+  align-content: center;
+  justify-items: start;
+  border-block: 1px solid $rule;
+}
+
+.catalog-status h3,
+.catalog-status p {
+  max-width: 28ch;
+  margin: 0 0 1rem;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.catalog-status button,
+.catalog-status a {
+  min-height: 2.75rem;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 1px solid $wine;
+  background: transparent;
+  color: $wine;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.catalog-status--loading {
+  display: block;
+  border: 0;
+}
+
+.loading-grid span {
+  display: block;
+  aspect-ratio: 1 / 1.08;
+  background: #f4e7dd;
+}
+
+.filter-overlay {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: none;
+  background: rgb(45 36 39 / 68%);
+}
+
+.filter-sheet {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 64vh;
+  max-height: 44rem;
+  background: $cream;
+  color: $charcoal;
+  animation: sheet-rise 210ms $ease;
+}
+
+.filter-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.7rem;
+  margin-inline: 1.25rem;
+  border-bottom: 1px solid $rule;
+}
+
+.filter-sheet__header h2 {
+  margin: 0;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.filter-sheet__header button,
+.filter-clear {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: $charcoal;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filter-sheet__body {
+  overflow-y: auto;
+  padding: 1.1rem 1.55rem 1rem;
+}
+
+.filter-sheet fieldset {
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid $rule;
+}
+
+.filter-sheet fieldset + fieldset {
+  padding-top: 0.9rem;
+}
+
+.filter-sheet legend {
+  margin-bottom: 0.25rem;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.filter-sheet label {
+  min-height: 2.75rem;
+  font-size: 1rem;
+}
+
+.filter-sheet__footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  min-height: 4.7rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid $rule;
+  background: $cream;
+}
+
+.filter-clear {
+  justify-self: start;
+  color: $wine;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.filter-apply,
+.add-to-cart {
+  min-height: 3.5rem;
+  padding: 0.85rem 1.4rem;
+  border: 0;
+  background: $wine-action;
+  color: #fff8f3;
+  cursor: pointer;
+  font-weight: 620;
+}
+
+.product-dialog {
+  position: fixed;
+  z-index: 90;
+  inset: 0;
+  overflow-y: auto;
+  background: $cream;
+  color: $charcoal;
+  animation: detail-arrive 220ms $ease;
+}
+
+.product-dialog__header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+  padding: 0.75rem clamp(1.25rem, 6vw, 6rem);
+  border-bottom: 1px solid $rule;
+  background: $cream;
+}
+
+.product-dialog__brand {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.product-dialog__header button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 0;
+  background: transparent;
+  color: $charcoal;
+  cursor: pointer;
+}
+
+.product-dialog__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(22rem, 0.75fr);
+  min-height: calc(100vh - 4.5rem);
+}
+
+.product-dialog__visual {
+  min-height: calc(100vh - 4.5rem);
+  background: #f4e7dd;
+}
+
+.product-dialog__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 4.5rem);
+  object-fit: cover;
+}
+
+.product-dialog__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 7rem);
+}
+
+.product-dialog__title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  align-items: baseline;
+}
+
+.product-dialog__category {
+  margin: 0;
+  color: #75686a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-dialog__details h2 {
+  margin: 0;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.product-dialog__price {
+  margin: 1.25rem 0 3rem;
+  color: $muted;
+}
+
+.quantity-control {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border: 0;
+}
+
+.quantity-control legend {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quantity-control div {
+  display: grid;
+  grid-template-columns: 3rem 4rem 3rem;
+  width: max-content;
+  border-block: 1px solid $wine;
+}
+
+.quantity-control button,
+.quantity-control output {
+  display: grid;
+  min-height: 3rem;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: $charcoal;
+}
+
+.quantity-control button {
+  cursor: pointer;
+  font-size: 1.35rem;
+}
+
+.add-to-cart {
+  width: 100%;
+  max-width: 22rem;
+}
+
+.cart-message {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  color: $wine;
+  font-size: 0.9rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 74.99rem) and (min-width: 56.25rem) {
+  .catalog-main {
+    padding-inline: 2rem;
+  }
+
+  .catalog-layout {
+    grid-template-columns: 15rem minmax(0, 1fr);
+  }
+
+  .product-grid,
+  .loading-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 56.24rem) {
+  app-site-header {
+    height: 4.5rem;
+  }
+
+  .catalog-main {
+    padding: 1.75rem 1.25rem 5rem;
+  }
+
+  .catalog-layout {
+    display: block;
+  }
+
+  .catalog-index {
+    position: static;
+    min-height: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .breadcrumb,
+  .desktop-filters {
+    display: none;
+  }
+
+  h1 {
+    margin: 0 0 1.65rem;
+    font-size: clamp(3.2rem, 14vw, 4.25rem);
+  }
+
+  .category-switch {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+    overflow-x: auto;
+    border-bottom: 1px solid $rule;
+    scrollbar-width: none;
+  }
+
+  .category-switch::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-switch button {
+    justify-content: flex-start;
+    gap: 0.8rem;
+    min-width: max-content;
+    min-height: 3.4rem;
+    padding-right: 1.5rem;
+    border-bottom: 0;
+    font-size: 1.45rem;
+  }
+
+  .category-switch button > span:last-child {
+    font-size: 0.92rem;
+  }
+
+  .category-switch__desktop-label {
+    display: none;
+  }
+
+  .category-switch__mobile-label {
+    display: initial;
+  }
+
+  .catalog-results {
+    padding-top: 0;
+  }
+
+  .mobile-utility {
+    position: sticky;
+    z-index: 12;
+    top: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+    align-items: center;
+    min-height: 4.25rem;
+    margin: 0 0 1.4rem;
+    border-bottom: 1px solid $rule;
+    background: $cream;
+  }
+
+  .mobile-utility button {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $charcoal;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .mobile-utility button span {
+    color: #75686a;
+  }
+
+  .mobile-utility__rule {
+    height: 2.5rem;
+    background: $rule;
+  }
+
+  .mobile-sort {
+    position: relative;
+  }
+
+  .sort-menu {
+    position: absolute;
+    z-index: 15;
+    top: calc(100% + 0.7rem);
+    right: 0;
+    width: 14rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $rule;
+    background: $cream;
+  }
+
+  .sort-menu button {
+    text-align: left;
+  }
+
+  .sort-menu button + button {
+    border-top: 1px solid $rule;
+  }
+
+  .product-grid,
+  .loading-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.45rem 0.85rem;
+  }
+
+  .product-card__image,
+  .product-card--featured .product-card__image {
+    aspect-ratio: 1 / 1.11;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-card__name {
+    font-size: clamp(1.22rem, 5.8vw, 1.55rem);
+  }
+
+  .product-card__category,
+  .product-card__price {
+    font-size: 0.83rem;
+  }
+
+  .product-card__price {
+    margin-top: 0.3rem;
+  }
+
+  .filter-overlay {
+    display: block;
+  }
+
+  .product-dialog__content {
+    display: block;
+  }
+
+  .product-dialog__visual {
+    min-height: 0;
+  }
+
+  .product-dialog__visual img {
+    height: min(55vh, 29rem);
+    object-position: 50% 36%;
+  }
+
+  .product-dialog__details {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  .product-dialog__details h2 {
+    font-size: clamp(3rem, 13vw, 4rem);
+  }
+
+  .product-dialog__price {
+    margin-bottom: 2rem;
+  }
+}
+
+@keyframes sheet-rise {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes detail-arrive {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .filter-sheet,
+  .product-dialog {
+    animation: none;
+  }
+}

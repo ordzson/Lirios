@@ -1,0 +1,130 @@
+{
+  "title": "Elige el mundo visual de Lirios",
+  "question": "¿Qué lenguaje convierte estas flores textiles en regalos refinados, curiosos y memorables?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Álbum de pétalos",
+      "kicker": "LA PROPUESTA",
+      "lineage": "libro-objeto botánico y edición de taller",
+      "thesis": "La tienda se abre como un álbum botánico cuyas páginas convierten cada arreglo en un hallazgo.",
+      "palette": ["#F2EBDD", "#6E263D", "#C98692", "#385442", "#211A1C"],
+      "materials": ["papel de algodón", "papel vegetal", "fibra aterciopelada"],
+      "viewport": "Un libro abierto ocupa la pantalla: un arreglo cruza el pliegue, el mensaje y Ver arreglos viven a la izquierda, y tres pestañas de catálogo asoman en el canto derecho.",
+      "risk": "Puede sentirse más editorial que comercial si las acciones y los precios quedan demasiado discretos.",
+      "raised": [
+        {"from": "Bazar de sombras", "raise": "La luz rasante revela la fibra y da al primer plano una atmósfera total."},
+        {"from": "Títulos recortados", "raise": "La composición adopta una asimetría decidida y una sola transición memorable."},
+        {"from": "Capas de etiquetas", "raise": "Las páginas y pétalos se superponen para convertir profundidad en curiosidad."},
+        {"from": "Letrero de tela", "raise": "El material se mantiene visible incluso en pestañas, controles y estados."},
+        {"from": "Panel de salidas", "raise": "El índice permanece fijo y hace inequívoca la prioridad del catálogo."}
+      ],
+      "comp": ".impeccable/mocks/decision/album-petalos.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "Herbario vivo",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "gabinete botánico contemporáneo y archivo de especímenes",
+      "thesis": "Cada flor se presenta como una pieza coleccionable, identificada con nombre, color y gesto de regalo.",
+      "palette": ["#F5F0E7", "#7B2E45", "#AAB6A2", "#E5B5B9", "#272421"],
+      "materials": ["papel de archivo", "etiquetas estampadas", "fotografía macro"],
+      "viewport": "Una flor monumental domina el centro como espécimen; etiquetas finas conducen hacia Arreglos, Flores individuales y Personaliza, con Ver arreglos como acción principal.",
+      "risk": "Es la solución más familiar para una marca botánica y exige fotografía excepcional para no parecer una plantilla de moda.",
+      "comp": ".impeccable/mocks/decision/herbario-vivo.png"
+    },
+    {
+      "id": "challenger-quilt",
+      "label": "Costuras de regalo",
+      "verdict": "competitive",
+      "lineage": "muestrario textil cosido y memoria doméstica",
+      "thesis": "El catálogo se arma con retazos de color y etiquetas cosidas que hacen visible la mano detrás de cada flor.",
+      "palette": ["#EFE7D7", "#9FAFB0", "#6A3F57", "#D35A52", "#262322"],
+      "materials": ["lino lavado", "costura visible", "rótulos de tela"],
+      "viewport": "Un mosaico de retazos desiguales muestra un arreglo protagonista, flores sueltas y una nota de personalización; cada bloque se une por una línea de hilo rojo oscuro.",
+      "case": "Identifica con fuerza la fabricación manual y permite un catálogo modular, aunque comunica menos inmediatamente la delicadeza de una floristería.",
+      "risk": "Puede acercarse a feria artesanal si la retícula y la tipografía pierden refinamiento.",
+      "comp": ".impeccable/mocks/decision/costuras-regalo.png",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-memory-quilt-atlas-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-memory-quilt-atlas.webp"
+    },
+    {
+      "id": "challenger-moon",
+      "label": "Bazar de sombras",
+      "verdict": "declined",
+      "lineage": "mercado nocturno de objetos improbables",
+      "thesis": "Cada arreglo aparece como un objeto raro descubierto bajo luz de luna.",
+      "palette": ["#111827", "#D4A24C", "#E8EDF2", "#393544"],
+      "materials": ["terciopelo oscuro", "tickets de origen", "luz recortada"],
+      "viewport": "Puestos de catálogo descienden por una calle nocturna y el arreglo principal brilla en el primer mostrador.",
+      "case": "La curiosidad es potente, pero oscurece la claridad del producto y se aleja del refinamiento luminoso solicitado.",
+      "kept": "Una atmósfera total, no un fondo decorativo.",
+      "risk": "Podría sentirse misterioso o teatral antes que acogedor."
+    },
+    {
+      "id": "challenger-bass",
+      "label": "Pétalos en secuencia",
+      "verdict": "declined",
+      "lineage": "títulos recortados de Saul Bass",
+      "thesis": "La historia de elegir un regalo avanza en escenas gráficas de papel recortado.",
+      "palette": ["#C94F3D", "#F1D36B", "#1E2942", "#F1E8D7"],
+      "materials": ["papel recortado", "tinta plana", "línea temblorosa"],
+      "viewport": "Una flor de silueta ocupa la pantalla mientras tres escenas breves ordenan arreglos, flores y personalización.",
+      "case": "La navegación sería memorable, pero la abstracción sacrifica la textura real que diferencia el producto.",
+      "kept": "Asimetría valiente y una sola coreografía de movimiento.",
+      "risk": "Puede convertir un regalo delicado en una campaña gráfica demasiado enfática."
+    },
+    {
+      "id": "challenger-stickers",
+      "label": "Capas de dedicatorias",
+      "verdict": "declined",
+      "lineage": "estratos de etiquetas y recuerdos adheridos",
+      "thesis": "Tarjetas, nombres y ocasiones se acumulan alrededor de cada arreglo como memoria de regalos anteriores.",
+      "palette": ["#24201F", "#E7C6B5", "#F6EADC", "#8C3E55"],
+      "materials": ["papel adhesivo", "bordes rasgados", "tinta desvanecida"],
+      "viewport": "Un arreglo emerge de capas de tarjetas parcialmente superpuestas que se pueden levantar para descubrir categorías.",
+      "case": "La profundidad invita a explorar, pero el ruido visual compite con la elegancia y la lectura de precios.",
+      "kept": "La superposición comunica historia y descubrimiento.",
+      "risk": "Podría parecer scrapbook juvenil o saturar rápidamente el catálogo."
+    },
+    {
+      "id": "challenger-depot",
+      "label": "Cintas de taller",
+      "verdict": "declined",
+      "lineage": "rótulo mecánico construido con tela teñida",
+      "thesis": "Las categorías avanzan en bandas textiles cuyo movimiento revela literalmente la trama.",
+      "palette": ["#173E35", "#E8C24B", "#EEE5D0"],
+      "materials": ["lona teñida", "ojales", "costura en relieve"],
+      "viewport": "Bandas de tela cruzan una ventana fija y detienen Arreglos listos en primer plano.",
+      "case": "Hace tangible la fibra, pero su lenguaje industrial contradice la floristería delicada que debe recibir al visitante.",
+      "kept": "La materia sigue visible en controles, cambios y estados.",
+      "risk": "Se sentiría utilitario y duro para esta audiencia."
+    },
+    {
+      "id": "challenger-board",
+      "label": "Tablero de ocasiones",
+      "verdict": "declined",
+      "lineage": "panel de salidas de una estación",
+      "thesis": "Los arreglos se ordenan por ocasión, disponibilidad y fecha de entrega en filas vivas.",
+      "palette": ["#171717", "#F0EFEA", "#D9A441", "#91404A"],
+      "materials": ["placas mate", "marco metálico", "luz ámbar"],
+      "viewport": "Un panel clasifica los regalos por fecha y ocasión mientras una imagen del arreglo seleccionado ocupa el costado.",
+      "case": "La información es impecable, pero la lógica de transporte domina el gesto emocional de regalar.",
+      "kept": "Una jerarquía fija que sigue legible aun cuando cambian los datos.",
+      "risk": "Se siente logístico antes que afectivo."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "Floristería digital refinada",
+    "thesis": "Una boutique floral contemporánea, clara y reconocible, ejecutada con gran fotografía y tipografía elegante.",
+    "palette": ["#FAF7F2", "#6F3548", "#D8B5B8", "#50624E", "#252321"],
+    "materials": ["fotografía editorial", "papel mate", "retícula limpia"],
+    "viewport": "Cabecera contenida, gran fotografía de un arreglo, mensaje corto, Ver arreglos y una fila inmediata de categorías.",
+    "risk": "Es fácil de entender, pero también fácil de confundir con cualquier otra floristería en línea.",
+    "comp": ".impeccable/mocks/decision/floristeria-refinada.png"
+  },
+  "steer": true
+}

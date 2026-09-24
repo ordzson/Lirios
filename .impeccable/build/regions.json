@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "id": "header-ground",
+      "kind": "chrome",
+      "grid": "A0:J0",
+      "note": "warm cream header band with no divider or shadow"
+    },
+    {
+      "id": "wordmark",
+      "kind": "text",
+      "grid": "B0:B0",
+      "note": "provisional Lirios wordmark in large wine high-contrast serif"
+    },
+    {
+      "id": "wordmark-petal",
+      "kind": "chrome",
+      "grid": "C0:C0",
+      "note": "small flat dusty-blush two-petal mark beside the wordmark, simple code-drawn icon",
+      "codeDrawn": true
+    },
+    {
+      "id": "nav-arrangements",
+      "kind": "text",
+      "grid": "E0:E0",
+      "note": "Arreglos navigation link in quiet charcoal sans serif"
+    },
+    {
+      "id": "nav-stems",
+      "kind": "text",
+      "grid": "F0:G0",
+      "note": "Flores individuales navigation link in quiet charcoal sans serif"
+    },
+    {
+      "id": "nav-custom",
+      "kind": "text",
+      "grid": "H0:H0",
+      "note": "Personaliza navigation link in quiet charcoal sans serif"
+    },
+    {
+      "id": "nav-tracking",
+      "kind": "text",
+      "grid": "I0:I0",
+      "note": "Seguir pedido navigation link in quiet charcoal sans serif"
+    },
+    {
+      "id": "hero-photo",
+      "kind": "image",
+      "grid": "A1:J6",
+      "note": "wide editorial still-life photograph: warm cream paper set, decisive black-wrapped orange chenille-flower bouquet on the right, generous calm negative space on the left; no UI text, no printed Lirios seal, dry-flower props are nonessential"
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "grid": "B2:E3",
+      "note": "two-line wine display headline Un detalle hecho / para quedarse."
+    },
+    {
+      "id": "primary-action",
+      "kind": "control",
+      "grid": "B4:C4",
+      "note": "deep-wine rectangular Ver arreglos button with white label and right arrow"
+    },
+    {
+      "id": "category-arrangements-photo",
+      "kind": "image",
+      "grid": "A7:C9",
+      "note": "editorial category photograph of the orange chenille bouquet in black wrapping, framed by a slim warm-cream gutter"
+    },
+    {
+      "id": "category-stems-photo",
+      "kind": "image",
+      "grid": "D7:G9",
+      "note": "editorial macro category photograph of individual pink chenille lilies, framed by slim warm-cream gutters"
+    },
+    {
+      "id": "category-custom-photo",
+      "kind": "image",
+      "grid": "H7:J9",
+      "note": "editorial category photograph of a rounded blue and lavender chenille arrangement with ribbon, framed by a slim warm-cream gutter"
+    }
+  ]
+}

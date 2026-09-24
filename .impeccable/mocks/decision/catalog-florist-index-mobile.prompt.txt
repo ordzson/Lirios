@@ -1,0 +1,7 @@
+Use case: ui-mockup
+Asset type: full-fidelity mobile web companion for the desktop concept “Índice vivo” on Lirios /catalogo.
+Input images: Image 1 is the exact desktop concept to adapt; Image 2 is the existing Lirios mobile homepage and binds the brand and header behavior.
+Primary request: Create a polished portrait mobile catalog at 390px proportions. Translate the desktop two-pane selector into a fast mobile sequence without turning it into cards.
+Structure: compact Lirios header with “Menú” and bag count; title “La colección”, short sentence and discreet “Precios provisionales”. Horizontal category tabs “Todos / Arreglos / Flores”. Compact controls “Filtros (2)” and “Precio”. Then a concise numbered product index of four rows, each row showing name and provisional Quetzal price with hairline dividers. The selected row “01 Lirios carmesí — Q 185” is wine and underlined. Immediately below the list, show a large square-cornered photograph of the selected red chenille lilies; beneath it place one smaller alternate-photo strip and one full-width wine action “Ver de cerca”. The action opens the full-screen modal with quantity, but the modal is closed here.
+Style: refined florist selection table, matte blush cream, wine typography, Bodoni-like product names, calm sans controls, precise hairlines, decisive real product photography, compact operational rhythm.
+Constraints: readable Spanish; price only, no availability; no search; no cards; no grids; no rounded pills; no gradients; no ratings; no badges; no claims; no device frame; no watermark.

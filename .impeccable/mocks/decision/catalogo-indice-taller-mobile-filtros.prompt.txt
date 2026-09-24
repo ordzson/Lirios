@@ -1,0 +1,7 @@
+Use case: ui-mockup
+Asset type: interaction-state companion for the approved Lirios mobile catalog.
+Input image: Image 1 is the approved mobile catalog and is the edit target.
+Primary request: Show the “Filtrar” control open as an accessible mobile filter sheet while preserving the exact header, palette, typography, square-corner language, and product-grid context from Image 1.
+State composition: dim the catalog behind with a subtle translucent charcoal veil. A matte blush-cream sheet rises from the bottom and occupies roughly 72% of the viewport; square top corners, no shadow-heavy card treatment. Header row says “Filtrar” in a large wine serif and “Cerrar” as a small sans text button. Under a hairline, show two expandable/section groups: “Color” with square checkboxes for “Rojo”, “Rosado”, “Amarillo”, “Blanco”, “Morado”; then “Tipo de flor” with square checkboxes for “Lirio”, “Gerbera”, “Margarita”, “Flor de cerezo”. Show “Rosado” and “Lirio” selected using wine checkmarks, never pills. The sheet footer is pinned: secondary underlined text action “Limpiar” on the left and one rectangular wine primary button “Ver 4 piezas” on the right.
+Exact visible Spanish text only: “Filtrar”, “Cerrar”, “Color”, “Rojo”, “Rosado”, “Amarillo”, “Blanco”, “Morado”, “Tipo de flor”, “Lirio”, “Gerbera”, “Margarita”, “Flor de cerezo”, “Limpiar”, “Ver 4 piezas”.
+Constraints: change only the filter-open state; preserve the existing catalog behind it; no rounded corners, no pills, no toggles, no chips, no search, no invented commercial claims, no extra colors, no watermark.

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scaffold reference: composition-a.png</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&display=swap">
+  <link rel="stylesheet" href="layout.css">
+  <style>html,body{margin:0}body{background:#f6ece0}.region{box-sizing:border-box}.region.text p{white-space:pre-wrap}</style>
+</head>
+<body>
+<!-- Reference only. Every region sits at its measured box inside a comp-aspect frame. Take the boxes (layout.css), keep your own semantic structure. -->
+<main class="comp-frame" style="max-width:1672px">
+  <div class="r-header-ground region chrome" data-region="header-ground"><!-- warm cream header band with no divider or shadow --></div>
+  <div class="r-wordmark region text" data-region="wordmark"><!-- provisional Lirios wordmark in large wine high-contrast serif --><p style="font-size:var(--r-wordmark-font);line-height:1.05;margin:0">wordmark</p></div>
+  <div class="r-wordmark-petal region chrome" data-region="wordmark-petal"><!-- small flat dusty-blush two-petal mark beside the wordmark, simple code-drawn icon --></div>
+  <div class="r-nav-arrangements region text" data-region="nav-arrangements"><!-- Arreglos navigation link in quiet charcoal sans serif --><p style="font-size:var(--r-nav-arrangements-font);line-height:1.05;margin:0">nav-arrangements</p></div>
+  <div class="r-nav-stems region text" data-region="nav-stems"><!-- Flores individuales navigation link in quiet charcoal sans serif --><p style="font-size:var(--r-nav-stems-font);line-height:1.05;margin:0">nav-stems</p></div>
+  <div class="r-nav-custom region text" data-region="nav-custom"><!-- Personaliza navigation link in quiet charcoal sans serif --><p style="line-height:1.05;margin:0">nav-custom</p></div>
+  <div class="r-nav-tracking region text" data-region="nav-tracking"><!-- Seguir pedido navigation link in quiet charcoal sans serif --><p style="font-size:var(--r-nav-tracking-font);line-height:1.05;margin:0">nav-tracking</p></div>
+  <figure class="r-hero-photo region plate" data-region="hero-photo"><img src="../../../assets/plates/hero-photo.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center"></figure>
+  <div class="r-headline region text" data-region="headline"><!-- two-line wine display headline Un detalle hecho / para quedarse. --><p style="font-size:var(--r-headline-font);font-family:var(--r-headline-family),sans-serif;font-weight:var(--r-headline-weight);line-height:1.05;margin:0">headline</p></div>
+  <div class="r-primary-action region control" data-region="primary-action"><!-- deep-wine rectangular Ver arreglos button with white label and right arrow: rebuild the control's chrome from the crop (comp-spec.mjs --crop primary-action); its ink box, border, fill, radius, and label size are the comp's --></div>
+  <figure class="r-category-arrangements-photo region plate" data-region="category-arrangements-photo"><img src="../../../assets/plates/category-arrangements-photo.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center"></figure>
+  <figure class="r-category-stems-photo region plate" data-region="category-stems-photo"><img src="../../../assets/plates/category-stems-photo.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center"></figure>
+  <figure class="r-category-custom-photo region plate" data-region="category-custom-photo"><img src="../../../assets/plates/category-custom-photo.png" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center"></figure>
+</main>
+</body>
+</html>

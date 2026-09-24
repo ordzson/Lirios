@@ -1,0 +1,288 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-24T01:59:55.475Z",
+  "comp": ".impeccable/mocks/composition-a.png",
+  "direction": "cf866e24",
+  "breakpoint": "1672x941",
+  "artifact": null,
+  "phase": "review",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-09-24T01:59:55.475Z",
+      "closedAt": "2026-09-24T02:36:39.274Z",
+      "attempts": 3,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/composition-a.png",
+        "at": "2026-09-24T02:36:39.274Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-24T02:36:39.328Z",
+      "closedAt": "2026-09-24T02:38:04.161Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "13 regions, 4 plates, 6 text regions measured",
+        "at": "2026-09-24T02:38:04.161Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-09-24T02:38:04.161Z",
+      "closedAt": "2026-09-24T02:44:12.745Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "4/4 plates",
+        "at": "2026-09-24T02:44:12.745Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "closed",
+      "openedAt": "2026-09-24T02:44:12.745Z",
+      "closedAt": "2026-09-24T02:59:15.161Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "hero 80% (drift)",
+        "score": 0.7957,
+        "verdict": "drift",
+        "report": ".impeccable/review/diff/hero/report.json",
+        "sideBySide": "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/hero/side-by-side.png",
+        "worst": [
+          "headline drift 55%",
+          "category-custom-photo drift 61%",
+          "category-arrangements-photo drift 62%"
+        ],
+        "worstIds": [
+          "headline",
+          "category-custom-photo",
+          "category-arrangements-photo"
+        ],
+        "worstCrops": [
+          {
+            "id": "headline",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.5528,
+              "structure": 0.5022,
+              "color": 0.7317,
+              "colorIntersection": 0.4923,
+              "paletteMatch": 0.8606,
+              "detail": 0.5721,
+              "detailRaw": 0.6242,
+              "detailAdded": 0.1042,
+              "bands": 0.33
+            },
+            "file": ".impeccable/review/diff/hero/regions/headline.png"
+          },
+          {
+            "id": "category-custom-photo",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.6086,
+              "structure": 0.378,
+              "color": 0.7353,
+              "colorIntersection": 0.652,
+              "paletteMatch": 0.7802,
+              "detail": 0.6541,
+              "detailRaw": 0.7427,
+              "detailAdded": 0.1771,
+              "bands": 0.8
+            },
+            "file": ".impeccable/review/diff/hero/regions/category-custom-photo.png"
+          },
+          {
+            "id": "category-arrangements-photo",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.6189,
+              "structure": 0.3351,
+              "color": 0.865,
+              "colorIntersection": 0.7733,
+              "paletteMatch": 0.9143,
+              "detail": 0.6442,
+              "detailRaw": 0.7015,
+              "detailAdded": 0.1146,
+              "bands": 0.8
+            },
+            "file": ".impeccable/review/diff/hero/regions/category-arrangements-photo.png"
+          }
+        ],
+        "advisories": [
+          "(advisory, above the 72% bar; fix in the polish pass before responsive) 1 reading:",
+          "  text nav-custom: ink is #5b514c in the build, #b4a79a in the comp; use the comp's colour"
+        ],
+        "regionVerdicts": {
+          "header-ground": "match",
+          "wordmark": "drift",
+          "wordmark-petal": "match",
+          "nav-arrangements": "drift",
+          "nav-stems": "drift",
+          "nav-custom": "drift",
+          "nav-tracking": "drift",
+          "hero-photo": "drift",
+          "headline": "drift",
+          "primary-action": "drift",
+          "category-arrangements-photo": "drift",
+          "category-stems-photo": "drift",
+          "category-custom-photo": "drift"
+        },
+        "at": "2026-09-24T02:59:15.161Z"
+      },
+      "forced": null,
+      "readingsSeen": {
+        "text nav-custom: ink is #5b514c in the build, #b4a79a in the comp; use the comp's colour": 2
+      },
+      "records": 1,
+      "history": [
+        {
+          "at": "2026-09-24T02:58:21.644Z",
+          "score": 0.7955,
+          "worstIds": [
+            "headline",
+            "category-custom-photo",
+            "category-arrangements-photo"
+          ],
+          "regionVerdicts": {
+            "header-ground": "match",
+            "wordmark": "drift",
+            "wordmark-petal": "missing",
+            "nav-arrangements": "drift",
+            "nav-stems": "drift",
+            "nav-custom": "drift",
+            "nav-tracking": "drift",
+            "hero-photo": "drift",
+            "headline": "drift",
+            "primary-action": "drift",
+            "category-arrangements-photo": "drift",
+            "category-stems-photo": "drift",
+            "category-custom-photo": "drift"
+          },
+          "artifactHash": null
+        },
+        {
+          "at": "2026-09-24T02:59:15.161Z",
+          "score": 0.7957,
+          "worstIds": [
+            "headline",
+            "category-custom-photo",
+            "category-arrangements-photo"
+          ],
+          "regionVerdicts": {
+            "header-ground": "match",
+            "wordmark": "drift",
+            "wordmark-petal": "match",
+            "nav-arrangements": "drift",
+            "nav-stems": "drift",
+            "nav-custom": "drift",
+            "nav-tracking": "drift",
+            "hero-photo": "drift",
+            "headline": "drift",
+            "primary-action": "drift",
+            "category-arrangements-photo": "drift",
+            "category-stems-photo": "drift",
+            "category-custom-photo": "drift"
+          },
+          "artifactHash": null
+        }
+      ]
+    },
+    "sections": {
+      "status": "closed",
+      "openedAt": "2026-09-24T02:59:15.161Z",
+      "closedAt": "2026-09-24T03:07:23.101Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-24T03:07:23.101Z"
+      },
+      "forced": null
+    },
+    "motion": {
+      "status": "closed",
+      "openedAt": "2026-09-24T03:07:23.101Z",
+      "closedAt": "2026-09-24T03:09:57.060Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-09-24T03:09:57.060Z"
+      },
+      "forced": null
+    },
+    "responsive": {
+      "status": "closed",
+      "openedAt": "2026-09-24T03:09:57.060Z",
+      "closedAt": "2026-09-24T03:21:04.749Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "desktop 76% (drift)",
+        "score": 0.7594,
+        "sideBySide": "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/desktop/side-by-side.png",
+        "at": "2026-09-24T03:21:04.749Z"
+      },
+      "forced": null
+    },
+    "review": {
+      "status": "closed",
+      "openedAt": "2026-09-24T03:21:04.749Z",
+      "closedAt": "2026-09-24T04:03:01.381Z",
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": {
+    "disposition": "fix",
+    "at": "2026-09-24T04:03:01.381Z",
+    "phaseAtFinish": "review"
+  },
+  "plates": {
+    "hero-photo": {
+      "status": "ok",
+      "score": 0.9157,
+      "size": "2508x848"
+    },
+    "category-arrangements-photo": {
+      "status": "ok",
+      "score": 0.6042,
+      "size": "1673x940"
+    },
+    "category-stems-photo": {
+      "status": "ok",
+      "score": 0.5636,
+      "size": "1933x813"
+    },
+    "category-custom-photo": {
+      "status": "ok",
+      "score": 0.625,
+      "size": "1673x940"
+    }
+  }
+}

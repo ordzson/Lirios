@@ -1,0 +1,363 @@
+<main class="home">
+  <div class="opening">
+    <app-site-header />
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <h1 id="hero-title">
+          <span class="hero__line">Un detalle hecho</span>
+          <span class="hero__line">para quedarse.</span>
+        </h1>
+        <a class="primary-action" routerLink="/catalogo" [queryParams]="{ categoria: 'arreglos' }">
+          <span>Ver arreglos</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M14 7l5 5-5 5" />
+          </svg>
+        </a>
+      </div>
+
+      <img
+        class="hero__photo"
+        src="/assets/pics/retouched/webp/flores1-retouched-full.webp"
+        srcset="
+          /assets/pics/retouched/webp/flores1-retouched-640.webp   640w,
+          /assets/pics/retouched/webp/flores1-retouched-full.webp 1086w
+        "
+        sizes="(max-width: 899px) 100vw, 50vw"
+        alt="Arreglo de lirios amarillos y margaritas blancas hecho con limpiapipas y envuelto en papel beige"
+        width="1086"
+        height="1448"
+        fetchpriority="high"
+      />
+    </section>
+
+    <section class="catalog-preview" aria-label="Vista previa del catálogo">
+      <a
+        class="catalog-preview__item catalog-preview__item--arrangements"
+        routerLink="/catalogo"
+        [queryParams]="{ categoria: 'arreglos' }"
+      >
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier1_3-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 78vw, 34vw"
+          alt=""
+          width="1086"
+          height="1448"
+        />
+        <span class="catalog-preview__label">Arreglos listos</span>
+      </a>
+      <a
+        class="catalog-preview__item catalog-preview__item--stems"
+        routerLink="/catalogo"
+        [queryParams]="{ categoria: 'flores' }"
+      >
+        <img
+          src="/assets/pics/retouched/webp/flor_individual_1-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/flor_individual_1-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/flor_individual_1-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 78vw, 32vw"
+          alt=""
+          width="1086"
+          height="1448"
+        />
+        <span class="catalog-preview__label">Flores individuales</span>
+      </a>
+      <a class="catalog-preview__item catalog-preview__item--custom" routerLink="/personalizados">
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier2-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 78vw, 34vw"
+          alt=""
+          width="1086"
+          height="1448"
+        />
+        <span class="catalog-preview__label">Arreglos personalizados</span>
+      </a>
+    </section>
+  </div>
+
+  <section id="arreglos" class="collection page-section" aria-labelledby="collection-title">
+    <div class="section-intro">
+      <h2 id="collection-title">Arreglos listos</h2>
+      <div class="section-intro__aside">
+        <p>
+          Composiciones terminadas para cuando encuentras el regalo y simplemente sabes que es ese.
+        </p>
+        <a class="text-link" routerLink="/catalogo" [queryParams]="{ categoria: 'arreglos' }">
+          Explorar catálogo
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="collection-grid" id="catalogo-completo">
+      <article class="product-story product-story--featured">
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier1-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 100vw, 58vw"
+          alt="Arreglo de lirios carmesí hecho con limpiapipas y envuelto en papel blanco"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="product-story__meta">
+          <h3>Lirios carmesí</h3>
+          <p>Arreglo listo</p>
+        </div>
+      </article>
+
+      <article class="product-story">
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier1_2-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 100vw, 36vw"
+          alt="Arreglo de lirios rosados hecho con limpiapipas y envuelto en papel blanco"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="product-story__meta">
+          <h3>Lirios rosados</h3>
+          <p>Arreglo listo</p>
+        </div>
+      </article>
+
+      <article class="product-story">
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier1_3-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 100vw, 36vw"
+          alt="Arreglo de tres gerberas amarillas hecho con limpiapipas"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="product-story__meta">
+          <h3>Gerberas doradas</h3>
+          <p>Arreglo listo</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="concept-note">Nombres de catálogo provisionales.</p>
+  </section>
+
+  <section id="flores" class="stems page-section" aria-labelledby="stems-title">
+    <figure class="stems__visual">
+      <img
+        src="/assets/pics/retouched/webp/flor_individual_1-retouched-full.webp"
+        srcset="
+          /assets/pics/retouched/webp/flor_individual_1-retouched-640.webp   640w,
+          /assets/pics/retouched/webp/flor_individual_1-retouched-full.webp 1086w
+        "
+        sizes="(max-width: 899px) 100vw, 56vw"
+        alt="Rama de pequeñas flores blancas hecha con limpiapipas"
+        width="1086"
+        height="1448"
+        decoding="async"
+      />
+    </figure>
+    <div class="stems__copy">
+      <h2 id="stems-title">Una flor también basta.</h2>
+      <p>
+        Elige una pieza individual para regalar un gesto pequeño, combinar colores o empezar tu
+        propia colección.
+      </p>
+      <a class="light-link" routerLink="/catalogo" [queryParams]="{ categoria: 'flores' }">
+        Ver flores individuales
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <section id="personaliza" class="custom page-section" aria-labelledby="custom-title">
+    <header class="custom__intro">
+      <h2 id="custom-title">
+        Un arreglo que <br class="custom__mobile-break" />empieza
+        <br class="custom__mobile-break" />contigo.
+      </h2>
+      <p class="custom__copy custom__copy--desktop">
+        Elige la intención para comenzar; los detalles se afinan contigo.
+      </p>
+      <p class="custom__copy custom__copy--mobile">
+        Tres formas de darle forma a una idea, contigo.
+      </p>
+    </header>
+
+    <ol class="tiers">
+      <li>
+        <img
+          class="tiers__image tiers__image--one"
+          src="/assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier1_2-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 5.5rem, 29vw"
+          alt="Ejemplo de arreglo pequeño con lirios rosados"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="tiers__head">
+          <h3>Un gesto</h3>
+          <span>Sutil</span>
+        </div>
+        <p>El punto de entrada para una idea contenida.</p>
+      </li>
+      <li>
+        <img
+          class="tiers__image tiers__image--two"
+          src="/assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier2-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 5.5rem, 29vw"
+          alt="Ejemplo de arreglo con lirios, margaritas y gerberas"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="tiers__head">
+          <h3>Una ocasión</h3>
+          <span>Expresivo</span>
+        </div>
+        <p>Más espacio para combinar color y presencia.</p>
+      </li>
+      <li>
+        <img
+          class="tiers__image tiers__image--three"
+          src="/assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 5.5rem, 29vw"
+          alt="Ejemplo de arreglo abundante con flores azules, rosadas y lavanda"
+          width="1086"
+          height="1448"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="tiers__head">
+          <h3>Una historia</h3>
+          <span>Abundante</span>
+        </div>
+        <p>Una conversación directa para una pieza singular.</p>
+      </li>
+    </ol>
+
+    <a
+      class="dark-link custom__link"
+      routerLink="/personalizados"
+      aria-label="Conocer los arreglos personalizados"
+    >
+      <span class="custom__link-label custom__link-label--desktop">Hablar de un arreglo</span>
+      <span class="custom__link-label custom__link-label--mobile"
+        >Conocer los arreglos personalizados</span
+      >
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+    </a>
+  </section>
+
+  <section class="process page-section" aria-labelledby="process-title">
+    <div class="process__heading">
+      <h2 id="process-title">Elegir un regalo puede ser sencillo.</h2>
+    </div>
+    <ol class="process__steps">
+      <li>
+        <span>1</span>
+        <h3>Explora</h3>
+        <p>Revisa arreglos listos, flores individuales o las tres formas de personalización.</p>
+      </li>
+      <li>
+        <span>2</span>
+        <h3>Confirma</h3>
+        <p>
+          La confirmación llega personalmente por WhatsApp o correo. Puedes pagar por transferencia
+          o contraentrega.
+        </p>
+      </li>
+      <li>
+        <span>3</span>
+        <h3>Sigue</h3>
+        <p>Consulta el avance con tu número de orden, sin necesidad de crear una cuenta.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="seguimiento" class="tracking page-section" aria-labelledby="tracking-title">
+    <div class="tracking__copy">
+      <h2 id="tracking-title">Tu pedido, a la vista.</h2>
+      <p>Prueba la experiencia de seguimiento con la orden de muestra <strong>LIR-2048</strong>.</p>
+    </div>
+
+    <form class="tracking-form" (submit)="trackOrder($event, orderNumber.value)" novalidate>
+      <label for="order-number">Número de orden</label>
+      <div class="tracking-form__control">
+        <input
+          #orderNumber
+          id="order-number"
+          name="order"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          placeholder="LIR-2048"
+          aria-describedby="tracking-message"
+        />
+        <button type="submit">
+          Consultar
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+        </button>
+      </div>
+      <p
+        id="tracking-message"
+        class="tracking-form__message"
+        aria-live="polite"
+        [attr.data-state]="trackingState()"
+      >
+        {{ trackingMessage() }}
+      </p>
+    </form>
+  </section>
+
+  <footer id="contacto" class="site-footer">
+    <a class="site-footer__brand" href="/">Lirios</a>
+    <div class="site-footer__about">
+      <p>Floristería artesanal en línea · Quetzaltenango, Guatemala</p>
+      <p>Contacto por WhatsApp y correo: datos por confirmar.</p>
+    </div>
+    <nav aria-label="Navegación de pie de página">
+      <a routerLink="/catalogo" [queryParams]="{ categoria: 'arreglos' }">Arreglos</a>
+      <a routerLink="/catalogo" [queryParams]="{ categoria: 'flores' }">Flores individuales</a>
+      <a routerLink="/personalizados">Personaliza</a>
+      <a href="#seguimiento">Seguir pedido</a>
+    </nav>
+    <small>Nombre e identidad en desarrollo.</small>
+  </footer>
+</main>

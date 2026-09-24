@@ -1,0 +1,207 @@
+<div class="custom-page">
+  <div class="custom-header">
+    <app-site-header />
+  </div>
+
+  <main>
+    <section class="custom-hero" aria-labelledby="custom-hero-title">
+      <div class="custom-hero__copy">
+        <h1 id="custom-hero-title">Una idea tuya, hecha flor.</h1>
+        <p>
+          Cuéntanos para quién es y qué quieres hacer sentir. Nosotros te ayudamos a convertirlo en
+          un arreglo único.
+        </p>
+        <a
+          class="whatsapp-action whatsapp-action--primary"
+          [href]="genericWhatsAppUrl"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.3 5.8a8 8 0 1 1-2.5 2.4L4.7 4.7l3.6 1.1Z" />
+            <path
+              d="M8.4 9.2c.5 2.7 2 4.2 4.6 4.8l1.4-1.2c.4-.3.8-.2 1.1.1l1.2 1.3c.3.3.3.8 0 1.1-1 1-2.2 1.5-3.5 1.3-3.4-.5-5.8-2.8-6.3-6.2-.2-1.3.3-2.6 1.3-3.5.3-.3.8-.3 1.1 0l1.3 1.2c.3.3.4.8.1 1.1L9.5 10"
+            />
+          </svg>
+          <span>Escribir por WhatsApp</span>
+          <svg class="whatsapp-action__arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+        <p class="custom-hero__reassurance">
+          Sin formularios. Sin compromiso. Te respondemos personalmente.
+        </p>
+      </div>
+
+      <figure class="custom-hero__visual">
+        <img
+          src="/assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp"
+          srcset="
+            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp   640w,
+            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp 1086w
+          "
+          sizes="(max-width: 899px) 100vw, 52vw"
+          alt="Arreglo abundante de flores azules, violetas, rosadas y blancas hecho con limpiapipas"
+          width="1086"
+          height="1448"
+          fetchpriority="high"
+        />
+        <figcaption>El color, las flores y la envoltura se eligen contigo.</figcaption>
+      </figure>
+    </section>
+
+    <section class="choice-guide" aria-labelledby="choice-guide-title">
+      <h2 id="choice-guide-title">Empieza por el gesto que imaginas.</h2>
+      <p>
+        No necesitas saber de flores. Mira las tres formas de comenzar y elige la que se parece más
+        a lo que quieres decir.
+      </p>
+    </section>
+
+    @for (choice of choices; track choice.id; let choiceIndex = $index) {
+      <section
+        class="choice"
+        [class.choice--occasion]="choiceIndex === 1"
+        [class.choice--story]="choiceIndex === 2"
+        [attr.id]="choice.id"
+        [attr.aria-labelledby]="choice.id + '-title'"
+      >
+        <header class="choice__intro">
+          <div>
+            <h2 [attr.id]="choice.id + '-title'">{{ choice.name }}</h2>
+            <p class="choice__promise">{{ choice.promise }}</p>
+          </div>
+          <div class="choice__details">
+            <p>{{ choice.description }}</p>
+            <p class="choice__fit">{{ choice.fit }}</p>
+            <a
+              class="whatsapp-action"
+              [href]="choiceWhatsAppUrl(choice)"
+              target="_blank"
+              rel="noopener"
+              [attr.aria-label]="'Preguntar por ' + choice.actionLabel + ' en WhatsApp'"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.3 5.8a8 8 0 1 1-2.5 2.4L4.7 4.7l3.6 1.1Z" />
+                <path
+                  d="M8.4 9.2c.5 2.7 2 4.2 4.6 4.8l1.4-1.2c.4-.3.8-.2 1.1.1l1.2 1.3c.3.3.3.8 0 1.1-1 1-2.2 1.5-3.5 1.3-3.4-.5-5.8-2.8-6.3-6.2-.2-1.3.3-2.6 1.3-3.5.3-.3.8-.3 1.1 0l1.3 1.2c.3.3.4.8.1 1.1L9.5 10"
+                />
+              </svg>
+              <span>Preguntar por {{ choice.actionLabel }}</span>
+              <svg class="whatsapp-action__arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </a>
+          </div>
+        </header>
+
+        <div class="samples" [class.samples--two]="choice.samples.length === 2">
+          @for (sample of choice.samples; track sample.name; let sampleIndex = $index) {
+            <article class="sample" [class.sample--lead]="sampleIndex === 0">
+              <img
+                src="/assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp"
+                [src]="sample.image"
+                [srcset]="sample.image640 + ' 640w, ' + sample.image + ' 1086w'"
+                [sizes]="
+                  choice.samples.length === 2
+                    ? '(max-width: 899px) 88vw, 48vw'
+                    : '(max-width: 899px) 88vw, 32vw'
+                "
+                [alt]="sample.alt"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="sample__meta">
+                <h3>{{ sample.name }}</h3>
+                <a
+                  [href]="sampleWhatsAppUrl(choice, sample)"
+                  target="_blank"
+                  rel="noopener"
+                  [attr.aria-label]="'Usar ' + sample.name + ' como referencia en WhatsApp'"
+                >
+                  Usar como referencia
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </section>
+    }
+
+    <section class="simple-process" aria-labelledby="simple-process-title">
+      <div>
+        <h2 id="simple-process-title">Lo hacemos fácil.</h2>
+        <p>
+          No tienes que llegar con todo decidido. Una idea, un color o una ocasión bastan para
+          comenzar.
+        </p>
+      </div>
+      <ol>
+        <li>
+          <span>Nos escribes</span>
+          <p>Elige una opción o envíanos la muestra que más te gustó.</p>
+        </li>
+        <li>
+          <span>Lo definimos contigo</span>
+          <p>Afinamos flores, colores y detalles directamente por WhatsApp.</p>
+        </li>
+        <li>
+          <span>Lo hacemos para ti</span>
+          <p>Confirmamos tu solicitud y te acompañamos hasta la entrega.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <h2 id="closing-title">Tu arreglo puede empezar con un mensaje.</h2>
+      <a
+        class="whatsapp-action whatsapp-action--light"
+        [href]="genericWhatsAppUrl"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.3 5.8a8 8 0 1 1-2.5 2.4L4.7 4.7l3.6 1.1Z" />
+          <path
+            d="M8.4 9.2c.5 2.7 2 4.2 4.6 4.8l1.4-1.2c.4-.3.8-.2 1.1.1l1.2 1.3c.3.3.3.8 0 1.1-1 1-2.2 1.5-3.5 1.3-3.4-.5-5.8-2.8-6.3-6.2-.2-1.3.3-2.6 1.3-3.5.3-.3.8-.3 1.1 0l1.3 1.2c.3.3.4.8.1 1.1L9.5 10"
+          />
+        </svg>
+        <span>Hablar por WhatsApp</span>
+        <svg class="whatsapp-action__arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 17 17 7M9 7h8v8" />
+        </svg>
+      </a>
+      <a class="closing__back" routerLink="/catalogo">O ver arreglos ya listos</a>
+    </section>
+  </main>
+
+  <footer class="custom-footer">
+    <a routerLink="/" class="custom-footer__brand">Lirios</a>
+    <p>Floristería artesanal en línea · Quetzaltenango, Guatemala</p>
+    <a [href]="genericWhatsAppUrl" target="_blank" rel="noopener">WhatsApp · +502 5074 6766</a>
+  </footer>
+
+  <a
+    class="mobile-whatsapp"
+    [class.mobile-whatsapp--hidden]="contextualActionVisible()"
+    [href]="mobileWhatsAppUrl()"
+    target="_blank"
+    rel="noopener"
+    [attr.aria-label]="mobileWhatsAppLabel() + ' en WhatsApp'"
+    [attr.aria-hidden]="contextualActionVisible()"
+    [attr.tabindex]="contextualActionVisible() ? -1 : null"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.3 5.8a8 8 0 1 1-2.5 2.4L4.7 4.7l3.6 1.1Z" />
+      <path
+        d="M8.4 9.2c.5 2.7 2 4.2 4.6 4.8l1.4-1.2c.4-.3.8-.2 1.1.1l1.2 1.3c.3.3.3.8 0 1.1-1 1-2.2 1.5-3.5 1.3-3.4-.5-5.8-2.8-6.3-6.2-.2-1.3.3-2.6 1.3-3.5.3-.3.8-.3 1.1 0l1.3 1.2c.3.3.4.8.1 1.1L9.5 10"
+      />
+    </svg>
+    <span>{{ mobileWhatsAppLabel() }}</span>
+  </a>
+</div>

@@ -1,0 +1,542 @@
+{
+  "tool": "comp-diff",
+  "version": 1,
+  "createdAt": "2026-09-24T04:08:08.472Z",
+  "label": "desktop",
+  "comp": ".impeccable/mocks/composition-a.png",
+  "build": ".impeccable/review/desktop.png",
+  "spec": ".impeccable/build/spec.json",
+  "compSize": "1672x941",
+  "buildSize": "1440x5646",
+  "align": "top",
+  "overall": 0.7718,
+  "verdict": "drift",
+  "scores": {
+    "overall": 0.7718,
+    "structure": 0.6136,
+    "color": 0.8856,
+    "colorIntersection": 0.8289,
+    "paletteMatch": 0.9161,
+    "detail": 0.8327,
+    "detailRaw": 0.8431,
+    "detailAdded": 0.0208,
+    "bands": 0.85
+  },
+  "palette": {
+    "comp": [
+      {
+        "hex": "#f6ece0",
+        "coverage": 0.5186
+      },
+      {
+        "hex": "#d7bca6",
+        "coverage": 0.2405
+      },
+      {
+        "hex": "#b49378",
+        "coverage": 0.0984
+      },
+      {
+        "hex": "#1b1512",
+        "coverage": 0.0932
+      },
+      {
+        "hex": "#6c1326",
+        "coverage": 0.0274
+      },
+      {
+        "hex": "#d67681",
+        "coverage": 0.0219
+      }
+    ],
+    "build": [
+      {
+        "hex": "#f6ebdf",
+        "coverage": 0.5489
+      },
+      {
+        "hex": "#c5a285",
+        "coverage": 0.1484
+      },
+      {
+        "hex": "#e2c7b3",
+        "coverage": 0.1482
+      },
+      {
+        "hex": "#18130f",
+        "coverage": 0.109
+      },
+      {
+        "hex": "#721929",
+        "coverage": 0.0255
+      },
+      {
+        "hex": "#da7682",
+        "coverage": 0.02
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": "header-ground",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.8919,
+        "structure": 0.9607,
+        "color": 0.9342,
+        "colorIntersection": 0.8714,
+        "paletteMatch": 0.968,
+        "detail": 0.6885,
+        "detailRaw": 0.7458,
+        "detailAdded": 0.1146,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 150,
+          "y": 16,
+          "w": 1522,
+          "h": 78
+        },
+        "build": {
+          "x": 153,
+          "y": 19,
+          "w": 1519,
+          "h": 75
+        }
+      }
+    },
+    {
+      "id": "wordmark",
+      "x": 0.0999,
+      "y": 0.0128,
+      "w": 0.0789,
+      "h": 0.0638,
+      "kind": "text",
+      "score": {
+        "overall": 0.7533,
+        "structure": 0.7057,
+        "color": 0.7897,
+        "colorIntersection": 0.6313,
+        "paletteMatch": 0.875,
+        "detail": 0.6868,
+        "detailRaw": 0.6972,
+        "detailAdded": 0.0208,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 7,
+          "w": 125,
+          "h": 44
+        },
+        "build": {
+          "x": 0,
+          "y": 7,
+          "w": 120,
+          "h": 42
+        }
+      }
+    },
+    {
+      "id": "wordmark-petal",
+      "x": 0.2,
+      "y": 0,
+      "w": 0.1,
+      "h": 0.1,
+      "kind": "chrome",
+      "score": {
+        "overall": 0.859,
+        "structure": 0.9944,
+        "color": 0.9707,
+        "colorIntersection": 0.9453,
+        "paletteMatch": 0.9843,
+        "detail": 0.4732,
+        "detailRaw": 0.4836,
+        "detailAdded": 0.0208,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 41,
+          "w": 2,
+          "h": 6
+        },
+        "build": {
+          "x": 0,
+          "y": 41,
+          "w": 12,
+          "h": 15
+        }
+      }
+    },
+    {
+      "id": "nav-arrangements",
+      "x": 0.4611,
+      "y": 0.0255,
+      "w": 0.0389,
+      "h": 0.0383,
+      "kind": "text",
+      "score": {
+        "overall": 0.8064,
+        "structure": 0.8645,
+        "color": 0.8587,
+        "colorIntersection": 0.7639,
+        "paletteMatch": 0.9098,
+        "detail": 0.6457,
+        "detailRaw": 0.6562,
+        "detailAdded": 0.0208,
+        "bands": 0.6267
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 5,
+          "y": 13,
+          "w": 59,
+          "h": 18
+        },
+        "build": {
+          "x": 5,
+          "y": 14,
+          "w": 59,
+          "h": 19
+        }
+      }
+    },
+    {
+      "id": "nav-stems",
+      "x": 0.5431,
+      "y": 0.0255,
+      "w": 0.1005,
+      "h": 0.0319,
+      "kind": "text",
+      "score": {
+        "overall": 0.7755,
+        "structure": 0.7503,
+        "color": 0.8558,
+        "colorIntersection": 0.7837,
+        "paletteMatch": 0.8946,
+        "detail": 0.5763,
+        "detailRaw": 0.6336,
+        "detailAdded": 0.1146,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 10,
+          "y": 15,
+          "w": 153,
+          "h": 15
+        },
+        "build": {
+          "x": 17,
+          "y": 17,
+          "w": 150,
+          "h": 15
+        }
+      }
+    },
+    {
+      "id": "nav-custom",
+      "x": 0.6998,
+      "y": 0.0255,
+      "w": 0.0502,
+      "h": 0.0744,
+      "kind": "text",
+      "score": {
+        "overall": 0.6838,
+        "structure": 0.6956,
+        "color": 0.6607,
+        "colorIntersection": 0.4939,
+        "paletteMatch": 0.7506,
+        "detail": 0.5387,
+        "detailRaw": 0.6116,
+        "detailAdded": 0.1458,
+        "bands": 0.9
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 7,
+          "w": 74,
+          "h": 63
+        },
+        "build": {
+          "x": 0,
+          "y": 8,
+          "w": 84,
+          "h": 62
+        }
+      }
+    },
+    {
+      "id": "nav-tracking",
+      "x": 0.8002,
+      "y": 0.0255,
+      "w": 0.0646,
+      "h": 0.0383,
+      "kind": "text",
+      "score": {
+        "overall": 0.734,
+        "structure": 0.6708,
+        "color": 0.8042,
+        "colorIntersection": 0.7122,
+        "paletteMatch": 0.8538,
+        "detail": 0.6507,
+        "detailRaw": 0.6819,
+        "detailAdded": 0.0625,
+        "bands": 1
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 13,
+          "w": 97,
+          "h": 18
+        },
+        "build": {
+          "x": 0,
+          "y": 14,
+          "w": 105,
+          "h": 19
+        }
+      }
+    },
+    {
+      "id": "hero-photo",
+      "x": 0,
+      "y": 0.1,
+      "w": 1,
+      "h": 0.6,
+      "kind": "image",
+      "score": {
+        "overall": 0.7851,
+        "structure": 0.6713,
+        "color": 0.8905,
+        "colorIntersection": 0.7969,
+        "paletteMatch": 0.9409,
+        "detail": 0.7925,
+        "detailRaw": 0.8134,
+        "detailAdded": 0.0417,
+        "bands": 0.8583
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 1672,
+          "h": 565
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 1672,
+          "h": 565
+        }
+      }
+    },
+    {
+      "id": "headline",
+      "x": 0.0999,
+      "y": 0.1998,
+      "w": 0.3517,
+      "h": 0.1998,
+      "kind": "text",
+      "score": {
+        "overall": 0.5199,
+        "structure": 0.4085,
+        "color": 0.7289,
+        "colorIntersection": 0.5077,
+        "paletteMatch": 0.848,
+        "detail": 0.5962,
+        "detailRaw": 0.6223,
+        "detailAdded": 0.0521,
+        "bands": 0.44
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 5,
+          "w": 577,
+          "h": 177
+        },
+        "build": {
+          "x": 0,
+          "y": 1,
+          "w": 588,
+          "h": 164
+        }
+      }
+    },
+    {
+      "id": "primary-action",
+      "x": 0.0999,
+      "y": 0.4187,
+      "w": 0.1651,
+      "h": 0.0808,
+      "kind": "control",
+      "score": {
+        "overall": 0.7867,
+        "structure": 0.8778,
+        "color": 0.6857,
+        "colorIntersection": 0.4193,
+        "paletteMatch": 0.8292,
+        "detail": 0.7583,
+        "detailRaw": 0.7739,
+        "detailAdded": 0.0313,
+        "bands": 0.9
+      },
+      "verdict": "drift",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 276,
+          "h": 76
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 276,
+          "h": 76
+        }
+      }
+    },
+    {
+      "id": "category-arrangements-photo",
+      "x": 0,
+      "y": 0.7,
+      "w": 0.3,
+      "h": 0.3,
+      "kind": "image",
+      "score": {
+        "overall": 0.5899,
+        "structure": 0.352,
+        "color": 0.8656,
+        "colorIntersection": 0.773,
+        "paletteMatch": 0.9154,
+        "detail": 0.591,
+        "detailRaw": 0.6483,
+        "detailAdded": 0.1146,
+        "bands": 0.6667
+      },
+      "verdict": "contradicted",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 502,
+          "h": 282
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 502,
+          "h": 282
+        }
+      }
+    },
+    {
+      "id": "category-stems-photo",
+      "x": 0.3,
+      "y": 0.7,
+      "w": 0.4,
+      "h": 0.3,
+      "kind": "image",
+      "score": {
+        "overall": 0.8221,
+        "structure": 0.7239,
+        "color": 0.8085,
+        "colorIntersection": 0.7523,
+        "paletteMatch": 0.8387,
+        "detail": 0.8589,
+        "detailRaw": 0.8901,
+        "detailAdded": 0.0625,
+        "bands": 1
+      },
+      "verdict": "match",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 668,
+          "h": 282
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 668,
+          "h": 282
+        }
+      }
+    },
+    {
+      "id": "category-custom-photo",
+      "x": 0.7,
+      "y": 0.7,
+      "w": 0.3,
+      "h": 0.3,
+      "kind": "image",
+      "score": {
+        "overall": 0.5643,
+        "structure": 0.3571,
+        "color": 0.7431,
+        "colorIntersection": 0.654,
+        "paletteMatch": 0.7911,
+        "detail": 0.5728,
+        "detailRaw": 0.6769,
+        "detailAdded": 0.2083,
+        "bands": 0.8
+      },
+      "verdict": "contradicted",
+      "inkBox": {
+        "comp": {
+          "x": 0,
+          "y": 0,
+          "w": 502,
+          "h": 282
+        },
+        "build": {
+          "x": 0,
+          "y": 0,
+          "w": 502,
+          "h": 282
+        }
+      }
+    }
+  ],
+  "files": {
+    "sideBySide": "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/side-by-side.png",
+    "heatmap": "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/heatmap.png",
+    "regionFiles": [
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/header-ground.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/wordmark.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/wordmark-petal.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/nav-arrangements.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/nav-stems.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/nav-custom.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/nav-tracking.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/hero-photo.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/headline.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/primary-action.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/category-arrangements-photo.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/category-stems-photo.png",
+      "/home/ordson/Documentos/Sitios/Lirios/.impeccable/review/diff/final/regions/category-custom-photo.png"
+    ]
+  }
+}
