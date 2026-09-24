@@ -42,20 +42,20 @@ const CHOICES: readonly ArrangementChoice[] = [
     samples: [
       {
         name: 'Lirios carmesí',
-        image: '/assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/arreglo_tier1-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/arreglo_tier1-retouched-640.webp',
         alt: 'Tres lirios carmesí hechos con limpiapipas y envueltos en papel blanco',
       },
       {
         name: 'Lirios rosados',
-        image: '/assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/arreglo_tier1_2-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/arreglo_tier1_2-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/arreglo_tier1_2-retouched-640.webp',
         alt: 'Arreglo pequeño de lirios rosados hechos con limpiapipas',
       },
       {
         name: 'Gerberas doradas',
-        image: '/assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/arreglo_tier1_3-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/arreglo_tier1_3-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/arreglo_tier1_3-retouched-640.webp',
         alt: 'Arreglo pequeño de gerberas amarillas hechas con limpiapipas',
       },
     ],
@@ -73,14 +73,14 @@ const CHOICES: readonly ArrangementChoice[] = [
     samples: [
       {
         name: 'Jardín luminoso',
-        image: '/assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/arreglo_tier2-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/arreglo_tier2-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/arreglo_tier2-retouched-640.webp',
         alt: 'Arreglo de lirios rosados, gerberas amarillas y margaritas blancas hecho con limpiapipas',
       },
       {
         name: 'Lirios y margaritas',
-        image: '/assets/pics/retouched/webp/flores1-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/flores1-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/flores1-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/flores1-retouched-640.webp',
         alt: 'Arreglo de lirios amarillos y margaritas blancas hecho con limpiapipas',
       },
     ],
@@ -98,20 +98,20 @@ const CHOICES: readonly ArrangementChoice[] = [
     samples: [
       {
         name: 'Jardín violeta',
-        image: '/assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp',
-        image640: '/assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp',
+        image: 'assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp',
+        image640: 'assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp',
         alt: 'Arreglo abundante de flores azules, violetas, rosadas y blancas hecho con limpiapipas',
       },
       {
         name: 'Jardín silvestre',
-        image: '/assets/pics/webp/arreglo_tier3_1-full.webp',
-        image640: '/assets/pics/webp/arreglo_tier3_1-640.webp',
+        image: 'assets/pics/webp/arreglo_tier3_1-full.webp',
+        image640: 'assets/pics/webp/arreglo_tier3_1-640.webp',
         alt: 'Arreglo amplio de lirios, lavanda, margaritas y girasol hecho con limpiapipas',
       },
       {
         name: 'Flores de celebración',
-        image: '/assets/pics/webp/arreglo_tier3_2-full.webp',
-        image640: '/assets/pics/webp/arreglo_tier3_2-640.webp',
+        image: 'assets/pics/webp/arreglo_tier3_2-full.webp',
+        image640: 'assets/pics/webp/arreglo_tier3_2-640.webp',
         alt: 'Arreglo amplio y colorido de flores variadas hecho con limpiapipas',
       },
     ],

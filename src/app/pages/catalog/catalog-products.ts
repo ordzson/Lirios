@@ -18,7 +18,7 @@ export interface CatalogProduct {
   sortOrder: number;
 }
 
-const imageRoot = '/assets/pics/retouched/webp';
+const imageRoot = 'assets/pics/retouched/webp';
 
 // Precios mock (GTQ) para maquetar el catálogo; sustituir por los reales antes de publicar.
 export const CATALOG_PRODUCTS: readonly CatalogProduct[] = [

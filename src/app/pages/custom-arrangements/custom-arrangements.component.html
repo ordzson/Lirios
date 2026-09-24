@@ -35,10 +35,10 @@
 
       <figure class="custom-hero__visual">
         <img
-          src="/assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp"
+          src="assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp"
           srcset="
-            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp   640w,
-            /assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp 1086w
+            assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp   640w,
+            assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp 1086w
           "
           sizes="(max-width: 899px) 100vw, 52vw"
           alt="Arreglo abundante de flores azules, violetas, rosadas y blancas hecho con limpiapipas"
@@ -99,7 +99,7 @@
           @for (sample of choice.samples; track sample.name; let sampleIndex = $index) {
             <article class="sample" [class.sample--lead]="sampleIndex === 0">
               <img
-                src="/assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp"
+                src="assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp"
                 [src]="sample.image"
                 [srcset]="sample.image640 + ' 640w, ' + sample.image + ' 1086w'"
                 [sizes]="

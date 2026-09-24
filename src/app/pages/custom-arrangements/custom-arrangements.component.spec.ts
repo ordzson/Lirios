@@ -42,7 +42,7 @@ describe('CustomArrangementsComponent', () => {
     expect(sampleLinks).toHaveLength(8);
     expect(decodeURIComponent(sampleLinks[0].href)).toContain('Lirios carmesí');
     expect(decodeURIComponent(sampleLinks[0].href)).toContain(
-      '/assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp',
+      'assets/pics/retouched/webp/arreglo_tier1-retouched-full.webp',
     );
   });
 });
