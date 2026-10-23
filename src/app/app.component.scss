@@ -21,39 +21,15 @@ $gutter-mobile: 1.25rem;
   position: absolute;
   inset: 0 0 auto;
   z-index: 3;
-  height: 8.6%;
+  height: 6.5rem;
 }
 
 .site-header {
   position: absolute;
   inset: 0 0 auto;
   z-index: 3;
-  height: 8.6%;
+  height: 6.5rem;
   background: #faf2eb;
-}
-
-.brand {
-  position: absolute;
-  top: 50%;
-  left: 9.1%;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: #6c1326;
-  font-family: 'Bodoni Moda', serif;
-  font-size: clamp(2.75rem, 3.25vw, 3.4rem);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.035em;
-  text-decoration: none;
-  transform: translateY(-50%);
-}
-
-.brand__petal {
-  width: 2.5rem;
-  height: 2.5rem;
-  overflow: visible;
-  fill: #d99ca4;
 }
 
 .primary-nav {
@@ -80,18 +56,20 @@ $gutter-mobile: 1.25rem;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.45rem;
-  transition: color 180ms ease-out, text-decoration-color 180ms ease-out;
+  transition:
+    color 180ms ease-out,
+    text-decoration-color 180ms ease-out;
 }
 
 .primary-nav a:hover {
-  color: #6c1326;
+  color: var(--brand-ink);
   text-decoration-color: currentColor;
 }
 
 .hero {
   position: absolute;
-  inset: 8.6% 0 auto;
-  height: 63.2%;
+  inset: 6.5rem 0 auto;
+  height: calc(71.8% - 6.5rem);
   margin: 0;
   overflow: hidden;
   background: #faf2eb;
@@ -123,7 +101,7 @@ h1 {
   left: 9.1%;
   max-width: min(38%, 45rem);
   margin: 0;
-  color: #6c1326;
+  color: var(--brand-ink);
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(3rem, 5.05vw, 5.3rem);
   font-weight: 500;
@@ -146,14 +124,17 @@ h1 {
   width: 17%;
   min-height: clamp(3.6rem, 4.26vw, 4.45rem);
   padding: 0.9rem clamp(1.4rem, 2vw, 2.1rem);
-  background: #741429;
+  background: var(--brand-action);
   color: #fff8f3;
   font-size: clamp(1.1rem, 1.44vw, 1.5rem);
   font-weight: 560;
   line-height: 1;
   text-decoration: none;
   box-shadow: 0 0.7rem 1.5rem rgb(77 13 31 / 12%);
-  transition: background-color 180ms ease-out, box-shadow 180ms ease-out, transform 180ms ease-out;
+  transition:
+    background-color 180ms ease-out,
+    box-shadow 180ms ease-out,
+    transform 180ms ease-out;
 }
 
 .primary-action svg {
@@ -167,7 +148,7 @@ h1 {
 }
 
 .primary-action:hover {
-  background: #5f0e21;
+  background: var(--brand-pressed);
   box-shadow: 0 0.85rem 1.8rem rgb(77 13 31 / 18%);
   transform: translateY(-0.125rem);
 }
@@ -253,7 +234,7 @@ h1 {
 }
 
 .section-intro h2 {
-  color: #6c1326;
+  color: var(--brand-ink);
   font-size: clamp(4rem, 7.4vw, 6rem);
   line-height: 0.9;
 }
@@ -282,7 +263,7 @@ h1 {
 }
 
 .text-link {
-  color: #6c1326;
+  color: var(--brand-ink);
 }
 
 .text-link svg,
@@ -384,7 +365,7 @@ h1 {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(25rem, 0.88fr);
   min-height: 48rem;
-  background: #641326;
+  background: var(--brand-deep);
   color: #fff5eb;
 }
 
@@ -433,7 +414,7 @@ h1 {
 
 .custom {
   padding: clamp(7rem, 11vw, 11rem) clamp(2rem, 8vw, 8rem);
-  background: #e8d1cc;
+  background: var(--brand-blush);
   color: #2d2427;
 }
 
@@ -448,7 +429,7 @@ h1 {
 
 .custom h2 {
   max-width: 11ch;
-  color: #641326;
+  color: var(--brand-deep);
   font-size: clamp(4rem, 7vw, 6rem);
   line-height: 0.9;
 }
@@ -473,7 +454,7 @@ h1 {
   max-width: 96rem;
   margin: clamp(4.5rem, 8vw, 8rem) auto 3rem;
   padding: 0;
-  border-block: 1px solid rgb(100 19 38 / 35%);
+  border-block: 1px solid rgb(121 33 71 / 35%);
   list-style: none;
 }
 
@@ -510,12 +491,12 @@ h1 {
 }
 
 .tiers li + li {
-  border-left: 1px solid rgb(100 19 38 / 35%);
+  border-left: 1px solid rgb(121 33 71 / 35%);
 }
 
 .tiers span,
 .process__steps span {
-  color: #641326;
+  color: var(--brand-deep);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -524,7 +505,7 @@ h1 {
 
 .tiers h3 {
   margin: 0;
-  color: #641326;
+  color: var(--brand-deep);
   font-family: 'Bodoni Moda', serif;
   font-size: clamp(2.2rem, 3vw, 3.2rem);
   font-weight: 400;
@@ -540,8 +521,8 @@ h1 {
 .dark-link {
   margin-left: max(calc((100% - 96rem) / 2), 0px);
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgb(100 19 38 / 38%);
-  color: #641326;
+  border-bottom: 1px solid rgb(121 33 71 / 38%);
+  color: var(--brand-deep);
 }
 
 .process {
@@ -558,7 +539,7 @@ h1 {
 }
 
 .process h2 {
-  color: #641326;
+  color: var(--brand-deep);
   font-size: clamp(3.8rem, 5.5vw, 6rem);
   line-height: 0.94;
 }
@@ -611,7 +592,7 @@ h1 {
 
 .tracking h2 {
   max-width: 9ch;
-  color: #641326;
+  color: var(--brand-deep);
   font-size: clamp(4rem, 6vw, 6rem);
   line-height: 0.92;
 }
@@ -640,7 +621,7 @@ h1 {
 .tracking-form__control {
   display: grid;
   grid-template-columns: 1fr auto;
-  border-bottom: 1px solid #641326;
+  border-bottom: 1px solid var(--brand-deep);
 }
 
 .tracking-form input,
@@ -657,7 +638,7 @@ h1 {
   background: transparent;
   color: #2d2427;
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
-  caret-color: #641326;
+  caret-color: var(--brand-deep);
   outline: none;
 }
 
@@ -671,7 +652,7 @@ h1 {
   align-items: center;
   gap: 1rem;
   padding-inline: 1.8rem;
-  background: #641326;
+  background: var(--brand-deep);
   color: #fff5eb;
   cursor: pointer;
   font-weight: 650;
@@ -689,7 +670,7 @@ h1 {
 }
 
 .tracking-form__message[data-state='error'] {
-  color: #641326;
+  color: var(--brand-deep);
 }
 
 .site-footer {
@@ -703,10 +684,8 @@ h1 {
 }
 
 .site-footer__brand {
-  color: #f4e7dd;
-  font-family: 'Bodoni Moda', serif;
-  font-size: 3.4rem;
-  line-height: 1;
+  display: block;
+  width: min(100%, 13rem);
   text-decoration: none;
 }
 
@@ -757,7 +736,7 @@ h1 {
     padding: 0.5rem 0;
     border: 0;
     background: transparent;
-    color: #6c1326;
+    color: var(--brand-ink);
     cursor: pointer;
     font: inherit;
     font-size: 1rem;
@@ -843,23 +822,12 @@ h1 {
   .opening > app-site-header {
     position: relative;
     inset: auto;
-    height: 4.5rem;
+    height: 6rem;
   }
 
   .site-header {
     position: relative;
     height: 4.5rem;
-  }
-
-  .brand {
-    left: $gutter-mobile;
-    gap: 0.5rem;
-    font-size: 2.25rem;
-  }
-
-  .brand__petal {
-    width: 1.75rem;
-    height: 1.75rem;
   }
 
   .menu-toggle {
@@ -910,6 +878,7 @@ h1 {
     gap: 0.75rem;
     padding: 0.75rem $gutter-mobile 0;
     overflow-x: auto;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-padding-inline: $gutter-mobile;
     scroll-snap-type: x mandatory;
@@ -1067,7 +1036,7 @@ h1 {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.42fr) minmax(0, 0.88fr);
     margin: 2.5rem 0 1.75rem;
     border-block: 0;
-    border-bottom: 1px solid rgb(100 19 38 / 35%);
+    border-bottom: 1px solid rgb(121 33 71 / 35%);
   }
 
   .tiers li {
@@ -1087,7 +1056,7 @@ h1 {
 
   .tiers li + li {
     border-top: 0;
-    border-left: 1px solid rgb(100 19 38 / 48%);
+    border-left: 1px solid rgb(121 33 71 / 48%);
   }
 
   .tiers h3 {
@@ -1119,7 +1088,7 @@ h1 {
   }
 
   .tiers__head::before {
-    color: #641326;
+    color: var(--brand-deep);
     font-family: 'Bodoni Moda', serif;
     font-size: clamp(1.8rem, 8vw, 2.35rem);
     line-height: 0.9;
@@ -1202,10 +1171,6 @@ h1 {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
     padding: 4rem $gutter-mobile 2.5rem;
-  }
-
-  .site-footer__brand {
-    font-size: 2.75rem;
   }
 
   .site-footer nav {

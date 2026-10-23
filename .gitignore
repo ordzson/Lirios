@@ -43,3 +43,12 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Local secrets and private project files
+.env
+.env.*
+!.env.example
+/private/
+**/env
+**/env2
+/public/config.js

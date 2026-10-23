@@ -1,0 +1,14 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "database-url-with-password"
+description = "Database connection URL containing embedded credentials"
+regex = '''(?i)\b(postgres(ql)?|mysql|mariadb|mongodb(\+srv)?):\/\/[^:\s\/]+:[^@\s\/]+@[^\s]+'''
+tags = ["database", "password"]
+
+[[rules]]
+id = "database-password-assignment"
+description = "Database password assigned in source or configuration"
+regex = '''(?i)(database|db|postgres|supabase)[_a-z0-9-]*(password|passwd|pwd)\s*[:=]\s*["']?[^"'\s]{8,}'''
+tags = ["database", "password"]

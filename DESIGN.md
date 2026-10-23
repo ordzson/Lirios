@@ -1,15 +1,16 @@
 ---
-name: Lirios
+name: Dumish Blooms
 description: Floristería digital refinada para flores artesanales de limpiapipas en Quetzaltenango.
 colors:
-  wine: "#6c1326"
-  wine-deep: "#641326"
-  wine-action: "#741429"
-  wine-pressed: "#5f0e21"
-  petal: "#d99ca4"
+  gold: "#f2b600"
+  wine: "#922c59"
+  wine-deep: "#792147"
+  wine-action: "#a12f63"
+  wine-pressed: "#7e204c"
+  petal: "#de5b98"
   leaf: "#2f513e"
   cream: "#faf2eb"
-  blush: "#e8d1cc"
+  blush: "#f1dce5"
   sand: "#d6bea9"
   charcoal: "#2d2427"
   night: "#261c1f"
@@ -93,13 +94,13 @@ components:
     textColor: "{colors.wine}"
 ---
 
-# Design System: Lirios
+# Design System: Dumish Blooms
 
 ## Overview
 
 **Creative North Star: "El escaparate sereno"**
 
-Lirios reads like the window of a refined florist: calm matte cream, one real arrangement at decisive scale, and a single wine-colored invitation to step inside. The material carries the persuasion. The supplied product photographs show the chenille fibre, wrapping and handmade variation before any copy explains them. The interface stays out of the way, with a precise grid, square corners, hairline rules and generous quiet between passages.
+Dumish Blooms reads like the window of a refined florist: calm matte cream, one real arrangement at decisive scale, and a single wine-colored invitation to step inside. The material carries the persuasion. The supplied product photographs show the chenille fibre, wrapping and handmade variation before any copy explains them. The interface stays out of the way, with a precise grid, square corners, hairline rules and generous quiet between passages.
 
 The page is paced like a studio layout. A photographic opening gives way to an editorial catalogue on cream, then a full-bleed wine passage for single stems, a blush passage for personalised tiers, a quiet cream process list, a sand tracking panel, and a charcoal close. Density rises and falls inside one grammar. A high-contrast Didone speaks for the brand, and a sober grotesque does the operating.
 
@@ -117,13 +118,13 @@ The warmth is feminine without becoming decorative or childish. Wine, blush and 
 A warm, restrained palette: wine for voice and action, cream for the field, blush and sand as tonal passages, charcoal for reading.
 
 ### Primary
-- **Florist Wine** (wine): the wordmark, the hero headline, text-link ink, the focus ring and text selection. It is the brand's voice.
+- **Florist Wine** (wine): the hero headline, text-link ink, the focus ring and text selection. It is the brand's voice.
 - **Deep Wine Passage** (wine-deep): full-bleed section surfaces (single stems), section headlines on light passages, the attached submit button, and tier rules at 35% alpha.
 - **Action Wine** (wine-action): the single primary call to action. It is slightly brighter than the voice wine so the action stands out from the headline above it.
 - **Pressed Wine** (wine-pressed): hover state of the primary action.
 
 ### Secondary
-- **Petal Pink** (petal): the wordmark's petal mark only. It is a small accent, never a surface.
+- **Petal Pink** (petal): the official logo and small brand accents.
 - **Leaf Green** (leaf): the success state of order tracking. It is the only place green appears outside photography.
 
 ### Neutral
@@ -151,7 +152,7 @@ A warm, restrained palette: wine for voice and action, cream for the field, blus
 
 ### Hierarchy
 - **Display** (500, clamp(3rem, 5.05vw, 5.3rem), 0.95): the hero headline only, set as two deliberate lines.
-- **Wordmark** (500, clamp(2.75rem, 3.25vw, 3.4rem), 1): the provisional name in the header. It is set in type, so it survives the rename.
+- **Wordmark** (500, clamp(2.75rem, 3.25vw, 3.4rem), 1): legacy text scale, superseded by the supplied logo artwork in the header.
 - **Headline** (400, clamp(4rem, 7.4vw, 6rem), 0.9–0.94): section headlines in wine, capped at 6rem. On mobile, clamp(2.6rem, 11.5vw, 4.4rem).
 - **Title** (400, clamp(1.55rem, 2.2vw, 2.2rem) for products; clamp(2.2rem, 3vw, 3.2rem) for tiers): product and tier names.
 - **Body** (400, 1.12rem, 1.7–1.75): paragraphs held to about 34–36ch in asides.
@@ -165,7 +166,7 @@ A warm, restrained palette: wine for voice and action, cream for the field, blus
 
 ## Layout
 
-The opening is a measured composition that keeps the approved comp's 1672:941 proportion (`height: min(100vh, 56.28vw)`, min 42rem). The header is 8.6% of the height, the hero is 63.2%, and the category band fills the rest. On desktop the real portrait photograph occupies the right half of the hero without competing with the headline on the left. The wordmark and headline align on a 9.1% left edge, and the nav starts at 46.4%, with gaps that scale in vw. Below the opening, sections use `clamp(2rem, 8vw, 8rem)` inline padding and `clamp(7rem, 11vw, 11rem)` block padding, with content capped at 96rem. The asymmetric two-column grids (1.5fr / 0.7fr and similar) put the headline on the wide side and the aside on the narrow side, aligned at the bottom.
+The opening is a measured composition that keeps the approved comp's 1672:941 proportion (`height: min(100vh, 56.28vw)`, min 42rem). The header is 6.5rem tall; the hero fills the remaining space above the category band, which starts at 71.8% of the opening. On desktop the real portrait photograph occupies the right half of the hero without competing with the headline on the left. The wordmark and headline align on a 9.1% left edge, and the nav starts at 46.4%, with gaps that scale in vw. Below the opening, sections use `clamp(2rem, 8vw, 8rem)` inline padding and `clamp(7rem, 11vw, 11rem)` block padding, with content capped at 96rem. The asymmetric two-column grids (1.5fr / 0.7fr and similar) put the headline on the wide side and the aside on the narrow side, aligned at the bottom.
 
 Breakpoints:
 - Below 68.75rem, the nav folds into a "Menú" disclosure and process steps collapse to two columns.
@@ -186,7 +187,7 @@ The system is flat with tonal layering. Depth comes from photography and from al
 
 ## Shapes
 
-Square corners throughout (radius 0): buttons, fields, photographs and panels. Structure is drawn with 1px hairlines in wine at 35% alpha on blush, or in the rule colour on cream. Links carry a 1px bottom rule, and inputs are a single underline. The only organic shape is the petal mark beside the wordmark. Photographs are cropped with `object-fit: cover` to their grid boxes.
+Square corners throughout (radius 0): buttons, fields, photographs and panels. Structure is drawn with 1px hairlines in wine at 35% alpha on blush, or in the rule colour on cream. Links carry a 1px bottom rule, and inputs are a single underline. The supplied logo carries the organic flower mark. Photographs are cropped with `object-fit: cover` to their grid boxes.
 
 ## Components
 
@@ -232,3 +233,11 @@ The shop window "comes into focus" once. The photograph resolves from blur(1.1re
 - **Don't** drift the field toward yellow cream or pure white.
 - **Don't** add scroll reveals section by section; the page has one opening motion.
 - **Don't** invent prices, testimonials, delivery zones or contact data. (Temporary exception: catalog mock prices for layout, flagged in `catalog-products.ts` and `CATALOG_HANDOFF.md`; replace before launch.)
+
+## Official identity · 2026-10-23
+
+The official name is **Dumish Blooms**. The supplied `assets/brand/dumish.jpeg` replaces the provisional typed wordmark and petal mark in the shared header, product detail and administration. `BrandComponent` crops only the excess white margin with CSS; the source artwork stays unchanged. Header height is 6.5rem on desktop, with a 6rem phone opening and a compact responsive logo. Both dark footers use `assets/brand/dumish-white.svg`, a white vector tracing of the supplied lettering, descriptor and flower contours requested by the user. Pale petal interiors remain transparent, and the viewBox leaves breathing room around the complete artwork. This variant uses Bézier paths without raster images or background-removal filters. Admin marks retain a matte cream field.
+
+The logo's rose (#de5b98) and gold (#f2b600) are visually sampled approximations. Gold is an accent, never body text. Deep raspberry (#922c59 voice, #792147 passage, #a12f63 action, #7e204c pressed) replaces provisional wine and preserves readable contrast on cream. Blush becomes #f1dce5. Layout, photography, fonts, square corners and purchase behavior retain their existing direction. Existing “wine” token names remain compatibility aliases for these raspberry values. The favicon frames the flower from the same supplied artwork.
+
+**Wordmark rule:** use the supplied artwork through `BrandComponent`; do not recreate its lettering with Bodoni, redraw the flower, stretch it, or recolor it. The user-approved white vector tracing in dark footers is the exception to the recoloring rule. The earlier text-wordmark and petal-only prescriptions above are superseded by this official identity.

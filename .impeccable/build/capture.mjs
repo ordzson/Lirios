@@ -59,6 +59,13 @@ await send('Emulation.setDeviceMetricsOverride', {
   screenHeight: height
 });
 
+// Optional state that must exist before the app bootstraps, such as localStorage fixtures.
+if (process.env.CAPTURE_INIT) {
+  await send('Page.addScriptToEvaluateOnNewDocument', {
+    source: process.env.CAPTURE_INIT
+  });
+}
+
 const loaded = waitForEvent('Page.loadEventFired');
 await send('Page.navigate', { url: pageUrl });
 await loaded;
@@ -74,6 +81,14 @@ if (process.env.CAPTURE_EVAL) {
     expression: `Promise.resolve(${process.env.CAPTURE_EVAL}).then(() => new Promise(resolve => setTimeout(resolve, 500)))`,
     awaitPromise: true
   });
+}
+
+if (process.env.CAPTURE_INSPECT) {
+  const inspected = await send('Runtime.evaluate', {
+    expression: process.env.CAPTURE_INSPECT,
+    returnByValue: true
+  });
+  console.log(JSON.stringify(inspected.result.value, null, 2));
 }
 
 const captureOptions = {

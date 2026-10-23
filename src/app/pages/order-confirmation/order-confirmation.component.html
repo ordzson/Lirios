@@ -1,0 +1,176 @@
+<div class="confirmation-page">
+  <app-site-header [catalogMode]="true" />
+
+  <main class="confirmation-main">
+    @if (order; as savedOrder) {
+      <section class="confirmation-intro" aria-labelledby="confirmation-title">
+        <svg class="confirmation-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M11 33.5 25.5 48 53 17" />
+        </svg>
+        <div>
+          <h1 id="confirmation-title">Solicitud recibida.</h1>
+          <p>
+            Guardamos tu pedido en este navegador. Conserva el número para identificarlo cuando
+            coordinemos los detalles contigo.
+          </p>
+        </div>
+      </section>
+
+      <section class="order-number" aria-labelledby="order-number-title">
+        <div>
+          <h2 id="order-number-title">Número de orden</h2>
+          <output>{{ savedOrder.orderNumber }}</output>
+          <p>Creado el {{ formatDate(savedOrder.createdAt) }}</p>
+        </div>
+        <button type="button" (click)="copyOrderNumber()">
+          Copiar número
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="8" y="8" width="11" height="11" />
+            <path d="M16 8V5H5v11h3" />
+          </svg>
+        </button>
+        <p class="copy-message" aria-live="polite">{{ copyMessage() }}</p>
+      </section>
+
+      <div class="confirmation-sheet">
+        <section class="receipt" aria-labelledby="receipt-title">
+          <h2 id="receipt-title">Tu pedido</h2>
+
+          <div class="receipt-lines">
+            @for (item of savedOrder.items; track item.productId) {
+              <article class="receipt-line">
+                <img [src]="item.image" [alt]="item.imageAlt" width="1086" height="1448" />
+                <div>
+                  <h3>{{ item.name }}</h3>
+                  <p>{{ item.quantity }} {{ item.quantity === 1 ? 'pieza' : 'piezas' }}</p>
+                </div>
+                <p>{{ formatPrice(item.lineSubtotal) }}</p>
+              </article>
+            }
+          </div>
+
+          <dl class="receipt-totals">
+            <div>
+              <dt>Subtotal</dt>
+              <dd>{{ formatPrice(savedOrder.subtotal) }}</dd>
+            </div>
+            <div>
+              <dt>Entrega</dt>
+              <dd>Por confirmar</dd>
+            </div>
+            <div class="receipt-totals__total">
+              <dt>Total actual</dt>
+              <dd>{{ formatPrice(savedOrder.total) }}</dd>
+            </div>
+          </dl>
+
+          <p class="receipt-note">
+            El costo de entrega y el total final se confirman contigo antes de preparar el pedido.
+          </p>
+        </section>
+
+        <div class="order-details">
+          <section aria-labelledby="contact-title">
+            <h2 id="contact-title">Contacto</h2>
+            <dl>
+              <div>
+                <dt>Nombre</dt>
+                <dd>{{ savedOrder.contact.fullName }}</dd>
+              </div>
+              <div>
+                <dt>Teléfono o WhatsApp</dt>
+                <dd>{{ savedOrder.contact.phone }}</dd>
+              </div>
+              @if (savedOrder.contact.email) {
+                <div>
+                  <dt>Correo</dt>
+                  <dd>{{ savedOrder.contact.email }}</dd>
+                </div>
+              }
+            </dl>
+          </section>
+
+          <section aria-labelledby="delivery-title">
+            <h2 id="delivery-title">Entrega</h2>
+            <dl>
+              <div>
+                <dt>Recibe</dt>
+                <dd>{{ savedOrder.delivery.recipientName }}</dd>
+              </div>
+              <div>
+                <dt>Dirección</dt>
+                <dd>{{ savedOrder.delivery.address }}</dd>
+              </div>
+              <div>
+                <dt>Municipio</dt>
+                <dd>{{ savedOrder.delivery.municipality }}</dd>
+              </div>
+              @if (savedOrder.delivery.references) {
+                <div>
+                  <dt>Referencias</dt>
+                  <dd>{{ savedOrder.delivery.references }}</dd>
+                </div>
+              }
+              @if (savedOrder.delivery.notes) {
+                <div>
+                  <dt>Indicaciones</dt>
+                  <dd>{{ savedOrder.delivery.notes }}</dd>
+                </div>
+              }
+            </dl>
+          </section>
+        </div>
+
+        <aside class="next-step" aria-labelledby="next-step-title">
+          <h2 id="next-step-title">Lo que sigue</h2>
+          <ol>
+            <li>Revisaremos la solicitud y la disponibilidad de las piezas.</li>
+            <li>Te contactaremos por WhatsApp o correo para confirmar entrega y total final.</li>
+            <li>Pagarás contraentrega; no se realizó ningún cobro en línea.</li>
+          </ol>
+          <div class="payment-method">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path
+                d="M17 18h18v13H17zM22 22.5h8M9 33h7l5.5 4H33l7-7c-2-2-4-2-6 0l-3 2h-9M9 27h6c3 0 5 2 7 5"
+              />
+              <circle cx="26" cy="24.5" r="2.5" />
+            </svg>
+            <div>
+              <strong>Pago contraentrega</strong>
+              <span>Estado: solicitud recibida</span>
+            </div>
+          </div>
+          <a routerLink="/catalogo">
+            Volver al catálogo
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+          </a>
+        </aside>
+      </div>
+    } @else {
+      <section class="missing-order" aria-labelledby="missing-order-title">
+        <div>
+          <h1 id="missing-order-title">No encontramos esta solicitud.</h1>
+          <p>
+            El pedido no está guardado en este navegador. Revisa que el enlace esté completo o
+            vuelve al catálogo para preparar una nueva solicitud.
+          </p>
+          @if (orderNumber) {
+            <p class="missing-order__number">
+              Número consultado: <strong>{{ orderNumber }}</strong>
+            </p>
+          }
+          <a routerLink="/catalogo">
+            Explorar catálogo
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+          </a>
+        </div>
+        <img
+          src="assets/pics/retouched/webp/flor_individual_1-retouched-full.webp"
+          alt="Rama de flores blancas hecha con limpiapipas"
+          width="1086"
+          height="1448"
+        />
+      </section>
+    }
+  </main>
+</div>

@@ -1,0 +1,13 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://TU-DOMINIO.com",
+      "https://TU-PROYECTO.vercel.app",
+      "http://localhost:4200"
+    ],
+    "AllowedMethods": ["PUT"],
+    "AllowedHeaders": ["Content-Type"],
+    "ExposeHeaders": ["ETag"],
+    "MaxAgeSeconds": 3600
+  }
+]

@@ -16,7 +16,7 @@ Ruta pública independiente `/catalogo`, modo **Operate**. Permite explorar una 
 
 ## Audience and job
 
-Una persona que ya entiende qué vende Lirios llega para ver piezas concretas, cambiar rápidamente de categoría, acotar por atributos y abrir un producto. Puede estar eligiendo un regalo o una flor para sí misma; necesita orientación sin la densidad de un marketplace.
+Una persona que ya entiende qué vende Dumish Blooms llega para ver piezas concretas, cambiar rápidamente de categoría, acotar por atributos y abrir un producto. Puede estar eligiendo un regalo o una flor para sí misma; necesita orientación sin la densidad de un marketplace.
 
 ## Outcome and proof
 

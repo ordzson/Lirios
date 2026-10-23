@@ -17,7 +17,7 @@ Personas en Quetzaltenango que buscan un regalo artesanal refinado, o una flor d
 
 ## Action, proof, and constraints
 
-Acción principal: “Ver arreglos”. Acciones secundarias: flores individuales, personalización y seguimiento. La prueba visual es el carácter chenille de las flores en la biblioteca fotográfica real aportada al proyecto. Sin precios, testimonios ni afirmaciones comerciales inventadas. “Lirios” sigue siendo provisional.
+Acción principal: “Ver arreglos”. Acciones secundarias: flores individuales, personalización y seguimiento. La prueba visual es el carácter chenille de las flores en la biblioteca fotográfica real aportada al proyecto. Sin precios, testimonios ni afirmaciones comerciales inventadas. El nombre y logo oficiales son Dumish Blooms.
 
 ## Direction contract
 
@@ -27,7 +27,7 @@ Acción principal: “Ver arreglos”. Acciones secundarias: flores individuales
 
 **STORY:** La persona reconoce inmediatamente un arreglo de limpiapipas, entiende que puede explorar piezas listas y entra al catálogo sin presión. El borde inferior deja ver flores individuales y arreglos personalizados como rutas posteriores.
 
-**FIRST VIEWPORT:** Barra superior contenida; palabra provisional a la izquierda y cuatro destinos a la derecha. Debajo, titular monumental y CTA vino en la mitad izquierda; arreglo amarillo, blanco y durazno a escala decisiva en la derecha; tres fotografías reales de categorías forman una banda visual en el borde inferior.
+**FIRST VIEWPORT:** Barra superior contenida; logo oficial a la izquierda y cuatro destinos a la derecha. Debajo, titular monumental y CTA vino en la mitad izquierda; arreglo amarillo, blanco y durazno a escala decisiva en la derecha; tres fotografías reales de categorías forman una banda visual en el borde inferior.
 
 **FORM:** Floristería digital refinada, canon escogido por la persona usuaria; composición “A · Escaparate sereno”. Seed `cf866e24`. Momento memorable: descubrir de inmediato que el ramo protagonista no es botánico sino construido en chenille.
 
@@ -41,4 +41,4 @@ On phone and tablet portrait, “Un arreglo que empieza contigo” becomes a com
 
 ## Unresolved decisions
 
-Nombre final, catálogo completo, precios, ampliación de la biblioteca fotográfica, zonas/costos de entrega y datos de contacto se resolverán después; la portada no debe convertirlos en hechos.
+Catálogo completo, precios, ampliación de la biblioteca fotográfica, zonas/costos de entrega y datos de contacto se resolverán después; la portada no debe convertirlos en hechos.

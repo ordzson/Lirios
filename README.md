@@ -1,59 +1,43 @@
 # Lirios
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.24.
+Tienda Angular para flores artesanales, preparada para Vercel Functions, Supabase y Cloudflare R2.
 
-## Development server
+## Desarrollo
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+El proyecto usa exclusivamente `pnpm`.
 
 ```bash
-ng generate component component-name
+pnpm install
+pnpm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Sin credenciales, la tienda usa el catálogo local y la orden de muestra `LIR-2048`. La interfaz administrativa puede revisarse localmente en `http://localhost:4200/admin?preview=1`; sus datos están rotulados como ilustrativos y esa ruta de vista previa no se habilita fuera de `localhost`.
+
+## Verificación
 
 ```bash
-ng generate --help
+pnpm test
+pnpm run typecheck:api
+pnpm run build
+pnpm run verify:public-build
 ```
 
-## Building
+Con el sitio iniciado y Google Chrome instalado, `pnpm run verify:navigation` comprueba el scroll
+táctil sobre las galerías, los diálogos, filtros y cambios de ruta en teléfono, tableta y escritorio.
+Acepta otra URL local como argumento y `CHROME_BIN` si Chrome está en una ruta diferente.
+La prueba utiliza el catálogo local, sin consultar el backend.
 
-To build the project run:
+## Arquitectura
 
-```bash
-ng build
-```
+- Angular 21: tienda y panel administrativo.
+- Supabase Auth + Postgres + RLS: usuarios, roles, catálogo, inventario, pedidos y seguimiento.
+- Vercel Functions: firma y eliminación segura de objetos en Cloudflare R2.
+- Cloudflare R2: fotografías públicas mediante dominio propio; las cargas usan URLs firmadas de cinco minutos.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+La guía completa de provisión y credenciales está en [DEPLOYMENT.md](DEPLOYMENT.md).
 
-## Running unit tests
+## GitHub Pages
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Cada push a `main` verifica y publica la tienda en [GitHub Pages](https://ordzson.github.io/Lirios/).
+El workflow configura la ruta base y genera `404.html` para permitir enlaces directos a las rutas de Angular.
+Pages usa el catálogo local y la orden de muestra; las Functions de `/api` requieren el despliegue en Vercel descrito arriba.

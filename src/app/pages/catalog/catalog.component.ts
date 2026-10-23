@@ -1,3 +1,4 @@
+import { BrandComponent } from '../../shared/brand/brand.component';
 import { DOCUMENT } from '@angular/common';
 import {
   Component,
@@ -14,12 +15,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CartService } from '../../shared/cart/cart.service';
 import { SiteHeaderComponent } from '../../shared/site-header/site-header.component';
-import {
-  CatalogColor,
-  CatalogProduct,
-  FlowerType,
-  ProductCategory,
-} from './catalog-products';
+import { CatalogColor, CatalogProduct, FlowerType, ProductCategory } from './catalog-products';
 import { CatalogDataService } from './catalog-data.service';
 
 type CategoryFilter = 'todos' | 'arreglos' | 'flores';
@@ -54,7 +50,7 @@ const FLOWER_LABELS: Readonly<Record<FlowerType, string>> = {
 
 @Component({
   selector: 'app-catalog',
-  imports: [RouterLink, SiteHeaderComponent],
+  imports: [BrandComponent, RouterLink, SiteHeaderComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss',
 })
@@ -87,8 +83,6 @@ export class CatalogComponent {
   protected readonly productDialog = viewChild<ElementRef<HTMLElement>>('productDialog');
   protected readonly productClose = viewChild<ElementRef<HTMLButtonElement>>('productClose');
 
-  private previousBodyOverflow = '';
-
   protected readonly colorOptions = computed<readonly FilterOption<CatalogColor>[]>(() =>
     (Object.entries(COLOR_LABELS) as [CatalogColor, string][])
       .filter(([value]) => this.products().some((product) => product.colors.includes(value)))
@@ -119,62 +113,55 @@ export class CatalogComponent {
     this.filterProducts(this.selectedColors(), this.selectedFlowers()),
   );
 
-  protected readonly draftResultCount = computed(() =>
-    this.filterProducts(this.draftColors(), this.draftFlowers()).length,
+  protected readonly draftResultCount = computed(
+    () => this.filterProducts(this.draftColors(), this.draftFlowers()).length,
   );
 
   protected readonly selectedProduct = computed(() => {
     const slug = this.selectedSlug();
-    return slug ? this.products().find((product) => product.slug === slug) ?? null : null;
+    return slug ? (this.products().find((product) => product.slug === slug) ?? null) : null;
   });
 
   protected readonly currentQueryParams = computed(() => ({
     ...(this.category() === 'todos' ? {} : { categoria: this.category() }),
     ...(this.selectedColors().length ? { colores: this.selectedColors().join(',') } : {}),
     ...(this.selectedFlowers().length ? { flores: this.selectedFlowers().join(',') } : {}),
-    ...(this.sortMode() === 'recommended' ? {} : { orden: SORT_PARAMS[this.sortMode() as keyof typeof SORT_PARAMS] }),
+    ...(this.sortMode() === 'recommended'
+      ? {}
+      : { orden: SORT_PARAMS[this.sortMode() as keyof typeof SORT_PARAMS] }),
   }));
 
   constructor() {
-    this.route.queryParamMap
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((params) => {
-        const rawCategory = params.get('categoria');
-        this.category.set(
-          rawCategory === 'arreglos' || rawCategory === 'flores' ? rawCategory : 'todos',
-        );
-        this.selectedColors.set(
-          this.parseList(params.get('colores'), Object.keys(COLOR_LABELS) as CatalogColor[]),
-        );
-        this.selectedFlowers.set(
-          this.parseList(params.get('flores'), Object.keys(FLOWER_LABELS) as FlowerType[]),
-        );
-        const rawSort = params.get('orden');
-        const sortEntry = (Object.entries(SORT_PARAMS) as [SortMode, string][]).find(
-          ([, param]) => param === rawSort,
-        );
-        this.sortMode.set(sortEntry?.[0] ?? 'recommended');
-      });
+    this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((params) => {
+      const rawCategory = params.get('categoria');
+      this.category.set(
+        rawCategory === 'arreglos' || rawCategory === 'flores' ? rawCategory : 'todos',
+      );
+      this.selectedColors.set(
+        this.parseList(params.get('colores'), Object.keys(COLOR_LABELS) as CatalogColor[]),
+      );
+      this.selectedFlowers.set(
+        this.parseList(params.get('flores'), Object.keys(FLOWER_LABELS) as FlowerType[]),
+      );
+      const rawSort = params.get('orden');
+      const sortEntry = (Object.entries(SORT_PARAMS) as [SortMode, string][]).find(
+        ([, param]) => param === rawSort,
+      );
+      this.sortMode.set(sortEntry?.[0] ?? 'recommended');
+    });
 
-    this.route.paramMap
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((params) => {
-        const slug = params.get('slug');
-        this.selectedSlug.set(slug);
-        this.quantity.set(1);
-        this.cartMessage.set('');
-        this.syncScrollLock();
+    this.route.paramMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((params) => {
+      const slug = params.get('slug');
+      this.selectedSlug.set(slug);
+      this.quantity.set(1);
+      this.cartMessage.set('');
 
-        if (slug) {
-          setTimeout(() => this.productClose()?.nativeElement.focus());
-        }
-      });
+      if (slug) {
+        setTimeout(() => this.productClose()?.nativeElement.focus());
+      }
+    });
 
     void this.loadCatalog();
-
-    this.destroyRef.onDestroy(() => {
-      this.document.body.style.overflow = this.previousBodyOverflow;
-    });
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -237,13 +224,11 @@ export class CatalogComponent {
     this.draftColors.set([...this.selectedColors()]);
     this.draftFlowers.set([...this.selectedFlowers()]);
     this.filtersOpen.set(true);
-    this.syncScrollLock();
     setTimeout(() => this.filterClose()?.nativeElement.focus());
   }
 
   protected closeFilters(returnFocus = false): void {
     this.filtersOpen.set(false);
-    this.syncScrollLock();
 
     if (returnFocus) {
       setTimeout(() => this.filterTrigger()?.nativeElement.focus());
@@ -288,20 +273,19 @@ export class CatalogComponent {
 
   protected closeProduct(): void {
     const slug = this.selectedProduct()?.slug;
-    void this.router.navigate(['/catalogo'], {
-      queryParams: this.currentQueryParams(),
-    }).then(() => {
-      this.syncScrollLock();
-      if (!slug) {
-        return;
-      }
+    void this.router
+      .navigate(['/catalogo'], {
+        queryParams: this.currentQueryParams(),
+      })
+      .then(() => {
+        if (!slug) {
+          return;
+        }
 
-      setTimeout(() => {
-        this.document
-          .querySelector<HTMLElement>(`a[href^="/catalogo/${slug}"]`)
-          ?.focus();
+        setTimeout(() => {
+          this.document.querySelector<HTMLElement>(`a[href^="/catalogo/${slug}"]`)?.focus();
+        });
       });
-    });
   }
 
   protected decreaseQuantity(): void {
@@ -336,7 +320,10 @@ export class CatalogComponent {
     }).format(product.price);
   }
 
-  private filterProducts(colors: readonly CatalogColor[], flowers: readonly FlowerType[]): CatalogProduct[] {
+  private filterProducts(
+    colors: readonly CatalogColor[],
+    flowers: readonly FlowerType[],
+  ): CatalogProduct[] {
     const filtered = this.products().filter((product) => {
       const categoryMatches =
         this.category() === 'todos' ||
@@ -406,7 +393,9 @@ export class CatalogComponent {
 
   private toggleValue<T extends string>(target: WritableSignal<T[]>, value: T): void {
     target.update((values) =>
-      values.includes(value) ? values.filter((candidate) => candidate !== value) : [...values, value],
+      values.includes(value)
+        ? values.filter((candidate) => candidate !== value)
+        : [...values, value],
     );
   }
 
@@ -427,17 +416,6 @@ export class CatalogComponent {
     const bounds = grid.getBoundingClientRect();
     if (bounds.bottom < 0 || bounds.top > this.document.documentElement.clientHeight) {
       grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  private syncScrollLock(): void {
-    const shouldLock = this.filtersOpen() || Boolean(this.selectedProduct());
-
-    if (shouldLock && this.document.body.style.overflow !== 'hidden') {
-      this.previousBodyOverflow = this.document.body.style.overflow;
-      this.document.body.style.overflow = 'hidden';
-    } else if (!shouldLock) {
-      this.document.body.style.overflow = this.previousBodyOverflow;
     }
   }
 

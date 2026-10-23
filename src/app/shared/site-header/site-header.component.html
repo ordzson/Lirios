@@ -1,10 +1,6 @@
 <header class="site-header" [class.site-header--catalog]="catalogMode()">
-  <a class="brand" routerLink="/" aria-label="Lirios, inicio">
-    <span>Lirios</span>
-    <svg class="brand__petal" viewBox="0 0 48 48" aria-hidden="true">
-      <path d="M20 42C8 34 8 18 27 5c1 16-1 29-7 37Z" />
-      <path d="M23 42c5-13 13-18 23-17-3 12-12 18-23 17Z" />
-    </svg>
+  <a class="brand" routerLink="/" aria-label="Dumish Blooms, inicio">
+    <app-brand />
   </a>
 
   <button
@@ -39,7 +35,7 @@
   </nav>
 
   @if (catalogMode()) {
-    <a class="cart-link" routerLink="/catalogo" aria-label="Carrito">
+    <a class="cart-link" routerLink="/carrito" aria-label="Carrito">
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <path d="M8.5 11.5h15l1.6 16h-18.2l1.6-16Z" />
         <path d="M12 12V8.5a4 4 0 0 1 8 0V12" />

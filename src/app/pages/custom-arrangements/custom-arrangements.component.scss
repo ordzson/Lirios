@@ -1,9 +1,9 @@
-$wine: #6c1326;
-$wine-deep: #641326;
-$wine-action: #741429;
-$wine-pressed: #5f0e21;
+$wine: var(--brand-ink);
+$wine-deep: var(--brand-deep);
+$wine-action: var(--brand-action);
+$wine-pressed: var(--brand-pressed);
 $cream: #faf2eb;
-$blush: #e8d1cc;
+$blush: var(--brand-blush);
 $parchment: #f4e7dd;
 $charcoal: #2d2427;
 $mauve: #5d4b4f;
@@ -21,8 +21,8 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .custom-header {
-  height: clamp(5rem, 8vw, 7rem);
-  border-bottom: 1px solid rgb(108 19 38 / 16%);
+  height: 6.5rem;
+  border-bottom: 1px solid rgb(146 44 89 / 16%);
 }
 
 .custom-header app-site-header {
@@ -33,7 +33,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 .custom-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(28rem, 1.08fr);
-  min-height: calc(100svh - clamp(5rem, 8vw, 7rem));
+  min-height: calc(100svh - 6.5rem);
 }
 
 .custom-hero__copy {
@@ -250,7 +250,7 @@ h3 {
 
 .choice__fit {
   padding-top: 1rem;
-  border-top: 1px solid rgb(108 19 38 / 28%);
+  border-top: 1px solid rgb(146 44 89 / 28%);
   font-size: 0.9rem !important;
 }
 
@@ -293,6 +293,7 @@ h3 {
 .sample img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 0.84 / 1;
   object-fit: cover;
   object-position: 50% 42%;
@@ -459,8 +460,9 @@ h3 {
 }
 
 .custom-footer__brand {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 2.3rem;
+  display: block;
+  width: 12rem;
+  max-width: 100%;
   text-decoration: none;
 }
 
@@ -515,7 +517,7 @@ h3 {
   }
 
   .custom-header {
-    height: 4.75rem;
+    height: 6rem;
   }
 
   .custom-hero {
@@ -592,6 +594,8 @@ h3 {
     width: calc(100% + 1.25rem);
     margin-right: -1.25rem;
     overflow-x: auto;
+    // The gallery handles horizontal gestures; vertical gestures scroll the page.
+    overflow-y: hidden;
     scroll-padding-inline: 0;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;

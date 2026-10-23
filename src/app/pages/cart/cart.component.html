@@ -1,0 +1,347 @@
+<div class="checkout-page">
+  <app-site-header [catalogMode]="true" />
+
+  <main class="checkout-main">
+    @if (loadState() === 'loading') {
+      <section class="page-state" aria-live="polite">
+        <p>Cargando tu carrito…</p>
+      </section>
+    } @else if (loadState() === 'error') {
+      <section class="page-state page-state--error">
+        <h1>No pudimos preparar tu pedido.</h1>
+        <p>El carrito sigue guardado. Vuelve a cargar los productos para continuar.</p>
+        <button type="button" (click)="retryCatalog()">Intentar de nuevo</button>
+      </section>
+    } @else if (!lines().length) {
+      <section class="empty-cart">
+        <div class="empty-cart__copy">
+          <h1>Tu carrito espera una flor.</h1>
+          <p>
+            Explora la colección y agrega una pieza. Lo que elijas se conservará al recargar esta
+            página.
+          </p>
+          <a routerLink="/catalogo">
+            Explorar catálogo
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h13M14 7l5 5-5 5" />
+            </svg>
+          </a>
+        </div>
+        <img
+          src="assets/pics/retouched/webp/flor_individual_1-retouched-full.webp"
+          alt="Rama de flores blancas hecha con limpiapipas"
+          width="1086"
+          height="1448"
+        />
+      </section>
+    } @else {
+      <form
+        class="checkout-layout"
+        [formGroup]="checkoutForm"
+        (ngSubmit)="submitOrder()"
+        novalidate
+      >
+        <nav class="flow-index" aria-label="Secciones del pedido">
+          <a href="/carrito#cart-lines" [class.is-active]="activeStep() === 'cart'">
+            <span>01</span>
+            <strong>Carrito</strong>
+          </a>
+          <a href="/carrito#contact" [class.is-active]="activeStep() === 'contact'">
+            <span>02</span>
+            <strong>Tus datos</strong>
+          </a>
+          <a href="/carrito#delivery" [class.is-active]="activeStep() === 'delivery'">
+            <span>03</span>
+            <strong>Entrega</strong>
+          </a>
+          <a href="/carrito#confirm" [class.is-active]="activeStep() === 'confirm'">
+            <span>04</span>
+            <strong>Confirmar</strong>
+          </a>
+        </nav>
+
+        <div class="order-sheet">
+          <section id="cart-lines" class="cart-section" data-flow-step="cart">
+            <h1>Tu pedido</h1>
+
+            <div class="cart-columns" aria-hidden="true">
+              <span>Producto</span>
+              <span>Precio</span>
+              <span>Cantidad</span>
+              <span>Subtotal</span>
+            </div>
+
+            <div class="cart-lines" aria-label="Productos en el carrito">
+              @for (line of lines(); track line.productId) {
+                <article class="cart-line" [class.cart-line--unavailable]="!line.product">
+                  @if (line.product; as product) {
+                    <img
+                      [src]="checkoutImage(product)"
+                      [alt]="product.imageAlt"
+                      width="1086"
+                      height="1448"
+                    />
+                    <div class="cart-line__identity">
+                      <a [routerLink]="['/catalogo', product.slug]">{{ product.name }}</a>
+                      <button type="button" (click)="remove(line.productId)">Eliminar</button>
+                    </div>
+                    <p class="cart-line__price">{{ formatPrice(product.price) }}</p>
+                    <div class="quantity" aria-label="Cantidad">
+                      <button
+                        type="button"
+                        [disabled]="line.quantity === 1"
+                        [attr.aria-label]="'Disminuir cantidad de ' + product.name"
+                        (click)="decrease(line.productId)"
+                      >
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10" /></svg>
+                      </button>
+                      <output [attr.aria-label]="'Cantidad: ' + line.quantity">{{
+                        line.quantity
+                      }}</output>
+                      <button
+                        type="button"
+                        [disabled]="line.quantity === 99"
+                        [attr.aria-label]="'Aumentar cantidad de ' + product.name"
+                        (click)="increase(line.productId)"
+                      >
+                        <svg viewBox="0 0 16 16" aria-hidden="true">
+                          <path d="M3 8h10M8 3v10" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="cart-line__subtotal">{{ formatPrice(line.lineSubtotal) }}</p>
+                  } @else {
+                    <div class="cart-line__unavailable">
+                      <strong>Pieza no disponible</strong>
+                      <p>Este producto ya no aparece en el catálogo.</p>
+                      <button type="button" (click)="remove(line.productId)">
+                        Eliminar del carrito
+                      </button>
+                    </div>
+                  }
+                </article>
+              }
+            </div>
+
+            <a class="continue-shopping" routerLink="/catalogo">
+              Seguir explorando
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+            </a>
+
+            @if (cart.storageError()) {
+              <div class="storage-notice" role="status">
+                <p>{{ cart.storageError() }}</p>
+                <button type="button" (click)="cart.retryPersistence()">Volver a intentar</button>
+              </div>
+            }
+          </section>
+
+          <section id="contact" class="form-section" data-flow-step="contact">
+            <h2>Tus datos</h2>
+            <p class="section-copy">Los usaremos únicamente para coordinar esta solicitud.</p>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Nombre completo *</span>
+                <input
+                  type="text"
+                  formControlName="fullName"
+                  autocomplete="name"
+                  placeholder="Tu nombre completo"
+                  [attr.aria-invalid]="
+                    checkoutForm.controls.fullName.invalid && checkoutForm.controls.fullName.touched
+                  "
+                  aria-describedby="full-name-error"
+                />
+                @if (
+                  checkoutForm.controls.fullName.invalid && checkoutForm.controls.fullName.touched
+                ) {
+                  <small id="full-name-error">Escribe tu nombre completo.</small>
+                }
+              </label>
+
+              <label class="field">
+                <span>Teléfono o WhatsApp *</span>
+                <input
+                  type="tel"
+                  formControlName="phone"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  placeholder="Ej. 5555 5555"
+                  [attr.aria-invalid]="
+                    checkoutForm.controls.phone.invalid && checkoutForm.controls.phone.touched
+                  "
+                  aria-describedby="phone-error"
+                />
+                @if (checkoutForm.controls.phone.invalid && checkoutForm.controls.phone.touched) {
+                  <small id="phone-error">Ingresa un número de Guatemala de 8 dígitos.</small>
+                }
+              </label>
+
+              <label class="field field--wide">
+                <span>Correo electrónico <em>(opcional)</em></span>
+                <input
+                  type="email"
+                  formControlName="email"
+                  autocomplete="email"
+                  placeholder="tu@correo.com"
+                  [attr.aria-invalid]="
+                    checkoutForm.controls.email.invalid && checkoutForm.controls.email.touched
+                  "
+                  aria-describedby="email-error"
+                />
+                @if (checkoutForm.controls.email.invalid && checkoutForm.controls.email.touched) {
+                  <small id="email-error">Revisa el formato del correo.</small>
+                }
+              </label>
+            </div>
+          </section>
+
+          <section id="delivery" class="form-section" data-flow-step="delivery">
+            <h2>Entrega</h2>
+            <p class="section-copy">
+              La cobertura y el costo se confirman contigo antes de preparar el pedido.
+            </p>
+
+            <div class="field-grid">
+              <label class="field field--recipient">
+                <span>Nombre de quien recibe *</span>
+                <input
+                  type="text"
+                  formControlName="recipientName"
+                  autocomplete="name"
+                  placeholder="Nombre de la persona que recibirá"
+                  [attr.aria-invalid]="
+                    checkoutForm.controls.recipientName.invalid &&
+                    checkoutForm.controls.recipientName.touched
+                  "
+                  aria-describedby="recipient-error"
+                />
+                @if (
+                  checkoutForm.controls.recipientName.invalid &&
+                  checkoutForm.controls.recipientName.touched
+                ) {
+                  <small id="recipient-error">Indica quién recibirá el pedido.</small>
+                }
+              </label>
+
+              <label class="field field--address">
+                <span>Dirección de entrega *</span>
+                <input
+                  type="text"
+                  formControlName="address"
+                  autocomplete="street-address"
+                  placeholder="Calle, avenida, número, colonia o residencial"
+                  [attr.aria-invalid]="
+                    checkoutForm.controls.address.invalid && checkoutForm.controls.address.touched
+                  "
+                  aria-describedby="address-error"
+                />
+                @if (
+                  checkoutForm.controls.address.invalid && checkoutForm.controls.address.touched
+                ) {
+                  <small id="address-error">Agrega una dirección suficientemente detallada.</small>
+                }
+              </label>
+
+              <label class="field">
+                <span>Municipio *</span>
+                <input type="text" formControlName="municipality" readonly />
+              </label>
+
+              <label class="field">
+                <span>Referencias</span>
+                <input
+                  type="text"
+                  formControlName="references"
+                  placeholder="Ej. casa color beige, portón negro"
+                  maxlength="180"
+                />
+              </label>
+
+              <label class="field field--wide">
+                <span>Indicaciones adicionales <em>(opcional)</em></span>
+                <textarea
+                  formControlName="notes"
+                  rows="2"
+                  maxlength="240"
+                  placeholder="Algún detalle útil para coordinar la entrega"
+                ></textarea>
+              </label>
+            </div>
+          </section>
+
+          <section id="confirm" class="review-section" data-flow-step="confirm">
+            <h2>Antes de confirmar</h2>
+            <p>
+              Revisa el resumen. Tu solicitud se guardará con un número de orden y nos pondremos en
+              contacto para validar disponibilidad y entrega.
+            </p>
+          </section>
+        </div>
+
+        <aside class="order-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Resumen</h2>
+
+          <dl class="summary-totals">
+            <div>
+              <dt>Subtotal</dt>
+              <dd>{{ formatPrice(subtotal()) }}</dd>
+            </div>
+            <div>
+              <dt>Entrega</dt>
+              <dd>Por confirmar</dd>
+            </div>
+            <div class="summary-totals__total">
+              <dt>Total</dt>
+              <dd>{{ formatPrice(subtotal()) }}</dd>
+            </div>
+          </dl>
+
+          <section class="payment" aria-labelledby="payment-title">
+            <h3 id="payment-title">Método de pago</h3>
+            <div class="payment__method">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path
+                  d="M17 18h18v13H17zM22 22.5h8M9 33h7l5.5 4H33l7-7c-2-2-4-2-6 0l-3 2h-9M9 27h6c3 0 5 2 7 5"
+                />
+                <circle cx="26" cy="24.5" r="2.5" />
+              </svg>
+              <div>
+                <strong>Pago contraentrega</strong>
+                <p>Paga en efectivo al recibir tu pedido. No se requiere pago en línea.</p>
+              </div>
+            </div>
+          </section>
+
+          @if (validationMessage()) {
+            <p class="submit-message" role="alert">{{ validationMessage() }}</p>
+          }
+
+          @if (hasUnavailableLines()) {
+            <p class="submit-message" role="alert">
+              Elimina la pieza no disponible para confirmar.
+            </p>
+          }
+
+          @if (orderError()) {
+            <p id="order-error" class="submit-message" role="alert" tabindex="-1">
+              {{ orderError() }}
+            </p>
+          }
+
+          <button
+            class="confirm-order"
+            type="submit"
+            [disabled]="submitting() || hasUnavailableLines()"
+          >
+            <span>{{ submitting() ? 'Guardando pedido…' : 'Confirmar pedido' }}</span>
+            @if (!submitting()) {
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M14 7l5 5-5 5" /></svg>
+            }
+          </button>
+        </aside>
+      </form>
+    }
+  </main>
+</div>

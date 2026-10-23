@@ -1,79 +1,72 @@
 {
   "tool": "comp-spec",
   "version": 1,
-  "createdAt": "2026-09-24T02:37:44.949Z",
-  "comp": ".impeccable/mocks/composition-a.png",
+  "createdAt": "2026-10-03T15:16:37.810Z",
+  "comp": ".impeccable/mocks/decision/checkout-hoja-taller.png",
   "warnings": [
-    "region wordmark-petal: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)"
+    "region wordmark-petal: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region product-one-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region product-two-photo: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region payment-icon: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)"
   ],
-  "uncoveredInkCells": [],
+  "uncoveredInkCells": [
+    "C7"
+  ],
   "compSize": {
-    "width": 1672,
-    "height": 941
+    "width": 1440,
+    "height": 900
   },
-  "aspect": 1.7768,
+  "aspect": 1.6,
   "orientation": "landscape",
   "palette": [
     {
-      "hex": "#f6ece0",
-      "coverage": 0.5302
+      "hex": "#f8f5e8",
+      "coverage": 0.9556
     },
     {
-      "hex": "#d7bca6",
-      "coverage": 0.2459
+      "hex": "#7f2233",
+      "coverage": 0.017
     },
     {
-      "hex": "#b49378",
-      "coverage": 0.1006
+      "hex": "#ddcecc",
+      "coverage": 0.0126
     },
     {
-      "hex": "#1b1512",
-      "coverage": 0.0953
+      "hex": "#b4a7a6",
+      "coverage": 0.0096
     },
     {
-      "hex": "#6c1326",
-      "coverage": 0.028
+      "hex": "#e7caae",
+      "coverage": 0.0053
     }
   ],
   "bands": [
     {
-      "y": 0.0833,
-      "strength": 0.4378
+      "y": 0.025,
+      "strength": 0.2665
     },
     {
-      "y": 0.2361,
-      "strength": 0.2703
+      "y": 0.1375,
+      "strength": 0.2193
     },
     {
-      "y": 0.2778,
-      "strength": 0.2806
+      "y": 0.1625,
+      "strength": 0.2976
     },
     {
-      "y": 0.3194,
-      "strength": 0.2399
+      "y": 0.6,
+      "strength": 0.4292
     },
     {
-      "y": 0.375,
-      "strength": 0.3225
-    },
-    {
-      "y": 0.4306,
-      "strength": 0.2869
-    },
-    {
-      "y": 0.5,
-      "strength": 0.3496
-    },
-    {
-      "y": 0.7361,
-      "strength": 0.753
+      "y": 0.675,
+      "strength": 0.5521
     }
   ],
   "regions": [
     {
       "id": "header-ground",
       "kind": "chrome",
-      "note": "warm cream header band with no divider or shadow",
+      "note": "matte blush-cream compact header band with one fine bottom rule",
       "grid": "A0:J0",
       "box": {
         "x": 0,
@@ -84,34 +77,34 @@
       "px": {
         "x": 0,
         "y": 0,
-        "w": 1672,
-        "h": 94
+        "w": 1440,
+        "h": 90
       },
-      "aspect": 17.7872,
+      "aspect": 16,
       "palette": [
         {
           "hex": "#f8f6e8",
-          "coverage": 0.907
+          "coverage": 0.9947
         },
         {
-          "hex": "#d5c1ae",
-          "coverage": 0.0625
+          "hex": "#e8cfcf",
+          "coverage": 0.0019
         },
         {
-          "hex": "#b39278",
-          "coverage": 0.0142
+          "hex": "#312138",
+          "coverage": 0.0014
         },
         {
-          "hex": "#413837",
-          "coverage": 0.0086
+          "hex": "#780820",
+          "coverage": 0.0012
         },
         {
-          "hex": "#726966",
-          "coverage": 0.0077
+          "hex": "#d898a8",
+          "coverage": 0.0009
         }
       ],
       "detail": {
-        "energy": 22.7952
+        "energy": 11.4279
       },
       "medium": "semantic",
       "plate": null,
@@ -120,51 +113,51 @@
     {
       "id": "wordmark",
       "kind": "text",
-      "note": "provisional Lirios wordmark in large wine high-contrast serif",
-      "grid": "B0:B0",
+      "note": "Lirios wordmark in wine high-contrast serif",
+      "grid": "A0:B0",
       "coverBox": {
-        "x": 0.1,
+        "x": 0,
         "y": 0,
-        "w": 0.1,
+        "w": 0.2,
         "h": 0.1
       },
       "box": {
-        "x": 0.0999,
-        "y": 0.0128,
-        "w": 0.0789,
-        "h": 0.0638
+        "x": 0.0875,
+        "y": 0.0067,
+        "w": 0.0708,
+        "h": 0.0533
       },
       "px": {
-        "x": 167,
-        "y": 12,
-        "w": 132,
-        "h": 60
+        "x": 126,
+        "y": 6,
+        "w": 102,
+        "h": 48
       },
-      "aspect": 2.2,
+      "aspect": 2.125,
       "palette": [
         {
-          "hex": "#f8f7ea",
-          "coverage": 0.7723
+          "hex": "#f8f4e9",
+          "coverage": 0.8432
         },
         {
-          "hex": "#620e20",
-          "coverage": 0.1476
+          "hex": "#842039",
+          "coverage": 0.065
         },
         {
-          "hex": "#e2c8c8",
-          "coverage": 0.0389
+          "hex": "#d6a3a7",
+          "coverage": 0.0382
         },
         {
-          "hex": "#b4868c",
-          "coverage": 0.0229
+          "hex": "#7b0c1c",
+          "coverage": 0.0287
         },
         {
-          "hex": "#985d66",
-          "coverage": 0.0183
+          "hex": "#b87c7f",
+          "coverage": 0.0249
         }
       ],
       "detail": {
-        "energy": 23.4086
+        "energy": 17.6076
       },
       "medium": "semantic",
       "plate": null,
@@ -172,57 +165,69 @@
       "type": {
         "comp": {
           "lines": 1,
-          "glyphs": 7,
-          "capHeightPx": 28.8,
+          "glyphs": 8,
+          "capHeightPx": 26.7,
           "inkIsDark": true,
           "allCaps": false,
-          "advance": 0.5211,
-          "advTall": 0.4516,
-          "advX": null,
-          "gap": 0.1042,
-          "xRatio": 0.8378,
-          "stemW": 0.2214,
-          "contrast": 2.9083,
-          "serif": null,
-          "densTall": 0.5507,
-          "densX": null,
-          "weight": 0.5507
+          "advance": 0.2251,
+          "advTall": 0.2251,
+          "advX": 0.2814,
+          "gap": 0.1501,
+          "xRatio": 0.618,
+          "stemW": 0.145,
+          "contrast": 2.1042,
+          "serif": 1.1063,
+          "densTall": 0.6011,
+          "densX": 0.4619,
+          "weight": 0.6011
         },
-        "widthClass": "condensed",
-        "weightClass": "medium"
+        "widthClass": "compressed",
+        "weightClass": "bold"
       }
     },
     {
       "id": "wordmark-petal",
       "kind": "chrome",
-      "note": "small flat dusty-blush two-petal mark beside the wordmark, simple code-drawn icon",
-      "grid": "C0:C0",
+      "note": "small flat dusty-pink two-petal code-drawn mark",
+      "grid": "B0:B0",
       "codeDrawn": true,
       "box": {
-        "x": 0.2,
+        "x": 0.1,
         "y": 0,
         "w": 0.1,
         "h": 0.1
       },
       "px": {
-        "x": 334,
+        "x": 144,
         "y": 0,
-        "w": 167,
-        "h": 94
+        "w": 144,
+        "h": 90
       },
-      "aspect": 1.7766,
+      "aspect": 1.6,
       "palette": [
         {
-          "hex": "#f8f5e8",
-          "coverage": 0.9989
+          "hex": "#f8f6e8",
+          "coverage": 0.9255
         },
         {
-          "hex": "#e0a8a8",
-          "coverage": 0.0011
+          "hex": "#d69aa2",
+          "coverage": 0.026
+        },
+        {
+          "hex": "#e9c8c9",
+          "coverage": 0.0204
+        },
+        {
+          "hex": "#7b0f26",
+          "coverage": 0.0204
+        },
+        {
+          "hex": "#b4787b",
+          "coverage": 0.0077
         }
       ],
       "detail": {
-        "energy": 0.6221
+        "energy": 9.6279
       },
       "medium": "semantic",
       "plate": null,
@@ -231,126 +236,51 @@
     {
       "id": "nav-arrangements",
       "kind": "text",
-      "note": "Arreglos navigation link in quiet charcoal sans serif",
-      "grid": "E0:E0",
+      "note": "Arreglos navigation link in charcoal sans serif",
+      "grid": "D0:E0",
       "coverBox": {
-        "x": 0.4,
-        "y": 0,
-        "w": 0.1,
-        "h": 0.1
-      },
-      "box": {
-        "x": 0.4611,
-        "y": 0.0255,
-        "w": 0.0389,
-        "h": 0.0383
-      },
-      "px": {
-        "x": 771,
-        "y": 24,
-        "w": 65,
-        "h": 36
-      },
-      "aspect": 1.8056,
-      "palette": [
-        {
-          "hex": "#f8f7ea",
-          "coverage": 0.8549
-        },
-        {
-          "hex": "#4f4545",
-          "coverage": 0.0431
-        },
-        {
-          "hex": "#dad2cd",
-          "coverage": 0.0392
-        },
-        {
-          "hex": "#7c7373",
-          "coverage": 0.0353
-        },
-        {
-          "hex": "#31212f",
-          "coverage": 0.0275
-        }
-      ],
-      "detail": {
-        "energy": 15.9679
-      },
-      "medium": "semantic",
-      "plate": null,
-      "text": null,
-      "type": {
-        "comp": {
-          "lines": 1,
-          "glyphs": 7,
-          "capHeightPx": 14,
-          "inkIsDark": true,
-          "allCaps": false,
-          "advance": 0.6085,
-          "advTall": 0.4832,
-          "advX": 0.6085,
-          "gap": 0.0895,
-          "xRatio": 0.7033,
-          "stemW": 0.1641,
-          "contrast": 1.0713,
-          "serif": null,
-          "densTall": 0.6623,
-          "densX": 0.5339,
-          "weight": 0.6623
-        },
-        "widthClass": "normal",
-        "weightClass": "black"
-      }
-    },
-    {
-      "id": "nav-stems",
-      "kind": "text",
-      "note": "Flores individuales navigation link in quiet charcoal sans serif",
-      "grid": "F0:G0",
-      "coverBox": {
-        "x": 0.5,
+        "x": 0.3,
         "y": 0,
         "w": 0.2,
         "h": 0.1
       },
       "box": {
-        "x": 0.5431,
-        "y": 0.0255,
-        "w": 0.1005,
-        "h": 0.0319
+        "x": 0.3542,
+        "y": 0.0133,
+        "w": 0.0542,
+        "h": 0.04
       },
       "px": {
-        "x": 908,
-        "y": 24,
-        "w": 168,
-        "h": 30
+        "x": 510,
+        "y": 12,
+        "w": 78,
+        "h": 36
       },
-      "aspect": 5.6,
+      "aspect": 2.1667,
       "palette": [
         {
-          "hex": "#f7f6ea",
-          "coverage": 0.8306
+          "hex": "#f8f6e9",
+          "coverage": 0.9044
         },
         {
-          "hex": "#392f35",
-          "coverage": 0.0619
+          "hex": "#453a43",
+          "coverage": 0.0341
         },
         {
-          "hex": "#c7c0c0",
-          "coverage": 0.0546
+          "hex": "#a88268",
+          "coverage": 0.0273
         },
         {
-          "hex": "#8c8484",
-          "coverage": 0.0328
+          "hex": "#2e2b4e",
+          "coverage": 0.0171
         },
         {
-          "hex": "#5b5158",
-          "coverage": 0.02
+          "hex": "#9b9ba8",
+          "coverage": 0.0171
         }
       ],
       "detail": {
-        "energy": 39.814
+        "energy": 14.6511
       },
       "medium": "semantic",
       "plate": null,
@@ -358,21 +288,96 @@
       "type": {
         "comp": {
           "lines": 1,
-          "glyphs": 18,
-          "capHeightPx": 13.9,
+          "glyphs": 5,
+          "capHeightPx": 12.3,
           "inkIsDark": true,
           "allCaps": false,
-          "advance": 0.5742,
-          "advTall": 0.1794,
-          "advX": 0.6101,
-          "gap": 0.1077,
-          "xRatio": 0.7045,
-          "stemW": 0.1656,
-          "contrast": 1.0542,
-          "serif": 0.3532,
-          "densTall": 0.7022,
-          "densX": 0.5709,
-          "weight": 0.7022
+          "advance": 0.7322,
+          "advTall": 0.4746,
+          "advX": 0.7322,
+          "gap": 0.0678,
+          "xRatio": 0.7677,
+          "stemW": 0.1695,
+          "contrast": 1.0331,
+          "serif": null,
+          "densTall": 0.6286,
+          "densX": 0.5453,
+          "weight": 0.6286
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "nav-stems",
+      "kind": "text",
+      "note": "Flores individuales navigation link in charcoal sans serif",
+      "grid": "E0:F0",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.425,
+        "y": 0.0133,
+        "w": 0.1042,
+        "h": 0.0333
+      },
+      "px": {
+        "x": 612,
+        "y": 12,
+        "w": 150,
+        "h": 30
+      },
+      "aspect": 5,
+      "palette": [
+        {
+          "hex": "#f8f6e9",
+          "coverage": 0.8686
+        },
+        {
+          "hex": "#383358",
+          "coverage": 0.0379
+        },
+        {
+          "hex": "#a49e9d",
+          "coverage": 0.0334
+        },
+        {
+          "hex": "#42303d",
+          "coverage": 0.0312
+        },
+        {
+          "hex": "#68373c",
+          "coverage": 0.029
+        }
+      ],
+      "detail": {
+        "energy": 32.3012
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 17,
+          "capHeightPx": 12.3,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6492,
+          "advTall": 0.1894,
+          "advX": 0.6492,
+          "gap": 0.0541,
+          "xRatio": 0.7677,
+          "stemW": 0.1695,
+          "contrast": 1.0308,
+          "serif": null,
+          "densTall": 0.7165,
+          "densX": 0.5648,
+          "weight": 0.7165
         },
         "widthClass": "normal",
         "weightClass": "black"
@@ -381,109 +386,415 @@
     {
       "id": "nav-custom",
       "kind": "text",
-      "note": "Personaliza navigation link in quiet charcoal sans serif",
-      "grid": "H0:H0",
+      "note": "Personaliza navigation link in charcoal sans serif",
+      "grid": "F0:G0",
       "coverBox": {
-        "x": 0.7,
+        "x": 0.5,
         "y": 0,
-        "w": 0.1,
+        "w": 0.2,
         "h": 0.1
       },
       "box": {
-        "x": 0.6998,
-        "y": 0.0255,
-        "w": 0.0502,
-        "h": 0.0744
+        "x": 0.5458,
+        "y": 0.0133,
+        "w": 0.0667,
+        "h": 0.0333
       },
       "px": {
-        "x": 1170,
-        "y": 24,
-        "w": 84,
-        "h": 70
+        "x": 786,
+        "y": 12,
+        "w": 96,
+        "h": 30
       },
-      "aspect": 1.2,
+      "aspect": 3.2,
       "palette": [
         {
-          "hex": "#f6f1e5",
-          "coverage": 0.7139
+          "hex": "#f8f7ea",
+          "coverage": 0.8671
         },
         {
-          "hex": "#b4a79a",
-          "coverage": 0.1235
+          "hex": "#99948e",
+          "coverage": 0.0385
         },
         {
-          "hex": "#908480",
-          "coverage": 0.116
+          "hex": "#8692b0",
+          "coverage": 0.035
         },
         {
-          "hex": "#2d2025",
-          "coverage": 0.0256
+          "hex": "#4c3636",
+          "coverage": 0.0315
         },
         {
-          "hex": "#5a4d51",
-          "coverage": 0.0211
+          "hex": "#34263a",
+          "coverage": 0.028
         }
       ],
       "detail": {
-        "energy": 11.4172
+        "energy": 22.7017
       },
       "medium": "semantic",
       "plate": null,
       "text": null,
       "type": {
-        "comp": null,
-        "measuredAt": "2026-09-24T02:37:55.180Z",
-        "note": "no separable lettering in the crop; size by the region box"
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 12.3,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6213,
+          "advTall": 0.1621,
+          "advX": 0.6484,
+          "gap": 0.054,
+          "xRatio": 0.7664,
+          "stemW": 0.1798,
+          "contrast": 1.1229,
+          "serif": null,
+          "densTall": 0.7517,
+          "densX": 0.551,
+          "weight": 0.7517
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
       }
     },
     {
       "id": "nav-tracking",
       "kind": "text",
-      "note": "Seguir pedido navigation link in quiet charcoal sans serif",
-      "grid": "I0:I0",
+      "note": "Seguir pedido navigation link in charcoal sans serif",
+      "grid": "G0:H0",
       "coverBox": {
-        "x": 0.8,
+        "x": 0.6,
         "y": 0,
-        "w": 0.1,
+        "w": 0.2,
         "h": 0.1
       },
       "box": {
-        "x": 0.8002,
-        "y": 0.0255,
-        "w": 0.0646,
-        "h": 0.0383
+        "x": 0.6333,
+        "y": 0.0133,
+        "w": 0.0792,
+        "h": 0.04
       },
       "px": {
-        "x": 1338,
-        "y": 24,
-        "w": 108,
+        "x": 912,
+        "y": 12,
+        "w": 114,
         "h": 36
       },
-      "aspect": 3,
+      "aspect": 3.1667,
       "palette": [
         {
-          "hex": "#f8f6ea",
-          "coverage": 0.8565
+          "hex": "#f8f6e9",
+          "coverage": 0.8878
         },
         {
-          "hex": "#d1caca",
-          "coverage": 0.0526
+          "hex": "#8f6051",
+          "coverage": 0.0334
         },
         {
-          "hex": "#a19797",
-          "coverage": 0.0383
+          "hex": "#372d45",
+          "coverage": 0.0286
         },
         {
-          "hex": "#615358",
-          "coverage": 0.0287
+          "hex": "#8f929e",
+          "coverage": 0.0263
         },
         {
-          "hex": "#403335",
+          "hex": "#525876",
           "coverage": 0.0239
         }
       ],
       "detail": {
-        "energy": 23.5202
+        "energy": 23.2055
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 12.3,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6494,
+          "advTall": 0.4194,
+          "advX": 0.6494,
+          "gap": 0.1082,
+          "xRatio": 0.7688,
+          "stemW": 0.1753,
+          "contrast": 1.0613,
+          "serif": null,
+          "densTall": 0.6154,
+          "densX": 0.5539,
+          "weight": 0.6154
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "cart-link",
+      "kind": "control",
+      "note": "wine bag icon and Carrito quantity link",
+      "grid": "I0:J0",
+      "coverBox": {
+        "x": 0.8,
+        "y": 0,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.8375,
+        "y": 0.0133,
+        "w": 0.0917,
+        "h": 0.04
+      },
+      "px": {
+        "x": 1206,
+        "y": 12,
+        "w": 132,
+        "h": 36
+      },
+      "aspect": 3.6667,
+      "palette": [
+        {
+          "hex": "#f8f6e9",
+          "coverage": 0.8828
+        },
+        {
+          "hex": "#e6cbca",
+          "coverage": 0.0547
+        },
+        {
+          "hex": "#b36a7a",
+          "coverage": 0.0273
+        },
+        {
+          "hex": "#7d0e2a",
+          "coverage": 0.0195
+        },
+        {
+          "hex": "#903650",
+          "coverage": 0.0156
+        }
+      ],
+      "detail": {
+        "energy": 23.4822
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "index-divider",
+      "kind": "chrome",
+      "note": "fine vertical rule separating the numbered checkout index",
+      "grid": "B1:B9",
+      "box": {
+        "x": 0.1,
+        "y": 0.1,
+        "w": 0.1,
+        "h": 0.9
+      },
+      "px": {
+        "x": 144,
+        "y": 90,
+        "w": 144,
+        "h": 810
+      },
+      "aspect": 0.1778,
+      "palette": [
+        {
+          "hex": "#f8f5e8",
+          "coverage": 0.9658
+        },
+        {
+          "hex": "#e0cdc9",
+          "coverage": 0.0315
+        },
+        {
+          "hex": "#94484f",
+          "coverage": 0.0026
+        }
+      ],
+      "detail": {
+        "energy": 3.0077
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "summary-divider",
+      "kind": "chrome",
+      "note": "fine vertical rule separating the sticky order summary",
+      "grid": "H1:H9",
+      "box": {
+        "x": 0.7,
+        "y": 0.1,
+        "w": 0.1,
+        "h": 0.9
+      },
+      "px": {
+        "x": 1008,
+        "y": 90,
+        "w": 144,
+        "h": 810
+      },
+      "aspect": 0.1778,
+      "palette": [
+        {
+          "hex": "#f8f5e8",
+          "coverage": 0.9597
+        },
+        {
+          "hex": "#842737",
+          "coverage": 0.0262
+        },
+        {
+          "hex": "#e2cece",
+          "coverage": 0.0086
+        },
+        {
+          "hex": "#a99999",
+          "coverage": 0.0031
+        },
+        {
+          "hex": "#a15464",
+          "coverage": 0.0024
+        }
+      ],
+      "detail": {
+        "energy": 5.8996
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "index-cart",
+      "kind": "text",
+      "note": "active 01 Carrito index entry in wine with underline",
+      "grid": "A1:B1",
+      "coverBox": {
+        "x": 0,
+        "y": 0.1,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0583,
+        "y": 0.1333,
+        "w": 0.0667,
+        "h": 0.04
+      },
+      "px": {
+        "x": 84,
+        "y": 120,
+        "w": 96,
+        "h": 36
+      },
+      "aspect": 2.6667,
+      "palette": [
+        {
+          "hex": "#f8f4e9",
+          "coverage": 0.8413
+        },
+        {
+          "hex": "#7b1227",
+          "coverage": 0.0503
+        },
+        {
+          "hex": "#e9cacd",
+          "coverage": 0.045
+        },
+        {
+          "hex": "#ae6774",
+          "coverage": 0.0397
+        },
+        {
+          "hex": "#963d56",
+          "coverage": 0.0238
+        }
+      ],
+      "detail": {
+        "energy": 19.1908
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 18.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.4304,
+          "advTall": 0.2421,
+          "advX": 0.5784,
+          "gap": 0.0807,
+          "xRatio": 0.6622,
+          "stemW": 0.1715,
+          "contrast": 2.2382,
+          "serif": 0.6843,
+          "densTall": 0.3627,
+          "densX": 0.4926,
+          "weight": 0.3627
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "index-contact",
+      "kind": "text",
+      "note": "02 Tus datos index entry with hairline",
+      "grid": "A2:B2",
+      "coverBox": {
+        "x": 0,
+        "y": 0.2,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0583,
+        "y": 0.2267,
+        "w": 0.0792,
+        "h": 0.04
+      },
+      "px": {
+        "x": 84,
+        "y": 204,
+        "w": 114,
+        "h": 36
+      },
+      "aspect": 3.1667,
+      "palette": [
+        {
+          "hex": "#f7f3e9",
+          "coverage": 0.8553
+        },
+        {
+          "hex": "#bdb4b0",
+          "coverage": 0.0548
+        },
+        {
+          "hex": "#4a424e",
+          "coverage": 0.0504
+        },
+        {
+          "hex": "#80767b",
+          "coverage": 0.0351
+        },
+        {
+          "hex": "#b0a0b0",
+          "coverage": 0.0044
+        }
+      ],
+      "detail": {
+        "energy": 18.2752
       },
       "medium": "semantic",
       "plate": null,
@@ -492,120 +803,1716 @@
         "comp": {
           "lines": 1,
           "glyphs": 10,
-          "capHeightPx": 14,
+          "capHeightPx": 17.6,
           "inkIsDark": true,
           "allCaps": false,
-          "advance": 0.6444,
-          "advTall": 0.4117,
-          "advX": 0.6444,
-          "gap": 0.1432,
-          "xRatio": 0.7035,
-          "stemW": 0.1665,
-          "contrast": 1.0699,
+          "advance": 0.3262,
+          "advTall": 0.2553,
+          "advX": 0.4538,
+          "gap": 0.1135,
+          "xRatio": 0.6149,
+          "stemW": 0.1501,
+          "contrast": 1.7205,
+          "serif": 0.952,
+          "densTall": 0.6288,
+          "densX": 0.4862,
+          "weight": 0.6288
+        },
+        "widthClass": "condensed",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "index-delivery",
+      "kind": "text",
+      "note": "03 Entrega index entry with hairline",
+      "grid": "A3:B3",
+      "coverBox": {
+        "x": 0,
+        "y": 0.3,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0583,
+        "y": 0.3267,
+        "w": 0.0667,
+        "h": 0.0467
+      },
+      "px": {
+        "x": 84,
+        "y": 294,
+        "w": 96,
+        "h": 42
+      },
+      "aspect": 2.2857,
+      "palette": [
+        {
+          "hex": "#f8f4e8",
+          "coverage": 0.8533
+        },
+        {
+          "hex": "#847e83",
+          "coverage": 0.0655
+        },
+        {
+          "hex": "#d3cfca",
+          "coverage": 0.0384
+        },
+        {
+          "hex": "#423648",
+          "coverage": 0.0226
+        },
+        {
+          "hex": "#b6afad",
+          "coverage": 0.0203
+        }
+      ],
+      "detail": {
+        "energy": 14.5175
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 17.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.2549,
+          "advTall": 0.6515,
+          "advX": 0.2549,
+          "gap": 0.085,
+          "xRatio": 0.6415,
+          "stemW": 0.157,
+          "contrast": 1.9493,
+          "serif": 1.1588,
+          "densTall": 0.4146,
+          "densX": 0.6349,
+          "weight": 0.4146
+        },
+        "widthClass": "compressed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "index-confirm",
+      "kind": "text",
+      "note": "04 Confirmar index entry with hairline",
+      "grid": "A4:B4",
+      "coverBox": {
+        "x": 0,
+        "y": 0.4,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0583,
+        "y": 0.4267,
+        "w": 0.0875,
+        "h": 0.04
+      },
+      "px": {
+        "x": 84,
+        "y": 384,
+        "w": 126,
+        "h": 36
+      },
+      "aspect": 3.5,
+      "palette": [
+        {
+          "hex": "#f7f4e9",
+          "coverage": 0.8333
+        },
+        {
+          "hex": "#c5bdbc",
+          "coverage": 0.0813
+        },
+        {
+          "hex": "#767173",
+          "coverage": 0.0397
+        },
+        {
+          "hex": "#48414f",
+          "coverage": 0.0317
+        },
+        {
+          "hex": "#9d939a",
+          "coverage": 0.0139
+        }
+      ],
+      "detail": {
+        "energy": 21.0276
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 14,
+          "capHeightPx": 18,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.2783,
+          "advTall": 0.2783,
+          "advX": 0.2783,
+          "gap": 0.1113,
+          "xRatio": 0.6325,
+          "stemW": 0.1529,
+          "contrast": 1.9993,
+          "serif": 0.8626,
+          "densTall": 0.492,
+          "densX": 0.5801,
+          "weight": 0.492
+        },
+        "widthClass": "compressed",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "page-title",
+      "kind": "text",
+      "note": "large wine serif title Tu pedido",
+      "grid": "C1:E1",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.1,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2167,
+        "y": 0.1067,
+        "w": 0.1875,
+        "h": 0.0933
+      },
+      "px": {
+        "x": 312,
+        "y": 96,
+        "w": 270,
+        "h": 84
+      },
+      "aspect": 3.2143,
+      "palette": [
+        {
+          "hex": "#f8f4e9",
+          "coverage": 0.8503
+        },
+        {
+          "hex": "#6c0d20",
+          "coverage": 0.0944
+        },
+        {
+          "hex": "#e6c4c6",
+          "coverage": 0.0303
+        },
+        {
+          "hex": "#944252",
+          "coverage": 0.0169
+        },
+        {
+          "hex": "#b6717e",
+          "coverage": 0.0081
+        }
+      ],
+      "detail": {
+        "energy": 31.9475
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 41.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6283,
+          "advTall": 0.6524,
+          "advX": 0.6041,
+          "gap": 0.1208,
+          "xRatio": 0.6057,
+          "stemW": 0.1471,
+          "contrast": 4.1058,
+          "serif": 0.9981,
+          "densTall": 0.3804,
+          "densX": 0.3901,
+          "weight": 0.3804
+        },
+        "widthClass": "normal",
+        "weightClass": "regular",
+        "chosen": {
+          "family": "Bodoni Moda",
+          "weight": 400,
+          "fontSizePx": 59,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "805a4b59a05c"
+        }
+      }
+    },
+    {
+      "id": "label-product",
+      "kind": "text",
+      "note": "small uppercase sans PRODUCTO column label",
+      "grid": null,
+      "box": {
+        "x": 0.224,
+        "y": 0.19,
+        "w": 0.07,
+        "h": 0.025
+      },
+      "px": {
+        "x": 323,
+        "y": 171,
+        "w": 101,
+        "h": 23
+      },
+      "aspect": 4.3913,
+      "palette": [
+        {
+          "hex": "#f6f2e8",
+          "coverage": 0.9081
+        },
+        {
+          "hex": "#9a9192",
+          "coverage": 0.0735
+        },
+        {
+          "hex": "#c8bdbd",
+          "coverage": 0.011
+        },
+        {
+          "hex": "#787070",
+          "coverage": 0.0074
+        }
+      ],
+      "detail": {
+        "energy": 11.6833
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 9.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.7894,
+          "advTall": 0.7894,
+          "advX": null,
+          "gap": 0.103,
+          "xRatio": 0.8136,
+          "stemW": 0.2071,
+          "contrast": 1.0183,
           "serif": null,
-          "densTall": 0.6041,
-          "densX": 0.5841,
-          "weight": 0.6041
+          "densTall": 0.5463,
+          "densX": null,
+          "weight": 0.5463
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "label-price",
+      "kind": "text",
+      "note": "small uppercase sans PRECIO column label",
+      "grid": null,
+      "box": {
+        "x": 0.451,
+        "y": 0.19,
+        "w": 0.05,
+        "h": 0.025
+      },
+      "px": {
+        "x": 649,
+        "y": 171,
+        "w": 72,
+        "h": 23
+      },
+      "aspect": 3.1304,
+      "palette": [
+        {
+          "hex": "#f7f2e7",
+          "coverage": 0.901
+        },
+        {
+          "hex": "#b8adab",
+          "coverage": 0.0729
+        },
+        {
+          "hex": "#928b8e",
+          "coverage": 0.026
+        }
+      ],
+      "detail": {
+        "energy": 8.3686
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 6,
+          "capHeightPx": 9.4,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.695,
+          "advTall": 0.695,
+          "advX": null,
+          "gap": 0.1426,
+          "xRatio": null,
+          "stemW": 0.2095,
+          "contrast": 1.009,
+          "serif": null,
+          "densTall": 0.6074,
+          "densX": null,
+          "weight": 0.6074
         },
         "widthClass": "normal",
         "weightClass": "bold"
       }
     },
     {
-      "id": "hero-photo",
-      "kind": "image",
-      "note": "wide editorial still-life photograph: warm cream paper set, decisive black-wrapped orange chenille-flower bouquet on the right, generous calm negative space on the left; no UI text, no printed Lirios seal, dry-flower props are nonessential",
-      "grid": "A1:J6",
+      "id": "label-quantity",
+      "kind": "text",
+      "note": "small uppercase sans CANTIDAD column label",
+      "grid": null,
       "box": {
-        "x": 0,
-        "y": 0.1,
-        "w": 1,
-        "h": 0.6
+        "x": 0.523,
+        "y": 0.19,
+        "w": 0.07,
+        "h": 0.025
       },
       "px": {
-        "x": 0,
-        "y": 94,
-        "w": 1672,
-        "h": 565
+        "x": 753,
+        "y": 171,
+        "w": 101,
+        "h": 23
       },
-      "aspect": 2.9593,
+      "aspect": 4.3913,
       "palette": [
         {
-          "hex": "#f4e6da",
-          "coverage": 0.629
+          "hex": "#f8f5e8",
+          "coverage": 0.8787
         },
         {
-          "hex": "#c5a88e",
-          "coverage": 0.2064
+          "hex": "#9c9494",
+          "coverage": 0.0809
         },
         {
-          "hex": "#1a1311",
-          "coverage": 0.0979
-        },
-        {
-          "hex": "#6b1225",
-          "coverage": 0.0444
-        },
-        {
-          "hex": "#ad8464",
-          "coverage": 0.0223
+          "hex": "#d1c5c5",
+          "coverage": 0.0404
         }
       ],
       "detail": {
-        "energy": 38.5607
+        "energy": 10.1952
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 9.1,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.842,
+          "advTall": 0.842,
+          "advX": null,
+          "gap": 0.1098,
+          "xRatio": null,
+          "stemW": 0.2152,
+          "contrast": 0.9885,
+          "serif": null,
+          "densTall": 0.5871,
+          "densX": null,
+          "weight": 0.5871
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "label-subtotal",
+      "kind": "text",
+      "note": "small uppercase sans SUBTOTAL column label",
+      "grid": null,
+      "box": {
+        "x": 0.668,
+        "y": 0.19,
+        "w": 0.07,
+        "h": 0.025
+      },
+      "px": {
+        "x": 962,
+        "y": 171,
+        "w": 101,
+        "h": 23
+      },
+      "aspect": 4.3913,
+      "palette": [
+        {
+          "hex": "#f8f4e9",
+          "coverage": 0.8787
+        },
+        {
+          "hex": "#b9aeae",
+          "coverage": 0.1103
+        },
+        {
+          "hex": "#988d93",
+          "coverage": 0.011
+        }
+      ],
+      "detail": {
+        "energy": 10.4362
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 9.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.746,
+          "advTall": 0.746,
+          "advX": null,
+          "gap": 0.2487,
+          "xRatio": 0.7804,
+          "stemW": 0.2191,
+          "contrast": 1.0877,
+          "serif": null,
+          "densTall": 0.5642,
+          "densX": null,
+          "weight": 0.5642
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "product-one-photo",
+      "kind": "image",
+      "note": "small square warm product photograph of crimson handmade chenille lilies",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.224,
+        "y": 0.229,
+        "w": 0.075,
+        "h": 0.122
+      },
+      "px": {
+        "x": 323,
+        "y": 206,
+        "w": 108,
+        "h": 110
+      },
+      "aspect": 0.9818,
+      "palette": [
+        {
+          "hex": "#eadbce",
+          "coverage": 0.6018
+        },
+        {
+          "hex": "#c7ab9b",
+          "coverage": 0.2359
+        },
+        {
+          "hex": "#800a1b",
+          "coverage": 0.0646
+        },
+        {
+          "hex": "#4e0a10",
+          "coverage": 0.0488
+        },
+        {
+          "hex": "#b00a23",
+          "coverage": 0.0488
+        }
+      ],
+      "detail": {
+        "energy": 15.9713
       },
       "medium": "raster",
-      "plate": "assets/plates/hero-photo.png",
+      "plate": "assets/plates/product-one-photo.png",
       "text": null
     },
     {
-      "id": "headline",
+      "id": "product-one-name",
       "kind": "text",
-      "note": "two-line wine display headline Un detalle hecho / para quedarse.",
-      "grid": "B2:E3",
+      "note": "Lirios carmesí product name in wine serif with quiet Eliminar link below",
+      "grid": "D2:E2",
       "coverBox": {
-        "x": 0.1,
+        "x": 0.3,
         "y": 0.2,
-        "w": 0.4,
-        "h": 0.2
+        "w": 0.2,
+        "h": 0.1
       },
       "box": {
-        "x": 0.0999,
-        "y": 0.1998,
-        "w": 0.3517,
-        "h": 0.1998
+        "x": 0.3083,
+        "y": 0.2533,
+        "w": 0.1167,
+        "h": 0.04
       },
       "px": {
-        "x": 167,
-        "y": 188,
-        "w": 588,
-        "h": 188
+        "x": 444,
+        "y": 228,
+        "w": 168,
+        "h": 36
       },
-      "aspect": 3.1277,
+      "aspect": 4.6667,
       "palette": [
         {
-          "hex": "#f8efe7",
-          "coverage": 0.7769
+          "hex": "#f7f4e9",
+          "coverage": 0.8556
         },
         {
-          "hex": "#680e25",
-          "coverage": 0.1609
+          "hex": "#e6c7c8",
+          "coverage": 0.0699
         },
         {
-          "hex": "#894751",
-          "coverage": 0.0245
+          "hex": "#801b32",
+          "coverage": 0.0289
         },
         {
-          "hex": "#ad7a7f",
-          "coverage": 0.0226
+          "hex": "#b56e7d",
+          "coverage": 0.0243
         },
         {
-          "hex": "#d6b7b8",
-          "coverage": 0.015
+          "hex": "#c39093",
+          "coverage": 0.0213
         }
       ],
       "detail": {
-        "energy": 60.7626
+        "energy": 29.0061
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 21,
+          "capHeightPx": 17.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.2807,
+          "advTall": 0.1965,
+          "advX": 0.2807,
+          "gap": 0.0982,
+          "xRatio": 0.6237,
+          "stemW": 0.1644,
+          "contrast": 1.4982,
+          "serif": 1.0913,
+          "densTall": 0.6652,
+          "densX": 0.5688,
+          "weight": 0.6652
+        },
+        "widthClass": "compressed",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "product-one-price",
+      "kind": "text",
+      "note": "first product price in tabular sans",
+      "grid": "E2:F2",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0.2,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.4458,
+        "y": 0.26,
+        "w": 0.0667,
+        "h": 0.0333
+      },
+      "px": {
+        "x": 642,
+        "y": 234,
+        "w": 96,
+        "h": 30
+      },
+      "aspect": 3.2,
+      "palette": [
+        {
+          "hex": "#f8f4e9",
+          "coverage": 0.8243
+        },
+        {
+          "hex": "#a9a1a0",
+          "coverage": 0.0607
+        },
+        {
+          "hex": "#d5cbca",
+          "coverage": 0.0447
+        },
+        {
+          "hex": "#695f5f",
+          "coverage": 0.0415
+        },
+        {
+          "hex": "#564656",
+          "coverage": 0.0288
+        }
+      ],
+      "detail": {
+        "energy": 24.8813
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 12.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6984,
+          "advTall": 0.6984,
+          "advX": null,
+          "gap": 0.1197,
+          "xRatio": 0.8312,
+          "stemW": 0.1805,
+          "contrast": 1.0214,
+          "serif": 0.3707,
+          "densTall": 0.557,
+          "densX": null,
+          "weight": 0.557
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "product-one-quantity",
+      "kind": "control",
+      "note": "square minus quantity plus stepper for first product",
+      "grid": null,
+      "box": {
+        "x": 0.531,
+        "y": 0.253,
+        "w": 0.094,
+        "h": 0.052
+      },
+      "px": {
+        "x": 765,
+        "y": 228,
+        "w": 135,
+        "h": 47
+      },
+      "aspect": 2.8723,
+      "palette": [
+        {
+          "hex": "#f6f1e6",
+          "coverage": 0.9722
+        },
+        {
+          "hex": "#d6c7c5",
+          "coverage": 0.0222
+        },
+        {
+          "hex": "#342830",
+          "coverage": 0.0056
+        }
+      ],
+      "detail": {
+        "energy": 6.9595
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "product-one-subtotal",
+      "kind": "text",
+      "note": "first line subtotal in tabular sans",
+      "grid": "G2:H2",
+      "coverBox": {
+        "x": 0.6,
+        "y": 0.2,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.6583,
+        "y": 0.26,
+        "w": 0.0667,
+        "h": 0.0333
+      },
+      "px": {
+        "x": 948,
+        "y": 234,
+        "w": 96,
+        "h": 30
+      },
+      "aspect": 3.2,
+      "palette": [
+        {
+          "hex": "#f8f4e9",
+          "coverage": 0.8139
+        },
+        {
+          "hex": "#5d5158",
+          "coverage": 0.0662
+        },
+        {
+          "hex": "#a39695",
+          "coverage": 0.0568
+        },
+        {
+          "hex": "#d6cfcd",
+          "coverage": 0.0536
+        },
+        {
+          "hex": "#2d1d2d",
+          "coverage": 0.0095
+        }
+      ],
+      "detail": {
+        "energy": 25.0546
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 12.5,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.6644,
+          "advTall": 0.6644,
+          "advX": null,
+          "gap": 0.1063,
+          "xRatio": null,
+          "stemW": 0.1724,
+          "contrast": 0.9687,
+          "serif": 0.708,
+          "densTall": 0.5328,
+          "densX": null,
+          "weight": 0.5328
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "product-row-rule",
+      "kind": "chrome",
+      "note": "fine horizontal rule between product lines",
+      "grid": null,
+      "box": {
+        "x": 0.224,
+        "y": 0.362,
+        "w": 0.493,
+        "h": 0.004
+      },
+      "px": {
+        "x": 323,
+        "y": 326,
+        "w": 710,
+        "h": 4
+      },
+      "aspect": 177.5,
+      "palette": [
+        {
+          "hex": "#f8f8e8",
+          "coverage": 1
+        }
+      ],
+      "detail": {
+        "energy": 13.2839
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "product-two-photo",
+      "kind": "image",
+      "note": "small square warm product photograph of golden handmade chenille gerberas",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0.224,
+        "y": 0.375,
+        "w": 0.075,
+        "h": 0.124
+      },
+      "px": {
+        "x": 323,
+        "y": 338,
+        "w": 108,
+        "h": 112
+      },
+      "aspect": 0.9643,
+      "palette": [
+        {
+          "hex": "#ebd0b2",
+          "coverage": 0.6587
+        },
+        {
+          "hex": "#c8ad93",
+          "coverage": 0.1158
+        },
+        {
+          "hex": "#f7c809",
+          "coverage": 0.1158
+        },
+        {
+          "hex": "#de8f08",
+          "coverage": 0.0698
+        },
+        {
+          "hex": "#c46d08",
+          "coverage": 0.0398
+        }
+      ],
+      "detail": {
+        "energy": 10.6227
+      },
+      "medium": "raster",
+      "plate": "assets/plates/product-two-photo.png",
+      "text": null
+    },
+    {
+      "id": "product-two-name",
+      "kind": "text",
+      "note": "Gerberas doradas product name in wine serif with quiet Eliminar link below",
+      "grid": "D3:E4",
+      "coverBox": {
+        "x": 0.3,
+        "y": 0.3,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.3083,
+        "y": 0.4,
+        "w": 0.1917,
+        "h": 0.04
+      },
+      "px": {
+        "x": 444,
+        "y": 360,
+        "w": 276,
+        "h": 36
+      },
+      "aspect": 7.6667,
+      "palette": [
+        {
+          "hex": "#f8f3ea",
+          "coverage": 0.8506
+        },
+        {
+          "hex": "#c58e95",
+          "coverage": 0.0457
+        },
+        {
+          "hex": "#dfc6c6",
+          "coverage": 0.04
+        },
+        {
+          "hex": "#770d25",
+          "coverage": 0.0352
+        },
+        {
+          "hex": "#ac616d",
+          "coverage": 0.0285
+        }
+      ],
+      "detail": {
+        "energy": 55.1292
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 24,
+          "capHeightPx": 18.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.4606,
+          "advTall": 0.3251,
+          "advX": 0.5283,
+          "gap": 0.0542,
+          "xRatio": 0.6116,
+          "stemW": 0.1668,
+          "contrast": 1.5401,
+          "serif": null,
+          "densTall": 0.4619,
+          "densX": 0.5164,
+          "weight": 0.4619
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "product-two-price",
+      "kind": "text",
+      "note": "second product price in tabular sans",
+      "grid": "E3:F4",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0.3,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.4,
+        "y": 0.4,
+        "w": 0.1125,
+        "h": 0.04
+      },
+      "px": {
+        "x": 576,
+        "y": 360,
+        "w": 162,
+        "h": 36
+      },
+      "aspect": 4.5,
+      "palette": [
+        {
+          "hex": "#f8f4ea",
+          "coverage": 0.881
+        },
+        {
+          "hex": "#e1d3d3",
+          "coverage": 0.0331
+        },
+        {
+          "hex": "#72666b",
+          "coverage": 0.0314
+        },
+        {
+          "hex": "#bc7f85",
+          "coverage": 0.0281
+        },
+        {
+          "hex": "#bca9aa",
+          "coverage": 0.0264
+        }
+      ],
+      "detail": {
+        "energy": 32.3645
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 13,
+          "capHeightPx": 18.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.4871,
+          "advTall": 0.2436,
+          "advX": 0.4871,
+          "gap": 0.0541,
+          "xRatio": 0.6116,
+          "stemW": 0.149,
+          "contrast": 1.1801,
+          "serif": null,
+          "densTall": 0.7277,
+          "densX": 0.5206,
+          "weight": 0.7277
+        },
+        "widthClass": "condensed",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "product-two-quantity",
+      "kind": "control",
+      "note": "square minus quantity plus stepper for second product",
+      "grid": null,
+      "box": {
+        "x": 0.531,
+        "y": 0.402,
+        "w": 0.094,
+        "h": 0.052
+      },
+      "px": {
+        "x": 765,
+        "y": 362,
+        "w": 135,
+        "h": 47
+      },
+      "aspect": 2.8723,
+      "palette": [
+        {
+          "hex": "#f6eee6",
+          "coverage": 0.9861
+        },
+        {
+          "hex": "#dbc2c2",
+          "coverage": 0.0069
+        },
+        {
+          "hex": "#443438",
+          "coverage": 0.0056
+        },
+        {
+          "hex": "#b8b8a8",
+          "coverage": 0.0014
+        }
+      ],
+      "detail": {
+        "energy": 5.8284
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "product-two-subtotal",
+      "kind": "text",
+      "note": "second line subtotal in tabular sans",
+      "grid": "G3:H4",
+      "coverBox": {
+        "x": 0.6,
+        "y": 0.3,
+        "w": 0.2,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.6583,
+        "y": 0.4067,
+        "w": 0.0667,
+        "h": 0.0333
+      },
+      "px": {
+        "x": 948,
+        "y": 366,
+        "w": 96,
+        "h": 30
+      },
+      "aspect": 3.2,
+      "palette": [
+        {
+          "hex": "#f7f3e9",
+          "coverage": 0.8603
+        },
+        {
+          "hex": "#928b8b",
+          "coverage": 0.0603
+        },
+        {
+          "hex": "#3c2e3e",
+          "coverage": 0.0413
+        },
+        {
+          "hex": "#656060",
+          "coverage": 0.019
+        },
+        {
+          "hex": "#130d13",
+          "coverage": 0.019
+        }
+      ],
+      "detail": {
+        "energy": 24.1883
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 12.6,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.6735,
+          "advTall": 0.6735,
+          "advX": null,
+          "gap": 0.1188,
+          "xRatio": null,
+          "stemW": 0.1835,
+          "contrast": 0.9691,
+          "serif": null,
+          "densTall": 0.5257,
+          "densX": null,
+          "weight": 0.5257
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "contact-title",
+      "kind": "text",
+      "note": "wine serif section heading Tus datos",
+      "grid": "C5:E5",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.5,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2208,
+        "y": 0.54,
+        "w": 0.125,
+        "h": 0.0533
+      },
+      "px": {
+        "x": 318,
+        "y": 486,
+        "w": 180,
+        "h": 48
+      },
+      "aspect": 3.75,
+      "palette": [
+        {
+          "hex": "#f8f3e9",
+          "coverage": 0.83
+        },
+        {
+          "hex": "#720c1d",
+          "coverage": 0.084
+        },
+        {
+          "hex": "#8e3b4b",
+          "coverage": 0.0383
+        },
+        {
+          "hex": "#c19393",
+          "coverage": 0.0319
+        },
+        {
+          "hex": "#bf8696",
+          "coverage": 0.0159
+        }
+      ],
+      "detail": {
+        "energy": 32.3402
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 29.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.4709,
+          "advTall": 0.5214,
+          "advX": 0.4709,
+          "gap": 0.0673,
+          "xRatio": 0.6157,
+          "stemW": 0.1487,
+          "contrast": 2.6706,
+          "serif": 1.1609,
+          "densTall": 0.414,
+          "densX": 0.4387,
+          "weight": 0.414
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "contact-name",
+      "kind": "control",
+      "note": "Nombre completo label, placeholder and underline input",
+      "grid": "C6:E6",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.6,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2208,
+        "y": 0.6,
+        "w": 0.1167,
+        "h": 0.0733
+      },
+      "px": {
+        "x": 318,
+        "y": 540,
+        "w": 168,
+        "h": 66
+      },
+      "aspect": 2.5455,
+      "palette": [
+        {
+          "hex": "#f7f2e8",
+          "coverage": 0.8271
+        },
+        {
+          "hex": "#bbb1b1",
+          "coverage": 0.1226
+        },
+        {
+          "hex": "#695d5d",
+          "coverage": 0.0284
+        },
+        {
+          "hex": "#8f8684",
+          "coverage": 0.013
+        },
+        {
+          "hex": "#493c44",
+          "coverage": 0.0089
+        }
+      ],
+      "detail": {
+        "energy": 20.0632
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "contact-phone",
+      "kind": "control",
+      "note": "Teléfono label, placeholder and underline input",
+      "grid": "E6:G6",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0.6,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.4792,
+        "y": 0.6,
+        "w": 0.2208,
+        "h": 0.0733
+      },
+      "px": {
+        "x": 690,
+        "y": 540,
+        "w": 318,
+        "h": 66
+      },
+      "aspect": 4.8182,
+      "palette": [
+        {
+          "hex": "#f8f3e8",
+          "coverage": 0.9175
+        },
+        {
+          "hex": "#b9acab",
+          "coverage": 0.0713
+        },
+        {
+          "hex": "#6e6262",
+          "coverage": 0.0086
+        },
+        {
+          "hex": "#483d3d",
+          "coverage": 0.0026
+        }
+      ],
+      "detail": {
+        "energy": 15.0043
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "contact-email",
+      "kind": "control",
+      "note": "Correo electrónico label, placeholder and underline input",
+      "grid": null,
+      "box": {
+        "x": 0.225,
+        "y": 0.687,
+        "w": 0.493,
+        "h": 0.06
+      },
+      "px": {
+        "x": 324,
+        "y": 618,
+        "w": 710,
+        "h": 54
+      },
+      "aspect": 13.1481,
+      "palette": [
+        {
+          "hex": "#f8f4e8",
+          "coverage": 0.9666
+        },
+        {
+          "hex": "#b8b0b0",
+          "coverage": 0.0285
+        },
+        {
+          "hex": "#6f5f5f",
+          "coverage": 0.0042
+        },
+        {
+          "hex": "#988888",
+          "coverage": 0.0007
+        }
+      ],
+      "detail": {
+        "energy": 10.7356
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "delivery-title",
+      "kind": "text",
+      "note": "wine serif section heading Entrega",
+      "grid": null,
+      "box": {
+        "x": 0.225,
+        "y": 0.768,
+        "w": 0.15,
+        "h": 0.058
+      },
+      "px": {
+        "x": 324,
+        "y": 691,
+        "w": 216,
+        "h": 52
+      },
+      "aspect": 4.1538,
+      "palette": [
+        {
+          "hex": "#f8f3e8",
+          "coverage": 0.8904
+        },
+        {
+          "hex": "#730d20",
+          "coverage": 0.0513
+        },
+        {
+          "hex": "#ad6f73",
+          "coverage": 0.0272
+        },
+        {
+          "hex": "#e9c8cb",
+          "coverage": 0.0171
+        },
+        {
+          "hex": "#984856",
+          "coverage": 0.014
+        }
+      ],
+      "detail": {
+        "energy": 24.7335
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 8,
+          "capHeightPx": 27.9,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.3404,
+          "advTall": 0.7166,
+          "advX": 0.3224,
+          "gap": 0.0717,
+          "xRatio": 0.6211,
+          "stemW": 0.1472,
+          "contrast": 2.7807,
+          "serif": 1.2717,
+          "densTall": 0.3532,
+          "densX": 0.4889,
+          "weight": 0.3532
+        },
+        "widthClass": "compressed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "delivery-address",
+      "kind": "control",
+      "note": "Dirección de entrega label, placeholder and underline input",
+      "grid": "C8:G8",
+      "box": {
+        "x": 0.2,
+        "y": 0.8,
+        "w": 0.5,
+        "h": 0.1
+      },
+      "px": {
+        "x": 288,
+        "y": 720,
+        "w": 720,
+        "h": 90
+      },
+      "aspect": 8,
+      "palette": [
+        {
+          "hex": "#f8f4e8",
+          "coverage": 0.9795
+        },
+        {
+          "hex": "#bcb4b6",
+          "coverage": 0.0141
+        },
+        {
+          "hex": "#817171",
+          "coverage": 0.0028
+        },
+        {
+          "hex": "#a8626d",
+          "coverage": 0.002
+        },
+        {
+          "hex": "#801828",
+          "coverage": 0.0017
+        }
+      ],
+      "detail": {
+        "energy": 10.1148
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "delivery-municipality",
+      "kind": "control",
+      "note": "Municipio label, select affordance and underline",
+      "grid": "C9:E9",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.9,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2208,
+        "y": 0.9067,
+        "w": 0.2417,
+        "h": 0.0733
+      },
+      "px": {
+        "x": 318,
+        "y": 816,
+        "w": 348,
+        "h": 66
+      },
+      "aspect": 5.2727,
+      "palette": [
+        {
+          "hex": "#f8f5e8",
+          "coverage": 0.9226
+        },
+        {
+          "hex": "#d8c9c9",
+          "coverage": 0.0535
+        },
+        {
+          "hex": "#aea4a6",
+          "coverage": 0.0169
+        },
+        {
+          "hex": "#786868",
+          "coverage": 0.0039
+        },
+        {
+          "hex": "#484040",
+          "coverage": 0.0031
+        }
+      ],
+      "detail": {
+        "energy": 12.1488
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "delivery-reference",
+      "kind": "control",
+      "note": "Referencias label, placeholder and underline input",
+      "grid": "E9:G9",
+      "coverBox": {
+        "x": 0.4,
+        "y": 0.9,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.4792,
+        "y": 0.9067,
+        "w": 0.2208,
+        "h": 0.0733
+      },
+      "px": {
+        "x": 690,
+        "y": 816,
+        "w": 318,
+        "h": 66
+      },
+      "aspect": 4.8182,
+      "palette": [
+        {
+          "hex": "#f7f3e8",
+          "coverage": 0.9013
+        },
+        {
+          "hex": "#b8adac",
+          "coverage": 0.0957
+        },
+        {
+          "hex": "#534848",
+          "coverage": 0.003
+        }
+      ],
+      "detail": {
+        "energy": 19.3231
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "summary-title",
+      "kind": "text",
+      "note": "large wine serif title Resumen",
+      "grid": "H1:J1",
+      "coverBox": {
+        "x": 0.7,
+        "y": 0.1,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.7625,
+        "y": 0.1133,
+        "w": 0.1375,
+        "h": 0.0533
+      },
+      "px": {
+        "x": 1098,
+        "y": 102,
+        "w": 198,
+        "h": 48
+      },
+      "aspect": 4.125,
+      "palette": [
+        {
+          "hex": "#f7f3e9",
+          "coverage": 0.8056
+        },
+        {
+          "hex": "#720e22",
+          "coverage": 0.1228
+        },
+        {
+          "hex": "#e1c3c5",
+          "coverage": 0.0261
+        },
+        {
+          "hex": "#9b4a57",
+          "coverage": 0.0261
+        },
+        {
+          "hex": "#cda0a6",
+          "coverage": 0.0193
+        }
+      ],
+      "detail": {
+        "energy": 37.3378
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 33.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6934,
+          "advTall": 0.8442,
+          "advX": 0.6482,
+          "gap": 0.0904,
+          "xRatio": 0.6424,
+          "stemW": 0.1456,
+          "contrast": 3.5589,
+          "serif": 1.7182,
+          "densTall": 0.3683,
+          "densX": 0.4127,
+          "weight": 0.3683
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "summary-subtotal",
+      "kind": "text",
+      "note": "Subtotal label and amount aligned across summary with rule",
+      "grid": null,
+      "box": {
+        "x": 0.767,
+        "y": 0.203,
+        "w": 0.202,
+        "h": 0.067
+      },
+      "px": {
+        "x": 1104,
+        "y": 183,
+        "w": 291,
+        "h": 60
+      },
+      "aspect": 4.85,
+      "palette": [
+        {
+          "hex": "#f7f5e9",
+          "coverage": 0.9183
+        },
+        {
+          "hex": "#cac2c2",
+          "coverage": 0.0351
+        },
+        {
+          "hex": "#9b908f",
+          "coverage": 0.0189
+        },
+        {
+          "hex": "#4a3b46",
+          "coverage": 0.0141
+        },
+        {
+          "hex": "#756972",
+          "coverage": 0.0136
+        }
+      ],
+      "detail": {
+        "energy": 33.7135
       },
       "medium": "semantic",
       "plate": null,
@@ -613,226 +2520,413 @@
       "type": {
         "comp": {
           "lines": 2,
-          "glyphs": 15,
-          "capHeightPx": 68.1,
+          "glyphs": 29,
+          "capHeightPx": 12.3,
           "inkIsDark": true,
           "allCaps": false,
-          "advance": 0.7091,
-          "advTall": 0.9853,
-          "advX": 0.549,
-          "gap": 0.0433,
-          "xRatio": 0.6587,
-          "stemW": 0.1407,
-          "contrast": 2.5909,
-          "serif": 1.3489,
-          "densTall": 0.3098,
-          "densX": 0.4185,
-          "weight": 0.3098
+          "advance": 0.6612,
+          "advTall": 0.7177,
+          "advX": 0.6612,
+          "gap": 0.0827,
+          "xRatio": 0.7539,
+          "stemW": 0.1729,
+          "contrast": 1.1176,
+          "serif": 0.7518,
+          "densTall": 0.5453,
+          "densX": 0.4655,
+          "weight": 0.5453
         },
-        "widthClass": "condensed",
-        "weightClass": "light",
-        "chosen": {
-          "family": "Bodoni Moda",
-          "weight": 400,
-          "fontSizePx": 97,
-          "source": "catalog",
-          "estimatedSize": true,
-          "stamp": "2c6f954de689"
-        }
+        "widthClass": "normal",
+        "weightClass": "medium"
       }
     },
     {
-      "id": "primary-action",
-      "kind": "control",
-      "note": "deep-wine rectangular Ver arreglos button with white label and right arrow",
-      "grid": "B4:C4",
-      "coverBox": {
-        "x": 0.1,
-        "y": 0.4,
-        "w": 0.2,
-        "h": 0.1
-      },
+      "id": "summary-delivery",
+      "kind": "text",
+      "note": "Entrega label and Por confirmar value aligned across summary",
+      "grid": null,
       "box": {
-        "x": 0.0999,
-        "y": 0.4187,
-        "w": 0.1651,
-        "h": 0.0808
+        "x": 0.767,
+        "y": 0.272,
+        "w": 0.202,
+        "h": 0.067
       },
       "px": {
-        "x": 167,
-        "y": 394,
-        "w": 276,
-        "h": 76
+        "x": 1104,
+        "y": 245,
+        "w": 291,
+        "h": 60
       },
-      "aspect": 3.6316,
+      "aspect": 4.85,
       "palette": [
         {
-          "hex": "#6f1727",
-          "coverage": 0.8026
+          "hex": "#f7f5e7",
+          "coverage": 0.9794
         },
         {
-          "hex": "#f8eeec",
-          "coverage": 0.1638
+          "hex": "#dbb5b7",
+          "coverage": 0.0062
         },
         {
-          "hex": "#cda8ac",
-          "coverage": 0.0139
+          "hex": "#bf7c88",
+          "coverage": 0.0057
         },
         {
-          "hex": "#8b4755",
-          "coverage": 0.0122
+          "hex": "#78132d",
+          "coverage": 0.0052
         },
         {
-          "hex": "#a9737b",
-          "coverage": 0.0076
+          "hex": "#913f53",
+          "coverage": 0.0036
         }
       ],
       "detail": {
-        "energy": 25.6644
+        "energy": 10.1745
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 17,
+          "capHeightPx": 7.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5536,
+          "advTall": 0.511,
+          "advX": 0.7666,
+          "gap": 0.4685,
+          "xRatio": 0.5956,
+          "stemW": 0.3499,
+          "contrast": 2.2809,
+          "serif": 1.0385,
+          "densTall": 0.8191,
+          "densX": 0.5931,
+          "weight": 0.8191
+        },
+        "widthClass": "wide",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "summary-total",
+      "kind": "text",
+      "note": "wine Total label and prominent amount with rules",
+      "grid": null,
+      "box": {
+        "x": 0.767,
+        "y": 0.328,
+        "w": 0.202,
+        "h": 0.065
+      },
+      "px": {
+        "x": 1104,
+        "y": 295,
+        "w": 291,
+        "h": 59
+      },
+      "aspect": 4.9322,
+      "palette": [
+        {
+          "hex": "#f8f5e9",
+          "coverage": 0.8614
+        },
+        {
+          "hex": "#ddc9c6",
+          "coverage": 0.0743
+        },
+        {
+          "hex": "#cc9a9b",
+          "coverage": 0.0227
+        },
+        {
+          "hex": "#b57481",
+          "coverage": 0.0216
+        },
+        {
+          "hex": "#974255",
+          "coverage": 0.02
+        }
+      ],
+      "detail": {
+        "energy": 29.2658
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 19,
+          "capHeightPx": 19.8,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.3151,
+          "advTall": 0.3529,
+          "advX": 0.4033,
+          "gap": 0.1008,
+          "xRatio": 0.5272,
+          "stemW": 0.1462,
+          "contrast": 1.572,
+          "serif": 1.1702,
+          "densTall": 0.476,
+          "densX": 0.5194,
+          "weight": 0.476
+        },
+        "widthClass": "compressed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "payment-label",
+      "kind": "text",
+      "note": "Método de pago label",
+      "grid": "H4:J4",
+      "coverBox": {
+        "x": 0.7,
+        "y": 0.4,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.7708,
+        "y": 0.4667,
+        "w": 0.1625,
+        "h": 0.0333
+      },
+      "px": {
+        "x": 1110,
+        "y": 420,
+        "w": 234,
+        "h": 30
+      },
+      "aspect": 7.8,
+      "palette": [
+        {
+          "hex": "#f8f4ea",
+          "coverage": 0.8715
+        },
+        {
+          "hex": "#100c11",
+          "coverage": 0.0552
+        },
+        {
+          "hex": "#dbcdcc",
+          "coverage": 0.0249
+        },
+        {
+          "hex": "#594959",
+          "coverage": 0.0249
+        },
+        {
+          "hex": "#7b6f74",
+          "coverage": 0.0235
+        }
+      ],
+      "detail": {
+        "energy": 58.166
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 18,
+          "capHeightPx": 18.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.456,
+          "advTall": 1.7436,
+          "advX": 0.456,
+          "gap": 0.0671,
+          "xRatio": 0.5454,
+          "stemW": 0.1442,
+          "contrast": 1.174,
+          "serif": 7.2545,
+          "densTall": 0.4084,
+          "densX": 0.6529,
+          "weight": 0.4084
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "payment-icon",
+      "kind": "chrome",
+      "note": "small thin-line cash-in-hand code-drawn payment icon",
+      "grid": null,
+      "codeDrawn": true,
+      "box": {
+        "x": 0.767,
+        "y": 0.477,
+        "w": 0.04,
+        "h": 0.06
+      },
+      "px": {
+        "x": 1104,
+        "y": 429,
+        "w": 58,
+        "h": 54
+      },
+      "aspect": 1.0741,
+      "palette": [
+        {
+          "hex": "#f8f2ea",
+          "coverage": 0.787
+        },
+        {
+          "hex": "#a55363",
+          "coverage": 0.0621
+        },
+        {
+          "hex": "#ebcfce",
+          "coverage": 0.0621
+        },
+        {
+          "hex": "#841b36",
+          "coverage": 0.0533
+        },
+        {
+          "hex": "#770919",
+          "coverage": 0.0355
+        }
+      ],
+      "detail": {
+        "energy": 16.9604
       },
       "medium": "semantic",
       "plate": null,
       "text": null
     },
     {
-      "id": "category-arrangements-photo",
-      "kind": "image",
-      "note": "editorial category photograph of the orange chenille bouquet in black wrapping, framed by a slim warm-cream gutter",
-      "grid": "A7:C9",
+      "id": "payment-copy",
+      "kind": "text",
+      "note": "Pago contraentrega label and two-line explanatory copy",
+      "grid": "I4:J5",
+      "coverBox": {
+        "x": 0.8,
+        "y": 0.4,
+        "w": 0.2,
+        "h": 0.2
+      },
       "box": {
-        "x": 0,
-        "y": 0.7,
-        "w": 0.3,
-        "h": 0.3
+        "x": 0.8,
+        "y": 0.4733,
+        "w": 0.1667,
+        "h": 0.0867
       },
       "px": {
-        "x": 0,
-        "y": 659,
-        "w": 502,
-        "h": 282
+        "x": 1152,
+        "y": 426,
+        "w": 240,
+        "h": 78
       },
-      "aspect": 1.7801,
+      "aspect": 3.0769,
       "palette": [
         {
-          "hex": "#e6c9bb",
-          "coverage": 0.3295
+          "hex": "#f8f3e9",
+          "coverage": 0.8226
         },
         {
-          "hex": "#1c1513",
-          "coverage": 0.2829
+          "hex": "#9f959a",
+          "coverage": 0.0804
         },
         {
-          "hex": "#f8f4e5",
-          "coverage": 0.2041
+          "hex": "#d1c9c8",
+          "coverage": 0.0681
         },
         {
-          "hex": "#da630e",
-          "coverage": 0.1049
+          "hex": "#100c12",
+          "coverage": 0.0201
         },
         {
-          "hex": "#c7a387",
-          "coverage": 0.0787
+          "hex": "#594959",
+          "coverage": 0.0088
         }
       ],
       "detail": {
-        "energy": 28.686
+        "energy": 34.6673
       },
-      "medium": "raster",
-      "plate": "assets/plates/category-arrangements-photo.png",
-      "text": null
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 59,
+          "capHeightPx": 11.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6717,
+          "advTall": 0.5562,
+          "advX": 0.6717,
+          "gap": 0.1019,
+          "xRatio": 0.7726,
+          "stemW": 0.123,
+          "contrast": 1.0534,
+          "serif": 1.0613,
+          "densTall": 0.4594,
+          "densX": 0.4617,
+          "weight": 0.4594
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
     },
     {
-      "id": "category-stems-photo",
-      "kind": "image",
-      "note": "editorial macro category photograph of individual pink chenille lilies, framed by slim warm-cream gutters",
-      "grid": "D7:G9",
-      "box": {
-        "x": 0.3,
-        "y": 0.7,
-        "w": 0.4,
-        "h": 0.3
-      },
-      "px": {
-        "x": 502,
-        "y": 659,
-        "w": 669,
-        "h": 282
-      },
-      "aspect": 2.3723,
-      "palette": [
-        {
-          "hex": "#cfb09a",
-          "coverage": 0.4983
-        },
-        {
-          "hex": "#f5eede",
-          "coverage": 0.1674
-        },
-        {
-          "hex": "#ed92a0",
-          "coverage": 0.1581
-        },
-        {
-          "hex": "#cd6e76",
-          "coverage": 0.1272
-        },
-        {
-          "hex": "#f7c1cb",
-          "coverage": 0.049
-        }
-      ],
-      "detail": {
-        "energy": 26.8559
-      },
-      "medium": "raster",
-      "plate": "assets/plates/category-stems-photo.png",
-      "text": null
-    },
-    {
-      "id": "category-custom-photo",
-      "kind": "image",
-      "note": "editorial category photograph of a rounded blue and lavender chenille arrangement with ribbon, framed by a slim warm-cream gutter",
-      "grid": "H7:J9",
-      "box": {
+      "id": "confirm-button",
+      "kind": "control",
+      "note": "wide wine rectangular Confirmar pedido button with right arrow",
+      "grid": "H6:J6",
+      "coverBox": {
         "x": 0.7,
-        "y": 0.7,
+        "y": 0.6,
         "w": 0.3,
-        "h": 0.3
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.7625,
+        "y": 0.6,
+        "w": 0.2125,
+        "h": 0.0867
       },
       "px": {
-        "x": 1170,
-        "y": 659,
-        "w": 502,
-        "h": 282
+        "x": 1098,
+        "y": 540,
+        "w": 306,
+        "h": 78
       },
-      "aspect": 1.7801,
+      "aspect": 3.9231,
       "palette": [
         {
-          "hex": "#ccb49d",
-          "coverage": 0.5772
+          "hex": "#822737",
+          "coverage": 0.7185
         },
         {
-          "hex": "#f3eddd",
-          "coverage": 0.2524
+          "hex": "#f8f3eb",
+          "coverage": 0.2003
         },
         {
-          "hex": "#95815e",
-          "coverage": 0.0725
+          "hex": "#9e5866",
+          "coverage": 0.0493
         },
         {
-          "hex": "#785b82",
-          "coverage": 0.049
+          "hex": "#d2afb5",
+          "coverage": 0.0243
         },
         {
-          "hex": "#a8bdd6",
-          "coverage": 0.0489
+          "hex": "#ba838a",
+          "coverage": 0.0076
         }
       ],
       "detail": {
-        "energy": 25.3217
+        "energy": 28.4461
       },
-      "medium": "raster",
-      "plate": "assets/plates/category-custom-photo.png",
+      "medium": "semantic",
+      "plate": null,
       "text": null
     }
   ]

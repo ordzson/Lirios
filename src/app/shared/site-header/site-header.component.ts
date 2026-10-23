@@ -1,10 +1,11 @@
+import { BrandComponent } from '../brand/brand.component';
 import { Component, ElementRef, input, signal, viewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-site-header',
-  imports: [RouterLink],
+  imports: [BrandComponent, RouterLink],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.scss',
   host: {

@@ -1,83 +1,50 @@
 {
   "regions": [
-    {
-      "id": "header-ground",
-      "kind": "chrome",
-      "grid": "A0:J0",
-      "note": "warm cream header band with no divider or shadow"
-    },
-    {
-      "id": "wordmark",
-      "kind": "text",
-      "grid": "B0:B0",
-      "note": "provisional Lirios wordmark in large wine high-contrast serif"
-    },
-    {
-      "id": "wordmark-petal",
-      "kind": "chrome",
-      "grid": "C0:C0",
-      "note": "small flat dusty-blush two-petal mark beside the wordmark, simple code-drawn icon",
-      "codeDrawn": true
-    },
-    {
-      "id": "nav-arrangements",
-      "kind": "text",
-      "grid": "E0:E0",
-      "note": "Arreglos navigation link in quiet charcoal sans serif"
-    },
-    {
-      "id": "nav-stems",
-      "kind": "text",
-      "grid": "F0:G0",
-      "note": "Flores individuales navigation link in quiet charcoal sans serif"
-    },
-    {
-      "id": "nav-custom",
-      "kind": "text",
-      "grid": "H0:H0",
-      "note": "Personaliza navigation link in quiet charcoal sans serif"
-    },
-    {
-      "id": "nav-tracking",
-      "kind": "text",
-      "grid": "I0:I0",
-      "note": "Seguir pedido navigation link in quiet charcoal sans serif"
-    },
-    {
-      "id": "hero-photo",
-      "kind": "image",
-      "grid": "A1:J6",
-      "note": "wide editorial still-life photograph: warm cream paper set, decisive black-wrapped orange chenille-flower bouquet on the right, generous calm negative space on the left; no UI text, no printed Lirios seal, dry-flower props are nonessential"
-    },
-    {
-      "id": "headline",
-      "kind": "text",
-      "grid": "B2:E3",
-      "note": "two-line wine display headline Un detalle hecho / para quedarse."
-    },
-    {
-      "id": "primary-action",
-      "kind": "control",
-      "grid": "B4:C4",
-      "note": "deep-wine rectangular Ver arreglos button with white label and right arrow"
-    },
-    {
-      "id": "category-arrangements-photo",
-      "kind": "image",
-      "grid": "A7:C9",
-      "note": "editorial category photograph of the orange chenille bouquet in black wrapping, framed by a slim warm-cream gutter"
-    },
-    {
-      "id": "category-stems-photo",
-      "kind": "image",
-      "grid": "D7:G9",
-      "note": "editorial macro category photograph of individual pink chenille lilies, framed by slim warm-cream gutters"
-    },
-    {
-      "id": "category-custom-photo",
-      "kind": "image",
-      "grid": "H7:J9",
-      "note": "editorial category photograph of a rounded blue and lavender chenille arrangement with ribbon, framed by a slim warm-cream gutter"
-    }
+    { "id": "header-ground", "kind": "chrome", "grid": "A0:J0", "note": "matte blush-cream compact header band with one fine bottom rule" },
+    { "id": "wordmark", "kind": "text", "grid": "A0:B0", "note": "Lirios wordmark in wine high-contrast serif" },
+    { "id": "wordmark-petal", "kind": "chrome", "grid": "B0:B0", "note": "small flat dusty-pink two-petal code-drawn mark", "codeDrawn": true },
+    { "id": "nav-arrangements", "kind": "text", "grid": "D0:E0", "note": "Arreglos navigation link in charcoal sans serif" },
+    { "id": "nav-stems", "kind": "text", "grid": "E0:F0", "note": "Flores individuales navigation link in charcoal sans serif" },
+    { "id": "nav-custom", "kind": "text", "grid": "F0:G0", "note": "Personaliza navigation link in charcoal sans serif" },
+    { "id": "nav-tracking", "kind": "text", "grid": "G0:H0", "note": "Seguir pedido navigation link in charcoal sans serif" },
+    { "id": "cart-link", "kind": "control", "grid": "I0:J0", "note": "wine bag icon and Carrito quantity link" },
+    { "id": "index-divider", "kind": "chrome", "grid": "B1:B9", "note": "fine vertical rule separating the numbered checkout index" },
+    { "id": "summary-divider", "kind": "chrome", "grid": "H1:H9", "note": "fine vertical rule separating the sticky order summary" },
+    { "id": "index-cart", "kind": "text", "grid": "A1:B1", "note": "active 01 Carrito index entry in wine with underline" },
+    { "id": "index-contact", "kind": "text", "grid": "A2:B2", "note": "02 Tus datos index entry with hairline" },
+    { "id": "index-delivery", "kind": "text", "grid": "A3:B3", "note": "03 Entrega index entry with hairline" },
+    { "id": "index-confirm", "kind": "text", "grid": "A4:B4", "note": "04 Confirmar index entry with hairline" },
+    { "id": "page-title", "kind": "text", "grid": "C1:E1", "note": "large wine serif title Tu pedido" },
+    { "id": "label-product", "kind": "text", "box": { "x": 0.224, "y": 0.19, "w": 0.07, "h": 0.025 }, "note": "small uppercase sans PRODUCTO column label" },
+    { "id": "label-price", "kind": "text", "box": { "x": 0.451, "y": 0.19, "w": 0.05, "h": 0.025 }, "note": "small uppercase sans PRECIO column label" },
+    { "id": "label-quantity", "kind": "text", "box": { "x": 0.523, "y": 0.19, "w": 0.07, "h": 0.025 }, "note": "small uppercase sans CANTIDAD column label" },
+    { "id": "label-subtotal", "kind": "text", "box": { "x": 0.668, "y": 0.19, "w": 0.07, "h": 0.025 }, "note": "small uppercase sans SUBTOTAL column label" },
+    { "id": "product-one-photo", "kind": "image", "box": { "x": 0.224, "y": 0.229, "w": 0.075, "h": 0.122 }, "bleed": true, "note": "small square warm product photograph of crimson handmade chenille lilies" },
+    { "id": "product-one-name", "kind": "text", "grid": "D2:E2", "note": "Lirios carmesí product name in wine serif with quiet Eliminar link below" },
+    { "id": "product-one-price", "kind": "text", "grid": "E2:F2", "note": "first product price in tabular sans" },
+    { "id": "product-one-quantity", "kind": "control", "box": { "x": 0.531, "y": 0.253, "w": 0.094, "h": 0.052 }, "note": "square minus quantity plus stepper for first product" },
+    { "id": "product-one-subtotal", "kind": "text", "grid": "G2:H2", "note": "first line subtotal in tabular sans" },
+    { "id": "product-row-rule", "kind": "chrome", "box": { "x": 0.224, "y": 0.362, "w": 0.493, "h": 0.004 }, "note": "fine horizontal rule between product lines" },
+    { "id": "product-two-photo", "kind": "image", "box": { "x": 0.224, "y": 0.375, "w": 0.075, "h": 0.124 }, "bleed": true, "note": "small square warm product photograph of golden handmade chenille gerberas" },
+    { "id": "product-two-name", "kind": "text", "grid": "D3:E4", "note": "Gerberas doradas product name in wine serif with quiet Eliminar link below" },
+    { "id": "product-two-price", "kind": "text", "grid": "E3:F4", "note": "second product price in tabular sans" },
+    { "id": "product-two-quantity", "kind": "control", "box": { "x": 0.531, "y": 0.402, "w": 0.094, "h": 0.052 }, "note": "square minus quantity plus stepper for second product" },
+    { "id": "product-two-subtotal", "kind": "text", "grid": "G3:H4", "note": "second line subtotal in tabular sans" },
+    { "id": "contact-title", "kind": "text", "grid": "C5:E5", "note": "wine serif section heading Tus datos" },
+    { "id": "contact-name", "kind": "control", "grid": "C6:E6", "note": "Nombre completo label, placeholder and underline input" },
+    { "id": "contact-phone", "kind": "control", "grid": "E6:G6", "note": "Teléfono label, placeholder and underline input" },
+    { "id": "contact-email", "kind": "control", "box": { "x": 0.225, "y": 0.687, "w": 0.493, "h": 0.06 }, "note": "Correo electrónico label, placeholder and underline input" },
+    { "id": "delivery-title", "kind": "text", "box": { "x": 0.225, "y": 0.768, "w": 0.15, "h": 0.058 }, "note": "wine serif section heading Entrega" },
+    { "id": "delivery-address", "kind": "control", "grid": "C8:G8", "note": "Dirección de entrega label, placeholder and underline input" },
+    { "id": "delivery-municipality", "kind": "control", "grid": "C9:E9", "note": "Municipio label, select affordance and underline" },
+    { "id": "delivery-reference", "kind": "control", "grid": "E9:G9", "note": "Referencias label, placeholder and underline input" },
+    { "id": "summary-title", "kind": "text", "grid": "H1:J1", "note": "large wine serif title Resumen" },
+    { "id": "summary-subtotal", "kind": "text", "box": { "x": 0.767, "y": 0.203, "w": 0.202, "h": 0.067 }, "note": "Subtotal label and amount aligned across summary with rule" },
+    { "id": "summary-delivery", "kind": "text", "box": { "x": 0.767, "y": 0.272, "w": 0.202, "h": 0.067 }, "note": "Entrega label and Por confirmar value aligned across summary" },
+    { "id": "summary-total", "kind": "text", "box": { "x": 0.767, "y": 0.328, "w": 0.202, "h": 0.065 }, "note": "wine Total label and prominent amount with rules" },
+    { "id": "payment-label", "kind": "text", "grid": "H4:J4", "note": "Método de pago label" },
+    { "id": "payment-icon", "kind": "chrome", "box": { "x": 0.767, "y": 0.477, "w": 0.04, "h": 0.06 }, "note": "small thin-line cash-in-hand code-drawn payment icon", "codeDrawn": true },
+    { "id": "payment-copy", "kind": "text", "grid": "I4:J5", "note": "Pago contraentrega label and two-line explanatory copy" },
+    { "id": "confirm-button", "kind": "control", "grid": "H6:J6", "note": "wide wine rectangular Confirmar pedido button with right arrow" }
   ]
 }

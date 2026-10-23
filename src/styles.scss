@@ -2,6 +2,16 @@
 @import '@fontsource/bodoni-moda/latin-500.css';
 @import '@fontsource-variable/manrope/wght.css';
 
+:root {
+  --brand-pink: #de5b98;
+  --brand-gold: #f2b600;
+  --brand-ink: #922c59;
+  --brand-deep: #792147;
+  --brand-action: #a12f63;
+  --brand-pressed: #7e204c;
+  --brand-blush: #f1dce5;
+}
+
 *,
 *::before,
 *::after {
@@ -22,20 +32,26 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+// Follow the rendered dialog, including route changes and asynchronous product loading.
+// Component instances must not save and restore a shared body style during navigation.
+body:has(app-catalog .product-dialog, app-catalog .filter-overlay) {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
 
 ::selection {
-  background: #6c1326;
+  background: var(--brand-ink);
   color: #fff8f3;
 }
 
 :focus-visible {
-  outline: 0.1875rem solid #6c1326;
+  outline: 0.1875rem solid var(--brand-ink);
   outline-offset: 0.25rem;
 }
 
 html {
-  scrollbar-color: #6c1326 #faf2eb;
+  scrollbar-color: var(--brand-ink) #faf2eb;
 }

@@ -1,0 +1,58 @@
+name: Validate Lirios
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Scan source for secrets
+        uses: docker://ghcr.io/gitleaks/gitleaks:v8.30.1
+        with:
+          args: dir --config=.gitleaks.toml --redact --verbose --max-archive-depth=1 .
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck serverless functions
+        run: pnpm run typecheck:api
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build the Vercel artifact
+        run: pnpm run build:vercel
+
+      - name: Verify public asset policy
+        run: pnpm run verify:public-build
+
+      - name: Scan generated site for secrets
+        uses: docker://ghcr.io/gitleaks/gitleaks:v8.30.1
+        with:
+          args: dir --config=.gitleaks.toml --redact --verbose --max-archive-depth=1 dist/lirios/browser

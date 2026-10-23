@@ -1,3 +1,4 @@
+import { BrandComponent } from '../../shared/brand/brand.component';
 import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
@@ -120,7 +121,7 @@ const CHOICES: readonly ArrangementChoice[] = [
 
 @Component({
   selector: 'app-custom-arrangements',
-  imports: [RouterLink, SiteHeaderComponent],
+  imports: [BrandComponent, RouterLink, SiteHeaderComponent],
   templateUrl: './custom-arrangements.component.html',
   styleUrl: './custom-arrangements.component.scss',
 })
@@ -194,7 +195,8 @@ export class CustomArrangementsComponent implements AfterViewInit, OnDestroy {
   }
 
   protected sampleWhatsAppUrl(choice: ArrangementChoice, sample: ArrangementSample): string {
-    const imageUrl = new URL(sample.image, this.document.location.origin).href;
+    const baseUrl = this.document.baseURI || this.document.location.href;
+    const imageUrl = new URL(sample.image, baseUrl).href;
     const message = `${choice.whatsappMessage}\n\nMe gustó la muestra “${sample.name}”: ${imageUrl}\nNo tiene que ser idéntica; quiero usarla como referencia.`;
     return this.whatsAppUrl(message);
   }

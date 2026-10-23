@@ -1,0 +1,538 @@
+$wine: var(--brand-ink);
+$wine-action: var(--brand-action);
+$wine-pressed: var(--brand-pressed);
+$cream: #faf2eb;
+$parchment: #f4e7dd;
+$charcoal: #2d2427;
+$muted: #66595a;
+$rule: #d3c1b8;
+$leaf: #2f513e;
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: $cream;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.confirmation-page {
+  min-height: 100vh;
+  background: $cream;
+  color: $charcoal;
+}
+
+app-site-header {
+  display: block;
+  height: 6.5rem;
+}
+
+.confirmation-main {
+  max-width: 90rem;
+  min-height: calc(100vh - 3.75rem);
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 3.75rem) clamp(1.25rem, 4.8vw, 4.5rem) 7rem;
+  animation: confirmation-settle 480ms $ease both;
+}
+
+.confirmation-intro {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: start;
+  max-width: 65rem;
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.confirmation-mark {
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid $leaf;
+  fill: none;
+  stroke: $leaf;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.confirmation-intro h1,
+.missing-order h1 {
+  margin: -0.2rem 0 0.9rem;
+  font-size: clamp(4rem, 7vw, 6rem);
+  line-height: 0.92;
+}
+
+.confirmation-intro p {
+  max-width: 58ch;
+  margin: 0;
+  color: $muted;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.order-number {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+  align-items: center;
+  padding: clamp(1.5rem, 2.5vw, 2.2rem) 0;
+  border-block: 1px solid $wine;
+}
+
+.order-number h2 {
+  margin: 0 0 0.4rem;
+  color: $charcoal;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.order-number output {
+  display: block;
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  user-select: all;
+}
+
+.order-number div > p {
+  margin: 0.7rem 0 0;
+  color: $muted;
+  font-size: 0.8rem;
+}
+
+.order-number button {
+  display: inline-flex;
+  min-height: 3.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid $wine;
+  border-radius: 0;
+  background: transparent;
+  color: $wine;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+  transition:
+    background-color 180ms ease-out,
+    color 180ms ease-out;
+}
+
+.order-number button:hover {
+  background: $wine;
+  color: #fff8f3;
+}
+
+.order-number button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.copy-message {
+  grid-column: 1 / -1;
+  min-height: 1.3rem;
+  margin: 0;
+  color: $leaf;
+  font-size: 0.82rem;
+}
+
+.confirmation-sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.72fr) minmax(18rem, 0.72fr);
+  gap: clamp(2rem, 3.4vw, 3.5rem);
+  align-items: start;
+  padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+.confirmation-sheet > * + * {
+  padding-left: clamp(1.5rem, 2.5vw, 2.5rem);
+  border-left: 1px solid $rule;
+}
+
+.confirmation-sheet h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+  line-height: 1;
+}
+
+.receipt-lines {
+  border-top: 1px solid $rule;
+}
+
+.receipt-line {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  min-height: 7rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid $rule;
+}
+
+.receipt-line img {
+  display: block;
+  width: 5rem;
+  height: 5.5rem;
+  background: $parchment;
+  object-fit: cover;
+}
+
+.receipt-line h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.receipt-line p {
+  margin: 0;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.receipt-line div p {
+  margin-top: 0.35rem;
+  color: $muted;
+}
+
+.receipt-totals {
+  margin: 1.1rem 0 0;
+}
+
+.receipt-totals > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid $rule;
+}
+
+.receipt-totals dt,
+.receipt-totals dd {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.receipt-totals dd {
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+}
+
+.receipt-totals__total dt,
+.receipt-totals__total dd {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.5rem;
+}
+
+.receipt-note {
+  max-width: 58ch;
+  margin: 1rem 0 0;
+  color: $muted;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.order-details {
+  display: grid;
+  gap: 3rem;
+}
+
+.order-details section + section {
+  padding-top: 2.5rem;
+  border-top: 1px solid $rule;
+}
+
+.order-details dl {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+}
+
+.order-details dt {
+  margin-bottom: 0.25rem;
+  color: $muted;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.order-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.next-step {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.next-step ol {
+  display: grid;
+  gap: 1.15rem;
+  margin: 0;
+  padding: 0 0 0 1.2rem;
+  color: $muted;
+}
+
+.next-step li {
+  padding-left: 0.35rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.next-step li::marker {
+  color: $wine;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.1rem;
+}
+
+.payment-method {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  margin-top: 2rem;
+  padding-block: 1.35rem;
+  border-block: 1px solid $rule;
+}
+
+.payment-method > svg {
+  width: 3rem;
+  height: 3rem;
+  fill: none;
+  stroke: $wine;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 1.5;
+}
+
+.payment-method strong,
+.payment-method span {
+  display: block;
+}
+
+.payment-method strong {
+  font-size: 0.9rem;
+}
+
+.payment-method span {
+  margin-top: 0.25rem;
+  color: $muted;
+  font-size: 0.78rem;
+}
+
+.next-step > a,
+.missing-order a {
+  display: inline-flex;
+  min-height: 3.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.85rem 1.3rem;
+  background: $wine-action;
+  color: #fff8f3;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease-out,
+    transform 180ms ease-out;
+}
+
+.next-step > a {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.next-step > a:hover,
+.missing-order a:hover {
+  background: $wine-pressed;
+  transform: translateY(-0.125rem);
+}
+
+.next-step > a svg,
+.missing-order a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.missing-order {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, 31rem);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+  min-height: calc(100vh - 10rem);
+  max-width: 76rem;
+  margin-inline: auto;
+}
+
+.missing-order p {
+  max-width: 48ch;
+  margin: 0 0 1.2rem;
+  color: $muted;
+  line-height: 1.65;
+}
+
+.missing-order__number {
+  padding-block: 0.8rem;
+  border-block: 1px solid $rule;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.missing-order a {
+  margin-top: 0.8rem;
+}
+
+.missing-order > img {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  background: $parchment;
+  object-fit: cover;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid $wine;
+  outline-offset: 4px;
+}
+
+@media (max-width: 70rem) {
+  .confirmation-sheet {
+    grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.75fr);
+  }
+
+  .next-step {
+    position: static;
+    grid-column: 1 / -1;
+    padding: 2.5rem 0 0;
+    border-top: 1px solid $rule;
+    border-left: 0;
+  }
+
+  .next-step ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    padding-left: 1.2rem;
+  }
+
+  .next-step > a {
+    width: auto;
+  }
+}
+
+@media (max-width: 47rem) {
+  .confirmation-main {
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  .confirmation-intro {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .confirmation-mark {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .confirmation-intro h1,
+  .missing-order h1 {
+    font-size: clamp(3.2rem, 15vw, 4.5rem);
+  }
+
+  .order-number {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .order-number button {
+    width: 100%;
+  }
+
+  .confirmation-sheet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .confirmation-sheet > * + * {
+    padding: 2.5rem 0 0;
+    border-top: 1px solid $rule;
+    border-left: 0;
+  }
+
+  .next-step {
+    grid-column: auto;
+  }
+
+  .next-step ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .next-step > a {
+    width: 100%;
+  }
+
+  .missing-order {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .missing-order > img {
+    max-height: 28rem;
+  }
+}
+
+@keyframes confirmation-settle {
+  from {
+    filter: blur(0.18rem);
+    transform: translateY(0.25rem);
+  }
+
+  to {
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confirmation-main {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

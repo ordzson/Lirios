@@ -1,0 +1,345 @@
+<main class="admin-shell">
+  <aside class="admin-sidebar">
+    <a class="admin-brand" routerLink="/" aria-label="Dumish Blooms, volver a la tienda">
+      <app-brand />
+    </a>
+
+    <nav aria-label="Administración">
+      <button type="button" [class.is-active]="section() === 'overview'" (click)="setSection('overview')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></svg>
+        <span>Resumen</span>
+      </button>
+      <button type="button" [class.is-active]="section() === 'orders'" (click)="setSection('orders')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 8h6M9 12h6M9 16h4" /></svg>
+        <span>Pedidos</span>
+      </button>
+      <button type="button" [class.is-active]="section() === 'catalog'" (click)="setSection('catalog')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v14H4zM8 6V4h8v2M8 11h8M8 15h5" /></svg>
+        <span>Catálogo</span>
+      </button>
+      @if (auth.isAdmin() || data.previewMode) {
+        <button type="button" [class.is-active]="section() === 'team'" (click)="setSection('team')">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16.5 10a2.5 2.5 0 1 0 0-5M3 20v-2a5 5 0 0 1 10 0v2M14 14.5a4.5 4.5 0 0 1 7 3.7V20" /></svg>
+          <span>Equipo</span>
+        </button>
+      }
+    </nav>
+
+    <div class="admin-account">
+      <span>{{ data.previewMode ? 'Vista de preparación' : (auth.profile()?.fullName || auth.user()?.email) }}</span>
+      <small>{{ data.previewMode ? 'Datos ilustrativos' : (auth.profile()?.role === 'admin' ? 'Administración' : 'Operación') }}</small>
+      @if (!data.previewMode) { <button type="button" (click)="signOut()">Cerrar sesión</button> }
+    </div>
+  </aside>
+
+  <section class="admin-workspace">
+    @if (state() === 'loading') {
+      <div class="loading-state" aria-live="polite">
+        <div></div><div></div><div></div>
+        <p>Preparando la mesa de trabajo…</p>
+      </div>
+    } @else if (state() === 'error') {
+      <div class="fatal-state">
+        <h1>No pudimos abrir el taller.</h1>
+        <p>{{ errorMessage() }}</p>
+        <button type="button" (click)="retry()">Intentar de nuevo</button>
+      </div>
+    } @else {
+      @if (data.previewMode) {
+        <div class="preview-banner">Vista local con datos ilustrativos · conecta Supabase para operar.</div>
+      }
+      @if (notice() || errorMessage()) {
+        <div class="workspace-message" [class.workspace-message--error]="errorMessage()" aria-live="polite">
+          {{ errorMessage() || notice() }}
+        </div>
+      }
+
+      @if (section() === 'overview') {
+        <header class="workspace-header">
+          <div>
+            <h1>Mesa de trabajo</h1>
+            <p>Lo que necesita atención hoy, sin perder de vista el resto.</p>
+          </div>
+          <button class="primary-control" type="button" (click)="setSection('orders')">Ver pedidos</button>
+        </header>
+
+        <dl class="metric-strip" aria-label="Estado de la operación">
+          <div><dt>Por confirmar</dt><dd>{{ metrics().received }}</dd></div>
+          <div><dt>En preparación</dt><dd>{{ metrics().production }}</dd></div>
+          <div><dt>Listos</dt><dd>{{ metrics().ready }}</dd></div>
+          <div><dt>Stock bajo</dt><dd>{{ metrics().lowStock }}</dd></div>
+        </dl>
+
+        <div class="overview-grid">
+          <section class="queue" aria-labelledby="queue-title">
+            <div class="section-heading">
+              <h2 id="queue-title">Pedidos en movimiento</h2>
+              <button type="button" (click)="setSection('orders')">Ver todos</button>
+            </div>
+            @if (activeOrders().length) {
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Pedido</th><th>Cliente</th><th>Estado</th><th>Total</th></tr></thead>
+                  <tbody>
+                    @for (order of activeOrders(); track order.id) {
+                      <tr>
+                        <td><button class="table-link" type="button" (click)="selectOrder(order); setSection('orders')">{{ order.orderNumber }}</button></td>
+                        <td>{{ order.customerName }}</td>
+                        <td><span class="status" [attr.data-status]="order.status">{{ statusLabel(order.status) }}</span></td>
+                        <td>{{ order.total === null ? 'Por confirmar' : ('Q ' + (order.total | number: '1.2-2')) }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            } @else {
+              <div class="empty-state">
+                <h3>La mesa está despejada.</h3>
+                <p>Los pedidos nuevos aparecerán aquí en cuanto alguien confirme su solicitud.</p>
+              </div>
+            }
+          </section>
+
+          <aside class="attention-rail" aria-labelledby="attention-title">
+            <h2 id="attention-title">Atención</h2>
+            @if (lowStockProducts().length) {
+              <ul>
+                @for (product of lowStockProducts(); track product.id) {
+                  <li>
+                    <button type="button" (click)="editProduct(product); setSection('catalog')">
+                      <span>{{ product.name }}</span>
+                      <strong>{{ product.inventory }} disponibles</strong>
+                    </button>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <p class="rail-empty">No hay avisos de inventario.</p>
+            }
+            <button class="text-control" type="button" (click)="setSection('catalog')">Revisar catálogo →</button>
+          </aside>
+        </div>
+      }
+
+      @if (section() === 'orders') {
+        <header class="workspace-header workspace-header--stacked">
+          <div>
+            <h1>Pedidos</h1>
+            <p>Confirma, prepara y entrega desde una misma fila de trabajo.</p>
+          </div>
+          <div class="toolbar">
+            <label>
+              <span class="sr-only">Buscar pedido</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4 4" /></svg>
+              <input type="search" placeholder="Número, cliente o teléfono" [value]="orderSearch()" (input)="setSearch($event)" />
+            </label>
+            <select aria-label="Filtrar por estado" [value]="orderStatus()" (change)="setStatusFilter($event)">
+              <option value="all">Todos los estados</option>
+              @for (status of orderStatuses; track status[0]) { <option [value]="status[0]">{{ status[1] }}</option> }
+            </select>
+          </div>
+        </header>
+
+        <div class="orders-layout" [class.orders-layout--selected]="selectedOrder()">
+          <section class="orders-table" aria-label="Lista de pedidos">
+            @if (filteredOrders().length) {
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Pedido</th><th>Fecha</th><th>Cliente</th><th>Estado</th><th>Total</th></tr></thead>
+                  <tbody>
+                    @for (order of filteredOrders(); track order.id) {
+                      <tr [class.is-selected]="selectedOrderId() === order.id">
+                        <td><button class="table-link" type="button" (click)="selectOrder(order); $event.stopPropagation()">{{ order.orderNumber }}</button></td>
+                        <td>{{ order.createdAt | date: 'd MMM, HH:mm' : 'America/Guatemala' : 'es-GT' }}</td>
+                        <td><strong>{{ order.customerName }}</strong><small>{{ order.customerPhone }}</small></td>
+                        <td><span class="status" [attr.data-status]="order.status">{{ statusLabel(order.status) }}</span></td>
+                        <td>{{ order.total === null ? 'Por confirmar' : ('Q ' + (order.total | number: '1.2-2')) }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            } @else {
+              <div class="empty-state">
+                <h2>No hay coincidencias.</h2>
+                <p>Cambia el texto o el estado para volver a ver pedidos.</p>
+              </div>
+            }
+          </section>
+
+          @if (selectedOrder(); as order) {
+            <aside class="order-detail" aria-labelledby="order-detail-title">
+              <div class="detail-heading">
+                <div><h2 id="order-detail-title">{{ order.orderNumber }}</h2><p>{{ order.createdAt | date: 'd MMMM y, HH:mm' : 'America/Guatemala' : 'es-GT' }}</p></div>
+                <button type="button" aria-label="Cerrar detalle" (click)="selectedOrderId.set(null)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+                </button>
+              </div>
+              <label for="order-status">Estado</label>
+              <select id="order-status" [value]="order.status" [disabled]="saving()" (change)="changeOrderStatus(order, $event)">
+                @for (status of orderStatuses; track status[0]) { <option [value]="status[0]">{{ status[1] }}</option> }
+              </select>
+              <section>
+                <h3>Entrega</h3>
+                <p><strong>{{ order.recipientName }}</strong><br />{{ order.deliveryAddress }}<br />{{ order.municipality }}</p>
+                @if (order.notes) { <p class="detail-note">{{ order.notes }}</p> }
+              </section>
+              <section>
+                <h3>Contacto</h3>
+                <p>{{ order.customerName }}<br /><a [href]="'tel:' + order.customerPhone">{{ order.customerPhone }}</a><br /><a [href]="'mailto:' + order.customerEmail">{{ order.customerEmail || 'Sin correo' }}</a></p>
+              </section>
+              <section>
+                <h3>Piezas</h3>
+                <ul class="order-items">
+                  @for (item of order.items; track item.id) {
+                    <li><span>{{ item.quantity }} × {{ item.productName }}</span><strong>{{ item.unitPrice === null ? 'Por confirmar' : ('Q ' + (item.unitPrice | number: '1.2-2')) }}</strong></li>
+                  }
+                </ul>
+              </section>
+            </aside>
+          }
+        </div>
+      }
+
+      @if (section() === 'catalog') {
+        <header class="workspace-header">
+          <div>
+            <h1>Catálogo</h1>
+            <p>Precios, inventario y fotografías que aparecen en la tienda.</p>
+          </div>
+          <button class="primary-control" type="button" (click)="createProduct()">Nuevo producto</button>
+        </header>
+
+        <div class="catalog-layout" [class.catalog-layout--editing]="selectedProductId()">
+          <section class="product-list" aria-label="Productos">
+            <div class="product-list__head"><span>Producto</span><span>Inventario</span><span>Estado</span></div>
+            @for (product of products(); track product.id) {
+              <button type="button" [class.is-selected]="selectedProductId() === product.id" (click)="editProduct(product)">
+                <span class="product-identity">
+                  @if (product.images[0]; as image) { <img [src]="image.publicUrl" [alt]="image.altText" /> } @else { <span class="image-placeholder">Sin foto</span> }
+                  <span><strong>{{ product.name }}</strong><small>{{ product.category === 'arrangement' ? 'Arreglo' : 'Flor individual' }} · {{ product.price === null ? 'Sin precio' : ('Q ' + (product.price | number: '1.2-2')) }}</small></span>
+                </span>
+                <span>{{ product.trackInventory ? product.inventory : '—' }}</span>
+                <span class="publication-state" [attr.data-status]="product.status">{{ product.status === 'active' ? 'Publicado' : product.status === 'draft' ? 'Borrador' : 'Archivado' }}</span>
+              </button>
+            } @empty {
+              <div class="product-empty">
+                <h2>El catálogo está listo para su primera pieza.</h2>
+                <p>Crea un producto, guarda sus datos y agrega una fotografía antes de publicarlo.</p>
+                <button type="button" (click)="createProduct()">Crear primer producto</button>
+              </div>
+            }
+          </section>
+
+          @if (selectedProductId()) {
+            <aside class="product-editor" aria-labelledby="product-editor-title">
+              <div class="detail-heading">
+                <div><h2 id="product-editor-title">{{ selectedProductId() === 'new' ? 'Nuevo producto' : 'Editar producto' }}</h2><p>Los cambios publicados aparecen en el catálogo.</p></div>
+                <button type="button" aria-label="Cerrar editor" (click)="selectedProductId.set(null)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+                </button>
+              </div>
+              <form [formGroup]="productForm" (ngSubmit)="saveProduct()" novalidate>
+                <label for="product-name">Nombre</label>
+                <input
+                  id="product-name"
+                  type="text"
+                  formControlName="name"
+                  aria-describedby="product-name-error"
+                  [attr.aria-invalid]="productForm.controls.name.invalid && productForm.controls.name.touched"
+                  (input)="makeSlug()"
+                />
+                @if (productForm.controls.name.invalid && productForm.controls.name.touched) {
+                  <p id="product-name-error" class="field-error">Escribe un nombre de hasta 100 caracteres.</p>
+                }
+                <label for="product-slug">Dirección</label>
+                <div class="prefixed-input">
+                  <span>/catalogo/</span>
+                  <input
+                    id="product-slug"
+                    type="text"
+                    formControlName="slug"
+                    aria-describedby="product-slug-error"
+                    [attr.aria-invalid]="productForm.controls.slug.invalid && productForm.controls.slug.touched"
+                  />
+                </div>
+                @if (productForm.controls.slug.invalid && productForm.controls.slug.touched) {
+                  <p id="product-slug-error" class="field-error">Usa letras minúsculas, números y guiones, sin espacios.</p>
+                }
+                <label for="product-description">Descripción</label>
+                <textarea id="product-description" formControlName="description" rows="3"></textarea>
+                <div class="form-grid">
+                  <label>Tipo<select formControlName="category"><option value="arrangement">Arreglo</option><option value="single-flower">Flor individual</option></select></label>
+                  <label for="product-price">
+                    Precio (GTQ)
+                    <input id="product-price" type="number" min="0" step="0.01" formControlName="price" aria-describedby="product-price-error" [attr.aria-invalid]="productForm.controls.price.invalid && productForm.controls.price.touched" />
+                    @if (productForm.controls.price.invalid && productForm.controls.price.touched) { <span id="product-price-error" class="field-error">Usa cero o un valor mayor.</span> }
+                  </label>
+                  <label for="product-inventory">
+                    Inventario
+                    <input id="product-inventory" type="number" min="0" step="1" formControlName="inventory" aria-describedby="product-inventory-error" [attr.aria-invalid]="productForm.controls.inventory.invalid && productForm.controls.inventory.touched" />
+                    @if (productForm.controls.inventory.invalid && productForm.controls.inventory.touched) { <span id="product-inventory-error" class="field-error">El inventario no puede ser negativo.</span> }
+                  </label>
+                  <label>Estado<select formControlName="status"><option value="draft">Borrador</option><option value="active">Publicado</option><option value="archived">Archivado</option></select></label>
+                </div>
+                <div class="check-row">
+                  <label><input type="checkbox" formControlName="trackInventory" /> Controlar inventario</label>
+                  <label><input type="checkbox" formControlName="featured" /> Producto destacado</label>
+                </div>
+                <div class="editor-actions"><button type="submit" [disabled]="saving()">{{ saving() ? 'Guardando…' : 'Guardar producto' }}</button></div>
+              </form>
+
+              <section class="photo-manager">
+                <div><h3>Fotografías</h3><p>JPG, PNG o WebP · máximo 10 MB.</p></div>
+                @if (selectedProduct()?.images?.length) {
+                  <div class="photo-strip">
+                    @for (image of selectedProduct()?.images ?? []; track image.id) { <img [src]="image.publicUrl" [alt]="image.altText" /> }
+                  </div>
+                }
+                <label for="product-image-alt">Texto alternativo</label>
+                <input id="product-image-alt" type="text" [formControl]="productForm.controls.imageAlt" placeholder="Describe la flor y sus colores" />
+                <label class="upload-control" [class.is-disabled]="!productForm.controls.id.value">
+                  <input type="file" accept="image/jpeg,image/png,image/webp" [disabled]="!productForm.controls.id.value" (change)="uploadImage($event)" />
+                  <span>Elegir fotografía</span>
+                </label>
+                @if (uploadProgress()) { <p class="upload-message" aria-live="polite">{{ uploadProgress() }}</p> }
+              </section>
+            </aside>
+          }
+        </div>
+      }
+
+      @if (section() === 'team') {
+        <header class="workspace-header">
+          <div>
+            <h1>Equipo</h1>
+            <p>Decide quién puede operar el catálogo y quién administra los accesos.</p>
+          </div>
+        </header>
+        <section class="team-table" aria-label="Miembros del equipo">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Persona</th><th>Alta</th><th>Rol</th></tr></thead>
+              <tbody>
+                @for (member of team(); track member.id) {
+                  <tr>
+                    <td><strong>{{ member.fullName || 'Nombre pendiente' }}</strong><small>{{ member.id === auth.profile()?.id ? 'Tu cuenta' : member.id }}</small></td>
+                    <td>{{ member.createdAt | date: 'd MMM y' : 'America/Guatemala' : 'es-GT' }}</td>
+                    <td>
+                      <select [value]="member.role || 'manager'" [disabled]="saving() || member.id === auth.profile()?.id" (change)="changeRole(member, $event)" [attr.aria-label]="'Rol de ' + (member.fullName || 'la cuenta')">
+                        <option value="manager">Operación</option><option value="admin">Administración</option>
+                      </select>
+                    </td>
+                  </tr>
+                } @empty {
+                  <tr><td colspan="3">Las cuentas creadas en Supabase aparecerán aquí.</td></tr>
+                }
+              </tbody>
+            </table>
+          </div>
+          <p class="team-note"><strong>Operación</strong> gestiona pedidos y catálogo. <strong>Administración</strong> también puede cambiar roles y eliminar productos.</p>
+        </section>
+      }
+    }
+  </section>
+</main>

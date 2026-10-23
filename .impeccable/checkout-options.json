@@ -1,0 +1,43 @@
+{
+  "title": "Elige la estructura del pedido",
+  "question": "Las tres opciones conservan la identidad de Lirios y permiten completar el pedido en una sola ruta. Elige la composición que debe guiar el carrito y checkout.",
+  "options": [
+    {
+      "id": "talonario-encargo",
+      "label": "Talonario de encargo",
+      "kicker": "THE ROLL",
+      "thesis": "El pedido se organiza en tramos numerados y el total vive en un resguardo lateral siempre visible.",
+      "palette": ["#faf2eb", "#6c1326", "#d6bea9", "#2d2427"],
+      "materials": ["papel crema mate", "reglas finas", "fotografía real de producto"],
+      "viewport": "Una hoja amplia: carrito editable a la izquierda, resguardo de total a la derecha y contacto, entrega y pago numerados debajo.",
+      "risk": "La segmentación puede sentirse administrativa si las fotografías y el ritmo editorial pierden protagonismo.",
+      "comp": ".impeccable/mocks/decision/checkout-talonario.png"
+    },
+    {
+      "id": "hoja-taller",
+      "label": "Hoja del taller",
+      "thesis": "Una sola hoja continua acompaña el pedido de las piezas a la entrega, sin ocultar pasos ni cambiar de pantalla.",
+      "palette": ["#faf2eb", "#6c1326", "#e8d1cc", "#2d2427"],
+      "materials": ["índice editorial", "líneas de registro", "tipografía Bodoni y Manrope"],
+      "viewport": "Un índice vertical marca Carrito, Tus datos y Entrega; el contenido ocupa el centro y el resumen queda fijo a la derecha.",
+      "risk": "En pedidos largos exige una jerarquía muy disciplinada para no convertirse en un formulario interminable.",
+      "comp": ".impeccable/mocks/decision/checkout-hoja-taller.png"
+    },
+    {
+      "id": "escaparate-formulario",
+      "label": "Escaparate y formulario",
+      "thesis": "Las flores elegidas forman una franja visual editable antes de que el pedido descienda hacia los datos de entrega.",
+      "palette": ["#faf2eb", "#6c1326", "#f4e7dd", "#2d2427"],
+      "materials": ["fotografía de producto a escala", "campos subrayados", "pasajes tonales"],
+      "viewport": "Una banda superior muestra las piezas y sus cantidades; debajo aparecen el formulario amplio y un resumen compacto de contraentrega.",
+      "risk": "La franja visual consume altura y puede retrasar el formulario cuando el carrito contiene muchas piezas.",
+      "comp": ".impeccable/mocks/decision/checkout-escaparate.png"
+    }
+  ],
+  "reroll": true,
+  "steer": true,
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  }
+}

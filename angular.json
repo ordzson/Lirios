@@ -50,13 +50,32 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
+                "glob": "{dumish.jpeg,dumish-white.svg,favicon.svg}",
+                "input": "assets/brand",
+                "output": "assets/brand"
+              },
+              {
+                "glob": "favicon.ico",
                 "input": "public"
               },
               {
-                "glob": "**/*",
-                "input": "assets",
-                "output": "assets"
+                "glob": "config.js",
+                "input": "public"
+              },
+              {
+                "glob": "**/*.webp",
+                "input": "assets/pics/webp",
+                "output": "assets/pics/webp"
+              },
+              {
+                "glob": "**/*.webp",
+                "input": "assets/pics/retouched/webp",
+                "output": "assets/pics/retouched/webp"
+              },
+              {
+                "glob": "**/*.png",
+                "input": "assets/plates",
+                "output": "assets/plates"
               }
             ],
             "styles": [

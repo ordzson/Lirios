@@ -35,7 +35,7 @@ El negocio opera únicamente en línea y no tiene local físico. Atiende en Quet
 - Perfil de cliente opcional.
 - Consulta de seguimiento mediante número de orden sin exigir una cuenta.
 - Área administrativa autenticada para gestionar pedidos y estados de entrega.
-- El nombre provisional es “Lirios” y cambiará más adelante.
+- El nombre oficial es “Dumish Blooms”; el logo original se conserva en `assets/brand/dumish.jpeg`.
 
 ## Brand Commitments
 
@@ -45,7 +45,7 @@ La identidad debe partir de las convenciones reconocibles de una floristería di
 
 ## Evidence on Hand
 
-Se proporcionó una primera biblioteca de fotografías reales de producto: arreglos de los tres niveles, una flor individual y un arreglo complementario. Los nombres de catálogo siguen siendo provisionales. Aún no se proporcionaron identidad definitiva, testimonios, precios ni catálogo completo; no se debe inventar prueba social ni afirmaciones comerciales. Excepción temporal: el catálogo muestra precios mock para maquetación (ver `CATALOG_HANDOFF.md`), pendientes de sustituir por los reales.
+Se proporcionó una primera biblioteca de fotografías reales de producto: arreglos de los tres niveles, una flor individual y un arreglo complementario. Los nombres de catálogo siguen siendo provisionales. Ya se proporcionaron nombre y logo oficiales. Aún no se proporcionaron testimonios, precios ni catálogo completo; no se debe inventar prueba social ni afirmaciones comerciales. Excepción temporal: el catálogo muestra precios mock para maquetación (ver `CATALOG_HANDOFF.md`), pendientes de sustituir por los reales.
 
 ## Product Principles
 
@@ -53,7 +53,7 @@ Se proporcionó una primera biblioteca de fotografías reales de producto: arreg
 - Convertir elegir un regalo en una experiencia agradable, clara y sin presión.
 - Permitir comprar sin crear una cuenta y ofrecer continuidad a quien sí la quiera.
 - Mantener transparente el estado del pedido aunque la confirmación sea manual.
-- Preparar la identidad para sobrevivir al cambio del nombre provisional.
+- Aplicar de forma consistente el nombre y logo oficiales de Dumish Blooms.
 
 ## Accessibility & Inclusion
 

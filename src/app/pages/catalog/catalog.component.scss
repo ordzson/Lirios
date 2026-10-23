@@ -1,6 +1,6 @@
-$wine: #6c1326;
-$wine-deep: #641326;
-$wine-action: #741429;
+$wine: var(--brand-ink);
+$wine-deep: var(--brand-deep);
+$wine-action: var(--brand-action);
 $cream: #faf2eb;
 $charcoal: #2d2427;
 $muted: #66595a;
@@ -28,7 +28,7 @@ button {
 
 app-site-header {
   display: block;
-  height: 3.75rem;
+  height: 6.5rem;
 }
 
 .catalog-main {
@@ -228,7 +228,7 @@ h1 {
   gap: 0.5rem;
   margin-top: 2.25rem;
   padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgb(108 19 38 / 55%);
+  border-bottom: 1px solid rgb(146 44 89 / 55%);
   color: $wine;
   font-size: 0.85rem;
   font-weight: 560;
@@ -325,7 +325,7 @@ h1 {
 }
 
 .product-card:hover .product-card__name {
-  text-decoration-color: rgb(108 19 38 / 45%);
+  text-decoration-color: rgb(146 44 89 / 45%);
 }
 
 .product-card__category,
@@ -349,7 +349,7 @@ h1 {
   height: 100%;
   place-items: center;
   padding: 1rem;
-  background: #e8d1cc;
+  background: var(--brand-blush);
   color: #66595a;
   font-size: 0.85rem;
   text-align: center;
@@ -528,11 +528,8 @@ h1 {
 }
 
 .product-dialog__brand {
-  color: $wine;
-  font-family: 'Bodoni Moda', serif;
-  font-size: 2.25rem;
-  font-weight: 500;
-  letter-spacing: -0.035em;
+  display: block;
+  width: 8.75rem;
   text-decoration: none;
 }
 
@@ -679,7 +676,7 @@ h1 {
 
 @media (max-width: 56.24rem) {
   app-site-header {
-    height: 4.5rem;
+    height: 6rem;
   }
 
   .catalog-main {
