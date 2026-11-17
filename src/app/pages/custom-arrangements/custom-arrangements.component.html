@@ -40,7 +40,7 @@
             assets/pics/retouched/webp/arreglo_tier3_3-retouched-640.webp   640w,
             assets/pics/retouched/webp/arreglo_tier3_3-retouched-full.webp 1086w
           "
-          sizes="(max-width: 899px) 100vw, 52vw"
+          sizes="(max-width: 315px) calc(100vw - 40px), (max-width: 899px) 276px, 54vw"
           alt="Arreglo abundante de flores azules, violetas, rosadas y blancas hecho con limpiapipas"
           width="1086"
           height="1448"
@@ -104,8 +104,8 @@
                 [srcset]="sample.image640 + ' 640w, ' + sample.image + ' 1086w'"
                 [sizes]="
                   choice.samples.length === 2
-                    ? '(max-width: 899px) 88vw, 48vw'
-                    : '(max-width: 899px) 88vw, 32vw'
+                    ? '(max-width: 464px) 62vw, (max-width: 899px) 288px, (max-width: 1066px) 42vw, 448px'
+                    : '(max-width: 464px) 62vw, (max-width: 899px) 288px, (max-width: 1447px) 32vw, 470px'
                 "
                 [alt]="sample.alt"
                 width="1086"
@@ -181,7 +181,9 @@
   </main>
 
   <footer class="custom-footer">
-    <a routerLink="/" class="custom-footer__brand" aria-label="Dumish Blooms, inicio"><app-brand [onDark]="true" /></a>
+    <a routerLink="/" class="custom-footer__brand" aria-label="Dumish Blooms, inicio"
+      ><app-brand [onDark]="true"
+    /></a>
     <p>Floristería artesanal en línea · Quetzaltenango, Guatemala</p>
     <a [href]="genericWhatsAppUrl" target="_blank" rel="noopener">WhatsApp · +502 5074 6766</a>
   </footer>

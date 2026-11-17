@@ -170,11 +170,16 @@ try {
           `Vertical swipe over gallery ${index} (${width}px)`,
         );
         await position(gallery);
-        await swipe(width - 80, 220, -220, 0);
-        assert(
-          await evaluate(`document.querySelector(${JSON.stringify(gallery)}).scrollLeft > 50`),
-          'Horizontal gallery swipe',
+        const galleryOverflows = await evaluate(
+          `(() => { const gallery = document.querySelector(${JSON.stringify(gallery)}); return gallery.scrollWidth > gallery.clientWidth + 50; })()`,
         );
+        if (galleryOverflows) {
+          await swipe(width - 80, 220, -220, 0);
+          assert(
+            await evaluate(`document.querySelector(${JSON.stringify(gallery)}).scrollLeft > 50`),
+            'Horizontal gallery swipe',
+          );
+        }
         await position(gallery);
         const beforeDown = await evaluate('scrollY');
         await swipe(190, 180, -4, 200);

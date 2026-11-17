@@ -49,3 +49,9 @@ En escritorio, copy y acción ocupan la mitad izquierda y una fotografía real a
 ## Honest risk
 
 La abundancia fotográfica puede alargar la página en móvil. El carrusel horizontal, los CTA contextuales y el botón fijo reducen el recorrido necesario sin esconder la progresión completa.
+
+## Adaptación móvil · 2026-10-23
+
+La portada presenta una fotografía completa de 3:4, centrada y limitada a 17.25rem de ancho, con el pie debajo. Las galerías muestran fotografías completas de 3:4 a `min(62vw, 18rem)`, dejando visible la siguiente referencia en teléfono. Los nombres y sus enlaces ocupan líneas separadas; los enlaces mantienen un área táctil mínima de 44px. En tablet, las dos muestras de “Una ocasión” pueden verse juntas sin desplazamiento horizontal. El ritmo entre títulos, descripción y muestras se compacta conservando el contenido y los mensajes de WhatsApp.
+
+En escritorio, la imagen de portada se ajusta al espacio de su columna sin imponer su altura intrínseca. Las galerías se limitan a 76rem y la de dos muestras a 56rem.
