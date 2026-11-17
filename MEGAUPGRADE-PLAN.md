@@ -334,7 +334,7 @@ No se usan `animate`, `delight`, `overdrive` ni `bolder`.
 | Rol | Hace | Es dueño de |
 | --- | --- | --- |
 | **Líder / integrador** | Oleada 0, conecta rutas, resuelve dudas de contrato, corre la verificación de oleada. Tras la Oleada 1 es además el dueño del kit y de los tokens. | `app.routes.ts`, `admin.routes.ts`, `site-header`, `core/domain/types.ts` (único dueño; A1 no lo toca), `database.types.ts` (se regenera con `db:types`), `PLAN.md`, `CLAUDE.md`; desde el cierre de la Oleada 1: `src/styles/**` y `src/app/ui/**` salvo las carpetas de A4, B3, B2 y C0 |
-| **Agente de pruebas (T)** | Antes de **cada** paquete escribe todas las pruebas del catálogo §9 de ese paquete, del tipo que sean (D, DB, M, UI, F, MOB, SEC). | `**/*.catalog.spec.ts`, `supabase/tests/**`, `api/**/*.catalog.test.ts`, `scripts/verify-*.mjs`, `scripts/gen-golden-sql.mjs`, `supabase/tests/fixtures/**` |
+| **Agente de pruebas (T)** | En la Oleada 0 (paso 0-T) escribe la infraestructura de verificación. Antes de **cada** paquete escribe todas las pruebas del catálogo §9 de ese paquete, del tipo que sean (D, DB, M, UI, F, MOB, SEC). | `**/*.catalog.spec.ts`, `supabase/tests/**`, `api/**/*.catalog.test.ts`, `scripts/verify-*.mjs`, `scripts/gen-golden-sql.mjs`, `supabase/tests/fixtures/**` |
 | **Agentes de paquete** | Implementan un paquete de §8 hasta poner en verde sus pruebas. | Los archivos listados en su paquete |
 
 El trabajo es **secuencial**: un paquete a la vez, en el orden de §8, sobre la rama `feat/taller` (un commit de cierre por paquete). Cada paquete son dos sesiones distintas: primero T escribe sus pruebas, después otro agente lo implementa. Quien implementa nunca escribe ni edita las pruebas del catálogo.
@@ -396,16 +396,22 @@ Oleada 0 → A1 → A3 → A2 → A4 → despliegue esqueleto
 ### Oleada 0 — Preparación (líder + usuario)
 
 1. Restaurar Git: `git init`, agregar remoto `ordzson/Lirios`, `fetch`, comparar con la carpeta local y **pedir confirmación al usuario** antes de decidir cuál manda. Rama `feat/taller`.
-2. Supabase local: `pnpm dlx supabase init`, fijar `project_id` y puertos de §4.3 en `supabase/config.toml`, y `start`. Scripts nuevos en `package.json`: `stack:up`, `db:reset`, `db:golden` (genera el SQL de los casos dorados, §9.1), `db:test` (corre `db:golden` y luego pgTAP), `db:types`, `test:api` (Vitest en entorno node con `vitest.api.config.ts`), `verify:tokens` (falla si hay hexadecimales fuera de `src/styles/` en carpetas nuevas), `verify:migrations` (§4.1), `verify:flows`.
+2. Supabase local: `pnpm dlx supabase init`, fijar `project_id` y puertos de §4.3 en `supabase/config.toml`, y `start`. Scripts nuevos en `package.json`: `stack:up`, `db:reset`, `db:golden` (genera el SQL de los casos dorados, §9.1), `db:test` (corre `db:golden` y luego pgTAP), `db:types`, `test:api` (Vitest en entorno node con `vitest.api.config.ts`), `verify:tokens` (falla si hay hexadecimales fuera de `src/styles/` en carpetas nuevas), `verify:migrations` (§4.1), `verify:flows`. El líder solo **registra** estos scripts: los archivos a los que apuntan (`scripts/gen-golden-sql.mjs`, `scripts/verify-*.mjs`, `supabase/tests/**`) son de T y se escriben en el paso 0-T. Hasta entonces no se corren.
 3. S3 local: `docker-compose.dev.yml` con SeaweedFS, su `s3.json` de desarrollo y `scripts/dev-s3-init.mjs`; `.env.example` actualizado con los valores locales de §4.3.
 4. Functions en local: `tsx` como dependencia de desarrollo, `scripts/dev-api.mjs`, `proxy.conf.json` conectado en `angular.json`, scripts `dev:api` y `dev`.
 5. `src/test-setup.ts` con el sustituto de `showModal`/`close`, conectado en la configuración de pruebas.
 6. **Contratos que las pruebas necesitan antes de existir**: `src/app/core/domain/types.ts` copiado de §4.2; `supabase/tests/fixtures/README.md` con el formato de un caso dorado (§9.1); briefs con contrato de prueba de interfaz (§7.5) para el kit y el shell del panel.
+0-T. **Infraestructura de verificación (sesión de T).** Va después del paso 6 y antes del paso 9. Son scripts de verificación, no pruebas de un paquete, así que no caben en el paso 0 de §7.3. T escribe:
+   - `scripts/verify-tokens.mjs` y `scripts/verify-migrations.mjs` completos, con las reglas del paso 2, §4.1 y §7.2. No dependen de ningún paquete.
+   - `scripts/gen-golden-sql.mjs` completo según §9.1. Sin fixtures genera 0 archivos y sale en 0. Los JSON dorados los escribe T en el paso 0 de A3 (D-22).
+   - `scripts/verify-flows.mjs` como base: arranca Chrome, recorre los viewports de §9.6, corre `db:reset` antes de cada viewport y tiene un registro de flujos vacío. Cada flujo se agrega en el paso 0 de su paquete (F7 antes de A2, F6 antes de A4…).
+   - `supabase/tests/00_smoke.sql`: una prueba pgTAP mínima para que `db:test` tenga algo que correr.
+   - Nota `docs/entregas/oleada0-T.md` con lo escrito y la salida de cada script.
 7. Copiar este plan al repo como `PLAN.md`; crear `CLAUDE.md` del proyecto con §7.2; nota de pausa al inicio de `ADMIN_PLAN.md`; carpeta `docs/entregas/`.
 8. Capturas base de todas las páginas públicas (390 y 1440) en `.impeccable/review/base/`.
 9. CI (`.github/workflows/validate.yml`): disparar también en `feat/**`; agregar `db:test`, `test:api`, `verify:tokens`, `verify:migrations` y `verify:flows` (§4.3).
 
-Cierre de la Oleada 0: `pnpm run stack:up` levanta todo sin chocar con `horarios`; `pnpm run dev` sirve la tienda en `:4200` y `GET /api/health` responde por el proxy; `pnpm test` sigue en verde.
+Cierre de la Oleada 0: `pnpm run stack:up` levanta todo sin chocar con `horarios`; `pnpm run dev` sirve la tienda en `:4200` y `GET /api/health` responde por el proxy; `pnpm test` sigue en verde; `pnpm run db:test`, `pnpm run test:api`, `pnpm run verify:tokens`, `pnpm run verify:migrations` y `pnpm run verify:flows` corren y salen en verde (todavía casi vacíos), en local y en CI.
 
 Usuario, mientras tanto: crear el proyecto Supabase y el bucket R2 con dominio público; empezar las fotos recortadas; reunir datos reales (materiales, compras, minutos por flor, ganancia por hora, margen meta, horario y hora de cierre, usuario de Instagram, fechas de temporada).
 

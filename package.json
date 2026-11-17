@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "config": "node scripts/write-runtime-config.mjs",
+    "config": "node --env-file-if-exists=.env.local scripts/write-runtime-config.mjs",
     "prestart": "pnpm run config",
     "build": "pnpm run config && ng build",
     "build:vercel": "pnpm run config && ng build --configuration production",
@@ -12,7 +12,17 @@
     "verify:public-build": "bash scripts/verify-public-build.sh",
     "verify:navigation": "node scripts/verify-navigation.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:api": "vitest run --config vitest.api.config.ts",
+    "stack:up": "supabase start",
+    "stack:down": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:golden": "node scripts/gen-golden-sql.mjs",
+    "db:test": "pnpm run db:golden && supabase test db",
+    "db:types": "supabase gen types typescript --local > src/app/core/data/database.types.ts",
+    "verify:tokens": "node scripts/verify-tokens.mjs",
+    "verify:migrations": "node scripts/verify-migrations.mjs",
+    "verify:flows": "node scripts/verify-flows.mjs"
   },
   "private": true,
   "packageManager": "pnpm@11.2.2",
@@ -39,6 +49,7 @@
     "@vercel/node": "^20.0.0",
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
+    "supabase": "^3.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
