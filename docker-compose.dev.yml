@@ -1,0 +1,22 @@
+# Local S3 for development and tests (stands in for Cloudflare R2).
+# Development-only credentials live in docker/seaweedfs/s3.json.
+# `pnpm run stack:up` starts it together with Supabase and creates the bucket.
+name: lirios-dev
+
+services:
+  s3:
+    image: chrislusf/seaweedfs:4.54
+    command: server -dir=/data -s3 -s3.port=8333 -s3.config=/etc/seaweedfs/s3.json -master.volumeSizeLimitMB=128 -volume.max=0
+    ports:
+      - '127.0.0.1:58333:8333'
+    volumes:
+      - ./docker/seaweedfs/s3.json:/etc/seaweedfs/s3.json:ro
+      - s3-data:/data
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -q -O /dev/null http://127.0.0.1:8333/status || exit 1']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  s3-data:

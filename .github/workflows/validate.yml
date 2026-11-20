@@ -2,7 +2,7 @@ name: Validate Lirios
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'feat/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -15,11 +15,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Fast checks: no Docker, no running services.
   quality:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # Full history, in case a verify script compares against main.
+          fetch-depth: 0
 
       - name: Scan source for secrets
         uses: docker://ghcr.io/gitleaks/gitleaks:v8.30.1
@@ -43,6 +48,12 @@ jobs:
       - name: Typecheck serverless functions
         run: pnpm run typecheck:api
 
+      - name: Verify design tokens
+        run: pnpm run verify:tokens
+
+      - name: Verify migrations
+        run: pnpm run verify:migrations
+
       - name: Run tests
         run: pnpm test
 
@@ -56,3 +67,121 @@ jobs:
         uses: docker://ghcr.io/gitleaks/gitleaks:v8.30.1
         with:
           args: dir --config=.gitleaks.toml --redact --verbose --max-archive-depth=1 dist/lirios/browser
+
+  # Local stack (PLAN.md §4.3): Supabase CLI on the 553xx ports, SeaweedFS on
+  # :58333, the dev servers (app :4200, API :4310) and the runner's Chrome.
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Start Supabase
+        # Services the tests never use are skipped to save time.
+        run: pnpm exec supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,postgres-meta
+
+      - name: Write .env.local from .env.example and the local Supabase keys
+        run: |
+          status="$RUNNER_TEMP/supabase-status.env"
+          pnpm exec supabase status -o env 2>/dev/null | grep -E '^[A-Z0-9_]+=' > "$status"
+          set -a
+          # shellcheck source=/dev/null
+          . "$status"
+          set +a
+          for name in API_URL PUBLISHABLE_KEY SERVICE_ROLE_KEY; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::supabase status did not print $name"
+              exit 1
+            fi
+          done
+          echo "::add-mask::$SERVICE_ROLE_KEY"
+          {
+            grep -vE '^SUPABASE_(URL|PUBLISHABLE_KEY|SERVICE_ROLE_KEY)=' .env.example
+            echo "SUPABASE_URL=$API_URL"
+            echo "SUPABASE_PUBLISHABLE_KEY=$PUBLISHABLE_KEY"
+            echo "SUPABASE_SERVICE_ROLE_KEY=$SERVICE_ROLE_KEY"
+          } > .env.local
+          # Also export them to later steps (test:api and the verify scripts
+          # read process.env; only dev-api and `config` load .env.local).
+          grep -E '^[A-Z0-9_]+=' .env.local >> "$GITHUB_ENV"
+          grep -E '^[A-Z0-9_]+=' .env.local | sed -E 's/^(SUPABASE_(PUBLISHABLE|SERVICE_ROLE)_KEY)=.*/\1=***/'
+
+      - name: Start SeaweedFS and create the bucket
+        run: pnpm run s3:up
+
+      - name: Database tests (pgTAP + golden cases)
+        run: pnpm run db:test
+
+      - name: Check generated golden SQL is committed
+        run: |
+          changes="$(git status --porcelain -- supabase/tests/generated)"
+          if [ -n "$changes" ]; then
+            echo "$changes"
+            git diff -- supabase/tests/generated
+            echo "::error::supabase/tests/generated is out of date. Run 'pnpm run db:golden' and commit the result."
+            exit 1
+          fi
+
+      - name: API tests (with local S3)
+        run: pnpm run test:api
+
+      - name: Locate the runner's Chrome
+        run: |
+          chrome="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          if [ -z "$chrome" ]; then
+            echo "::error::Chrome not found on the runner"
+            exit 1
+          fi
+          "$chrome" --version
+          echo "CHROME_BIN=$chrome" >> "$GITHUB_ENV"
+
+      - name: Start dev servers
+        run: |
+          nohup pnpm run dev --host 127.0.0.1 > "$RUNNER_TEMP/dev.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/dev.pid"
+
+      - name: Wait for app (:4200) and API (/api/health)
+        run: |
+          pid="$(cat "$RUNNER_TEMP/dev.pid")"
+          for attempt in $(seq 1 120); do
+            if curl -fsS -o /dev/null http://127.0.0.1:4200/ \
+              && curl -fsS -o /dev/null http://127.0.0.1:4200/api/health; then
+              echo "Dev servers ready after ~$((attempt * 2))s"
+              exit 0
+            fi
+            if ! kill -0 "$pid" 2>/dev/null; then
+              echo "::error::pnpm run dev exited before becoming ready"
+              exit 1
+            fi
+            sleep 2
+          done
+          echo "::error::Dev servers not ready after 240s"
+          exit 1
+
+      - name: End-to-end flows
+        run: pnpm run verify:flows
+
+      - name: Dev server log
+        if: always()
+        run: cat "$RUNNER_TEMP/dev.log" 2>/dev/null || echo "No dev log."
+
+      - name: Stack container logs
+        if: failure()
+        run: |
+          docker compose -f docker-compose.dev.yml logs --no-color --tail=200 || true
+          docker ps -a --format '{{.Names}}\t{{.Status}}' || true

@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "node scripts/dev.mjs",
+    "dev:api": "tsx watch --clear-screen=false scripts/dev-api.mjs",
     "config": "node --env-file-if-exists=.env.local scripts/write-runtime-config.mjs",
     "prestart": "pnpm run config",
     "build": "pnpm run config && ng build",
@@ -14,8 +16,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:api": "vitest run --config vitest.api.config.ts",
-    "stack:up": "supabase start",
-    "stack:down": "supabase stop",
+    "stack:up": "supabase start && pnpm run s3:up",
+    "stack:down": "pnpm run s3:down && supabase stop",
+    "s3:up": "docker compose -f docker-compose.dev.yml up -d --wait && node --env-file-if-exists=.env.local scripts/dev-s3-init.mjs",
+    "s3:down": "docker compose -f docker-compose.dev.yml down",
     "db:reset": "supabase db reset",
     "db:golden": "node scripts/gen-golden-sql.mjs",
     "db:test": "pnpm run db:golden && supabase test db",
@@ -50,6 +54,7 @@
     "jsdom": "^28.0.0",
     "prettier": "^3.8.1",
     "supabase": "^3.1.0",
+    "tsx": "^4.23.15",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

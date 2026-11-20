@@ -1,3 +1,7 @@
+> **En pausa (2026-11-19).** Este plan queda fuera del alcance actual. Manda `PLAN.md` (Taller Dumish Blooms: costeo y producción bajo pedido).
+> De aquí solo se absorben los prerrequisitos listados en `PLAN.md` §3 («Prerrequisitos absorbidos de `ADMIN_PLAN.md`»): panel en rutas lazy, estados por RPC con siguiente paso (§7.2), pedido manual (§7.5), fixes #12–#14 y pipeline de imágenes (§5.3, que en `PLAN.md` es §5).
+> Editor de páginas, avisos por correo, invitaciones de equipo y bitácora no se implementan por ahora. No retomar sin decisión del usuario.
+
 # Plan de implementación — Módulo administrativo de Dumish Blooms
 
 Fecha: 2026-10-31 (America/Guatemala).
